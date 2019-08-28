@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //App foi inicializado
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
         launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
         return true
     }
 
