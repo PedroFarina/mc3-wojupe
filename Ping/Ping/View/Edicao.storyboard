@@ -12,7 +12,7 @@
         <!--Editando-->
         <scene sceneID="Fh4-fJ-EcV">
             <objects>
-                <tableViewController id="I43-w6-9zt" sceneMemberID="viewController">
+                <tableViewController id="I43-w6-9zt" customClass="EdicaoTableViewController" customModule="Ping" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Wgn-Rq-ODF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,7 +50,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Descrição" footerTitle="Este texto será impresso abaixo do código QR." id="IRq-50-r8v">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="7q3-sf-WKY">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="7q3-sf-WKY" customClass="TextViewTableViewCell" customModule="Ping" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="163" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7q3-sf-WKY" id="tFw-QW-Jez">
@@ -76,6 +76,9 @@
                                                 <constraint firstItem="B4T-35-LQc" firstAttribute="centerY" secondItem="tFw-QW-Jez" secondAttribute="centerY" id="vVp-YM-jsw"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="txtView" destination="B4T-35-LQc" id="6Gw-Ac-0yz"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -146,13 +149,27 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Editando" id="AcP-1M-Smm">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JeB-QA-5TF"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Zyk-Or-9sh"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JeB-QA-5TF">
+                            <connections>
+                                <action selector="cancelTap:" destination="I43-w6-9zt" id="Nmj-DE-wGU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Zyk-Or-9sh">
+                            <connections>
+                                <action selector="saveTap:" destination="I43-w6-9zt" id="oOO-hr-cJx"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cellApagarButton" destination="bB8-Lf-KGZ" id="KKD-Jv-9Mt"/>
+                        <outlet property="cellDescricao" destination="7q3-sf-WKY" id="z8S-4Y-RcW"/>
+                        <outlet property="cellRenovarButton" destination="cTa-P7-eCx" id="wAF-56-7lh"/>
+                        <outlet property="cellTitulo" destination="SnC-1g-czh" id="tYv-oF-PZh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fQ-Lu-Z7N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-386" y="31"/>
+            <point key="canvasLocation" x="-909" y="-26"/>
         </scene>
     </scenes>
     <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
