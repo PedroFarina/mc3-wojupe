@@ -20,6 +20,7 @@
 		02B2F35F23171D0200140BE8 /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B2F35E23171D0200140BE8 /* ButtonTableViewCell.xib */; };
 		02B2F36223171FDD00140BE8 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2F36023171FDD00140BE8 /* TextTableViewCell.swift */; };
 		02B2F36323171FDD00140BE8 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B2F36123171FDD00140BE8 /* TextTableViewCell.xib */; };
+		75A2203D231997900003A1ED /* EdicaoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A2203C231997900003A1ED /* EdicaoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		02B2F35E23171D0200140BE8 /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
 		02B2F36023171FDD00140BE8 /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
 		02B2F36123171FDD00140BE8 /* TextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
+		75A2203C231997900003A1ED /* EdicaoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdicaoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				02B2F3332316E9DE00140BE8 /* MainViewController.swift */,
+				75A2203C231997900003A1ED /* EdicaoTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				02B2F3322316E9DE00140BE8 /* AppDelegate.swift in Sources */,
 				02B2F356231712ED00140BE8 /* SwitchTableViewCell.swift in Sources */,
 				02B2F35D23171CE700140BE8 /* ButtonTableViewCell.swift in Sources */,
+				75A2203D231997900003A1ED /* EdicaoTableViewController.swift in Sources */,
 				02B2F36223171FDD00140BE8 /* TextTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,7 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BVZY57RJZG;
+				DEVELOPMENT_TEAM = C7LP8JSPCF;
 				INFOPLIST_FILE = Ping/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -387,7 +391,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = BVZY57RJZG;
+				DEVELOPMENT_TEAM = C7LP8JSPCF;
 				INFOPLIST_FILE = Ping/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
