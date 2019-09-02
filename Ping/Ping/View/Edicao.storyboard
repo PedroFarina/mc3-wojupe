@@ -1,7 +1,176 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I43-w6-9zt">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Editando-->
+        <scene sceneID="Fh4-fJ-EcV">
+            <objects>
+                <tableViewController id="I43-w6-9zt" customClass="EdicaoTableViewController" customModule="Ping" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Wgn-Rq-ODF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Título" id="TeG-UL-2TU">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="SnC-1g-czh" customClass="TextTableViewCell" customModule="Ping" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SnC-1g-czh" id="PSq-G2-aOW">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZJ-b4-Pd5">
+                                                    <rect key="frame" x="12" y="0.0" width="390" height="43.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43.5" id="1FD-VO-flm"/>
+                                                    </constraints>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hZJ-b4-Pd5" firstAttribute="height" secondItem="PSq-G2-aOW" secondAttribute="height" id="37z-Bf-Aeo"/>
+                                                <constraint firstItem="hZJ-b4-Pd5" firstAttribute="leading" secondItem="PSq-G2-aOW" secondAttribute="leading" constant="12" id="Zae-4U-KuW"/>
+                                                <constraint firstItem="hZJ-b4-Pd5" firstAttribute="centerY" secondItem="PSq-G2-aOW" secondAttribute="centerY" id="pu2-HR-1lp"/>
+                                                <constraint firstAttribute="trailing" secondItem="hZJ-b4-Pd5" secondAttribute="trailing" constant="12" id="qhi-Bj-qPJ"/>
+                                                <constraint firstItem="hZJ-b4-Pd5" firstAttribute="centerX" secondItem="PSq-G2-aOW" secondAttribute="centerX" id="rv5-m1-TwA"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Descrição" footerTitle="Este texto será impresso abaixo do código QR." id="IRq-50-r8v">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="7q3-sf-WKY" customClass="TextViewTableViewCell" customModule="Ping" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="163" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7q3-sf-WKY" id="tFw-QW-Jez">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="B4T-35-LQc">
+                                                    <rect key="frame" x="12" y="0.0" width="390" height="87.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="87" id="X9W-hR-qFn"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="B4T-35-LQc" secondAttribute="bottom" id="2rk-zZ-DcJ"/>
+                                                <constraint firstAttribute="trailing" secondItem="B4T-35-LQc" secondAttribute="trailing" constant="12" id="Y8V-Ot-GQx"/>
+                                                <constraint firstItem="B4T-35-LQc" firstAttribute="leading" secondItem="tFw-QW-Jez" secondAttribute="leading" constant="12" id="arh-h4-Ki7"/>
+                                                <constraint firstItem="B4T-35-LQc" firstAttribute="centerX" secondItem="tFw-QW-Jez" secondAttribute="centerX" id="ibv-U6-iEq"/>
+                                                <constraint firstItem="B4T-35-LQc" firstAttribute="top" secondItem="tFw-QW-Jez" secondAttribute="top" id="nFR-qW-dXb"/>
+                                                <constraint firstItem="B4T-35-LQc" firstAttribute="centerY" secondItem="tFw-QW-Jez" secondAttribute="centerY" id="vVp-YM-jsw"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="txtView" destination="B4T-35-LQc" id="6Gw-Ac-0yz"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Ações QR" footerTitle="As ações QR não podem ser desfeitas." id="DMX-ap-bl4">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cTa-P7-eCx" customClass="ButtonTableViewCell" customModule="Ping" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="282.5" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cTa-P7-eCx" id="VVe-DF-tdh">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Renovar QR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icz-cc-66D">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43.5" id="mRf-e6-WKL"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="icz-cc-66D" firstAttribute="height" secondItem="VVe-DF-tdh" secondAttribute="height" id="2W3-GA-NGm"/>
+                                                <constraint firstItem="icz-cc-66D" firstAttribute="width" secondItem="VVe-DF-tdh" secondAttribute="width" id="9Fy-1K-J0C"/>
+                                                <constraint firstItem="icz-cc-66D" firstAttribute="centerY" secondItem="VVe-DF-tdh" secondAttribute="centerY" id="d98-RG-adZ"/>
+                                                <constraint firstItem="icz-cc-66D" firstAttribute="centerX" secondItem="VVe-DF-tdh" secondAttribute="centerX" id="r2B-rD-0Pu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblBtn" destination="icz-cc-66D" id="2QR-PL-ag7"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bB8-Lf-KGZ" customClass="ButtonTableViewCell" customModule="Ping" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="326.5" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bB8-Lf-KGZ" id="4Kr-IN-mDG">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apagar QR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSk-Sk-BJq">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43.5" id="JTz-rt-Mbg"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gSk-Sk-BJq" firstAttribute="width" secondItem="4Kr-IN-mDG" secondAttribute="width" id="DqU-7P-AP7"/>
+                                                <constraint firstItem="gSk-Sk-BJq" firstAttribute="centerY" secondItem="4Kr-IN-mDG" secondAttribute="centerY" id="LbA-Q7-hd3"/>
+                                                <constraint firstItem="gSk-Sk-BJq" firstAttribute="height" secondItem="4Kr-IN-mDG" secondAttribute="height" id="OAz-bS-xco"/>
+                                                <constraint firstItem="gSk-Sk-BJq" firstAttribute="centerX" secondItem="4Kr-IN-mDG" secondAttribute="centerX" id="gyb-gO-LcY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblBtn" destination="gSk-Sk-BJq" id="DG8-74-MlZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="I43-w6-9zt" id="uzp-wa-cIE"/>
+                            <outlet property="delegate" destination="I43-w6-9zt" id="2e3-u6-3WL"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Editando" id="AcP-1M-Smm">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="JeB-QA-5TF">
+                            <connections>
+                                <action selector="cancelTap:" destination="I43-w6-9zt" id="Nmj-DE-wGU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Zyk-Or-9sh">
+                            <connections>
+                                <action selector="saveTap:" destination="I43-w6-9zt" id="oOO-hr-cJx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cellApagarButton" destination="bB8-Lf-KGZ" id="KKD-Jv-9Mt"/>
+                        <outlet property="cellDescricao" destination="7q3-sf-WKY" id="z8S-4Y-RcW"/>
+                        <outlet property="cellRenovarButton" destination="cTa-P7-eCx" id="wAF-56-7lh"/>
+                        <outlet property="cellTitulo" destination="SnC-1g-czh" id="tYv-oF-PZh"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3fQ-Lu-Z7N" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-909" y="-26"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
