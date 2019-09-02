@@ -10,6 +10,7 @@ import UIKit
 
 public class CampainhaPropertiesTableViewDataSource: NSObject, UITableViewDataSource {
     public var campainha: Campainha?
+    private var senhaEnabled:Bool = false
 
     public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -29,16 +30,20 @@ public class CampainhaPropertiesTableViewDataSource: NSObject, UITableViewDataSo
             title = "Proteção por Senha".localized()
             exe = {(swPassword) in
                 let iPath: IndexPath = IndexPath(row: 1, section: 0)
+                self.senhaEnabled = swPassword.isOn
                 tableView.cellForRow(at: iPath)?.isHidden = !swPassword.isOn
-                tableView.reloadRows(at: [iPath], with: .top)
+                tableView.reloadRows(at: [iPath], with: .middle)
             }
-            fallthrough
+            if let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.identifier)
+                as? SwitchTableViewCell {
+                cell.lblText = title
+                cell.onOffChanged = exe
+                return cell
+            }
         case 1:
             if let cell = tableView.dequeueReusableCell(withIdentifier: TextWithTitleTableViewCell.identifier)
                 as? TextWithTitleTableViewCell {
-                if let campainha = campainha {
-                    cell.isHidden = campainha.senha == nil
-                }
+                cell.isHidden = !senhaEnabled
                 cell.lblText = "Senha"
                 cell.txtPlaceholder = "----"
                 cell.maxCharacters = 4
@@ -48,7 +53,7 @@ public class CampainhaPropertiesTableViewDataSource: NSObject, UITableViewDataSo
                     }
                 }
                 cell.txtField.keyboardType = .numberPad
-                cell.txtField.textContentType = .newPassword
+                cell.txtField.textContentType = .password
                 cell.txtField.returnKeyType = .done
                 return cell
             }
@@ -61,14 +66,14 @@ public class CampainhaPropertiesTableViewDataSource: NSObject, UITableViewDataSo
                     self.desilenciar()
                 }
             }
-            fallthrough
-        default:
             if let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.identifier)
                 as? SwitchTableViewCell {
                 cell.lblText = title
                 cell.onOffChanged = exe
                 return cell
             }
+        default:
+            fatalError("Erro no indice da CampainhaPropertiesTableView".localized())
         }
         return UITableViewCell()
     }

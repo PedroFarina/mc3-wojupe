@@ -9,8 +9,13 @@
 import UIKit
 
 public class CampainhaPropertiesTableViewDelegate: NSObject, UITableViewDelegate {
-
-    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        guard let cell = tableView.cellForRow(at: indexPath) else {
+            return 44
+        }
+        if cell.isHidden {
+            return 0
+        }
+        return 44
     }
 }

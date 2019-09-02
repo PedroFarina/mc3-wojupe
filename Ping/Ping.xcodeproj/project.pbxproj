@@ -133,9 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				79372432231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift */,
+				79372434231D8E3C00665B2D /* CampainhaPropertiesTableViewDelegate.swift */,
 				02B2F3332316E9DE00140BE8 /* MainViewController.swift */,
 				75A2203C231997900003A1ED /* EdicaoTableViewController.swift */,
-				79372434231D8E3C00665B2D /* CampainhaPropertiesTableViewDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -437,7 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C7LP8JSPCF;
+				DEVELOPMENT_TEAM = YYV8LRMG8S;
 				INFOPLIST_FILE = Ping/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -455,7 +455,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C7LP8JSPCF;
+				DEVELOPMENT_TEAM = YYV8LRMG8S;
 				INFOPLIST_FILE = Ping/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
