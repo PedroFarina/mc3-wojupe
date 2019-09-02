@@ -28,8 +28,12 @@
 		02B2F35F23171D0200140BE8 /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B2F35E23171D0200140BE8 /* ButtonTableViewCell.xib */; };
 		02B2F36223171FDD00140BE8 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2F36023171FDD00140BE8 /* TextTableViewCell.swift */; };
 		02B2F36323171FDD00140BE8 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B2F36123171FDD00140BE8 /* TextTableViewCell.xib */; };
-		75A2203D231997900003A1ED /* EdicaoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A2203C231997900003A1ED /* EdicaoTableViewController.swift */; };
-		75A2203F23199DFE0003A1ED /* TextViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A2203E23199DFE0003A1ED /* TextViewTableViewCell.swift */; };
+		79372433231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79372432231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift */; };
+		79372435231D8E3C00665B2D /* CampainhaPropertiesTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79372434231D8E3C00665B2D /* CampainhaPropertiesTableViewDelegate.swift */; };
+		79372437231D913F00665B2D /* CampainhaPropertiesTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79372436231D913F00665B2D /* CampainhaPropertiesTableViewDataSource.swift */; };
+		79372439231D9ECB00665B2D /* TextWithTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79372438231D9ECB00665B2D /* TextWithTitleTableViewCell.swift */; };
+		7937243B231D9F0400665B2D /* TextWithTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7937243A231D9F0400665B2D /* TextWithTitleTableViewCell.xib */; };
+		7937243D231DA82A00665B2D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7937243C231DA82A00665B2D /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +62,12 @@
 		02B2F36123171FDD00140BE8 /* TextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
 		75A2203C231997900003A1ED /* EdicaoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdicaoTableViewController.swift; sourceTree = "<group>"; };
 		75A2203E23199DFE0003A1ED /* TextViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewTableViewCell.swift; sourceTree = "<group>"; };
+		79372432231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampainhaPropertiesTableViewController.swift; sourceTree = "<group>"; };
+		79372434231D8E3C00665B2D /* CampainhaPropertiesTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampainhaPropertiesTableViewDelegate.swift; sourceTree = "<group>"; };
+		79372436231D913F00665B2D /* CampainhaPropertiesTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampainhaPropertiesTableViewDataSource.swift; sourceTree = "<group>"; };
+		79372438231D9ECB00665B2D /* TextWithTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWithTitleTableViewCell.swift; sourceTree = "<group>"; };
+		7937243A231D9F0400665B2D /* TextWithTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextWithTitleTableViewCell.xib; sourceTree = "<group>"; };
+		7937243C231DA82A00665B2D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				024B1F5F2319B01D00E3C527 /* ModelController.swift */,
+				7937243C231DA82A00665B2D /* Settings.swift */,
 				024B1F6F2319C20100E3C527 /* ModelActionAnswer.swift */,
 				024B1F672319BC6700E3C527 /* Campainha+CoreDataClass.swift */,
 				024B1F682319BC6700E3C527 /* Campainha+CoreDataProperties.swift */,
@@ -83,6 +94,7 @@
 				024B1F642319BA2D00E3C527 /* Ping.xcdatamodeld */,
 				024B1F752319C37B00E3C527 /* Localizable.strings */,
 				024B1F762319C47C00E3C527 /* LocalizedStringExtension.swift */,
+				79372436231D913F00665B2D /* CampainhaPropertiesTableViewDataSource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -120,8 +132,10 @@
 		02B2F3432316E9E900140BE8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				79372432231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift */,
 				02B2F3332316E9DE00140BE8 /* MainViewController.swift */,
 				75A2203C231997900003A1ED /* EdicaoTableViewController.swift */,
+				79372434231D8E3C00665B2D /* CampainhaPropertiesTableViewDelegate.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -146,6 +160,8 @@
 				02B2F36023171FDD00140BE8 /* TextTableViewCell.swift */,
 				02B2F36123171FDD00140BE8 /* TextTableViewCell.xib */,
 				75A2203E23199DFE0003A1ED /* TextViewTableViewCell.swift */,
+				7937243A231D9F0400665B2D /* TextWithTitleTableViewCell.xib */,
+				79372438231D9ECB00665B2D /* TextWithTitleTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -213,6 +229,7 @@
 				02B2F33C2316E9E100140BE8 /* LaunchScreen.storyboard in Resources */,
 				02B2F35F23171D0200140BE8 /* ButtonTableViewCell.xib in Resources */,
 				02B2F357231712ED00140BE8 /* SwitchTableViewCell.xib in Resources */,
+				7937243B231D9F0400665B2D /* TextWithTitleTableViewCell.xib in Resources */,
 				02B2F3392316E9E100140BE8 /* Assets.xcassets in Resources */,
 				024B1F732319C37B00E3C527 /* Localizable.strings in Resources */,
 				02B2F36323171FDD00140BE8 /* TextTableViewCell.xib in Resources */,
@@ -254,13 +271,18 @@
 				024B1F662319BA2D00E3C527 /* Ping.xcdatamodeld in Sources */,
 				02B2F356231712ED00140BE8 /* SwitchTableViewCell.swift in Sources */,
 				024B1F6C2319BC6700E3C527 /* Campainha+CoreDataProperties.swift in Sources */,
+				7937243D231DA82A00665B2D /* Settings.swift in Sources */,
+				79372435231D8E3C00665B2D /* CampainhaPropertiesTableViewDelegate.swift in Sources */,
 				024B1F602319B01D00E3C527 /* ModelController.swift in Sources */,
+				79372437231D913F00665B2D /* CampainhaPropertiesTableViewDataSource.swift in Sources */,
 				024B1F6E2319BC6700E3C527 /* Usuario+CoreDataProperties.swift in Sources */,
+				79372439231D9ECB00665B2D /* TextWithTitleTableViewCell.swift in Sources */,
 				024B1F6D2319BC6700E3C527 /* Usuario+CoreDataClass.swift in Sources */,
 				02B2F35D23171CE700140BE8 /* ButtonTableViewCell.swift in Sources */,
 				024B1F702319C20100E3C527 /* ModelActionAnswer.swift in Sources */,
 				024B1F6B2319BC6700E3C527 /* Campainha+CoreDataClass.swift in Sources */,
 				02B2F36223171FDD00140BE8 /* TextTableViewCell.swift in Sources */,
+				79372433231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
