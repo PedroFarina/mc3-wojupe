@@ -16,6 +16,15 @@ class SwitchTableViewCell: UITableViewCell {
     @IBOutlet var onOff: UISwitch!
     public var onOffChanged: ((UISwitch) -> Void)?
 
+    public var lblText: String? {
+        get {
+            return lblTitle.text
+        }
+        set {
+            lblTitle.text = newValue
+        }
+    }
+
     @IBAction func onOffOccur (_  sender: UISwitch) {
         guard let onOffChanged = onOffChanged else {
             return

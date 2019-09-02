@@ -2,7 +2,7 @@
 //  Campainha+CoreDataProperties.swift
 //  Ping
 //
-//  Created by Pedro Giuliano Farina on 30/08/19.
+//  Created by Wolfgang Walder on 02/09/19.
 //  Copyright © 2019 Pedro Giuliano Farina. All rights reserved.
 //
 //
@@ -16,9 +16,10 @@ extension Campainha {
         return NSFetchRequest<Campainha>(entityName: "Campainha")
     }
 
-    @NSManaged public var titulo: String?
     @NSManaged public var descricao: String?
+    @NSManaged public var titulo: String?
     @NSManaged public var url: String?
+    @NSManaged public var senha: String?
     @NSManaged public var dono: Usuario?
 
 }

@@ -36,7 +36,7 @@ implicitly_unwrapped_optional:
   mode: allExceptIBOutlets
 
 function_body_length:
-  warning: 30
+  warning: 45
   error: 100
 
 line_length:
