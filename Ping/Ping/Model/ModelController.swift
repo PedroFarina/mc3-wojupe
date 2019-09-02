@@ -80,13 +80,13 @@ public class ModelController {
             let usuario = NSEntityDescription.insertNewObject(forEntityName: "Usuario",
                                                                     into: context) as? Usuario
             else {
-                return .fail(description: "Não foi possível criar um Usuario.".localized())
+                return .fail(description: "Não foi possível criar um usuario.".localized())
         }
         usuario.usuarioId = UUID()
         do {
             try _saveContext()
         } catch {
-            return .fail(description: "Não foi possível salvar uma campainha.".localized())
+            return .fail(description: "Não foi possível salvar um usuario.".localized())
         }
         return .successful
     }
