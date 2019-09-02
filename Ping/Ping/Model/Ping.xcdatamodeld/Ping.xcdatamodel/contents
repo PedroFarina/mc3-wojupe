@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14492.1" systemVersion="18G87" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Campainha" representedClassName="Campainha" syncable="YES">
         <attribute name="descricao" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="senha" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="dono" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Usuario" inverseName="campainhas" inverseEntity="Usuario" syncable="YES"/>
@@ -11,7 +12,7 @@
         <relationship name="campainhas" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="Campainha" inverseName="dono" inverseEntity="Campainha" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Campainha" positionX="60.4296875" positionY="-226.96875" width="128" height="103"/>
+        <element name="Campainha" positionX="60.4296875" positionY="-226.96875" width="128" height="120"/>
         <element name="Usuario" positionX="287.1015625" positionY="-197.0859375" width="128" height="73"/>
     </elements>
 </model>

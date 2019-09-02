@@ -35,7 +35,7 @@ public class ModelController {
     public func editCampainha(target campainha: Campainha, newTitulo titulo: String?,
                               newDescricao descricao: String?, newUrl url: String?) -> ModelActionAnswer {
         var hasModifications: Bool = false
-        
+
         //Vendo se alteraremos o titulo
         if let titulo = titulo, titulo != campainha.titulo {
             campainha.titulo = titulo
@@ -64,9 +64,9 @@ public class ModelController {
     }
 
     // MARK: Remover campainha
-    public func removeCampainha(target campainha:Campainha) -> ModelActionAnswer {
+    public func removeCampainha(target campainha: Campainha) -> ModelActionAnswer {
         context.delete(campainha)
-        do{
+        do {
             try _saveContext()
         } catch {
             return .fail(description: "Não foi possível deletar uma campainha.".localized())
