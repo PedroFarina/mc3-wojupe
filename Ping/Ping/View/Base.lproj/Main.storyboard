@@ -135,12 +135,27 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Campainha" largeTitleDisplayMode="never" id="RYp-BJ-gVl">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="qXM-lt-bCz"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="qXM-lt-bCz">
+                            <connections>
+                                <segue destination="Dml-xm-dmN" kind="presentation" id="uMu-ck-PWK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="imgQR" destination="TXw-QN-PsM" id="EG0-GG-I7Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="947.43777452415804" y="138.28125"/>
+        </scene>
+        <!--Edicao-->
+        <scene sceneID="qUQ-eh-Key">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Edicao" id="Dml-xm-dmN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9VH-0Q-QjT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1620" y="138"/>
         </scene>
         <!--Campainha Properties Table View Controller-->
         <scene sceneID="rjv-Eq-9gT">
@@ -168,7 +183,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nV-ES-06T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981" y="864"/>
+            <point key="canvasLocation" x="948" y="792"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7aS-85-cpG">
@@ -180,7 +195,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <color key="textColor" red="0.94221228359999998" green="0.60480719800000005" blue="0.21946668620000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -196,5 +211,5 @@
     <resources>
         <image name="sharebutton" width="66" height="66"/>
     </resources>
-    <color key="tintColor" red="0.94221228361129761" green="0.60480719804763794" blue="0.2194666862487793" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+    <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
 </document>

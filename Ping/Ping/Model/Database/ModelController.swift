@@ -32,13 +32,18 @@ public class ModelController {
     }
 
     // MARK: Editar campainha
-    public func editCampainha(target campainha: Campainha, newTitulo titulo: String?,
+    public func editCampainha(target campainha: Campainha, newTitulo titulo: String?, newSenha senha:String?,
                               newDescricao descricao: String?, newUrl url: String?) -> ModelActionAnswer {
         var hasModifications: Bool = false
 
         //Vendo se alteraremos o titulo
         if let titulo = titulo, titulo != campainha.titulo {
             campainha.titulo = titulo
+            hasModifications = true
+        }
+        //Vendo se alteramos a senha
+        if let senha = senha, senha != campainha.senha {
+            campainha.senha = senha
             hasModifications = true
         }
         //Vendo se alteraremos a descricao
