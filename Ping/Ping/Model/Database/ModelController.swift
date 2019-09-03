@@ -31,8 +31,13 @@ public class ModelController {
         return .successful
     }
 
+    // MARK: Renovar campainha
+    public func renewCampainha(target campainha: Campainha) -> ModelActionAnswer {
+        return .successful
+    }
+
     // MARK: Editar campainha
-    public func editCampainha(target campainha: Campainha, newTitulo titulo: String?, newSenha senha:String?,
+    public func editCampainha(target campainha: Campainha, newTitulo titulo: String?, newSenha senha: String?,
                               newDescricao descricao: String?, newUrl url: String?) -> ModelActionAnswer {
         var hasModifications: Bool = false
 

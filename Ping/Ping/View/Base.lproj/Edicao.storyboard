@@ -163,6 +163,12 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cellApagarButton" destination="KFg-AD-bb1" id="Twp-bh-cag"/>
+                        <outlet property="cellDescricao" destination="7q3-sf-WKY" id="3p0-MP-90x"/>
+                        <outlet property="cellRenovarButton" destination="cTa-P7-eCx" id="UYG-Nc-43X"/>
+                        <outlet property="cellTitulo" destination="SnC-1g-czh" id="ZAA-T9-ub7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fQ-Lu-Z7N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
