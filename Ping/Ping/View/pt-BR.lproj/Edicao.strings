@@ -1,0 +1,24 @@
+
+/* Class = "UILabel"; text = "Apagar QR"; ObjectID = "9gb-xQ-VS5"; */
+"9gb-xQ-VS5.text" = "Apagar QR";
+
+/* Class = "UINavigationItem"; title = "Editando"; ObjectID = "AcP-1M-Smm"; */
+"AcP-1M-Smm.title" = "Editando";
+
+/* Class = "UITableViewSection"; footerTitle = "As ações QR não podem ser desfeitas."; ObjectID = "DMX-ap-bl4"; */
+"DMX-ap-bl4.footerTitle" = "As ações QR não podem ser desfeitas.";
+
+/* Class = "UITableViewSection"; headerTitle = "Ações QR"; ObjectID = "DMX-ap-bl4"; */
+"DMX-ap-bl4.headerTitle" = "Ações QR";
+
+/* Class = "UITableViewSection"; footerTitle = "Este texto será impresso abaixo do código QR."; ObjectID = "IRq-50-r8v"; */
+"IRq-50-r8v.footerTitle" = "Este texto será impresso abaixo do código QR.";
+
+/* Class = "UITableViewSection"; headerTitle = "Descrição"; ObjectID = "IRq-50-r8v"; */
+"IRq-50-r8v.headerTitle" = "Descrição";
+
+/* Class = "UITableViewSection"; headerTitle = "Título"; ObjectID = "TeG-UL-2TU"; */
+"TeG-UL-2TU.headerTitle" = "Título";
+
+/* Class = "UILabel"; text = "Renovar QR"; ObjectID = "icz-cc-66D"; */
+"icz-cc-66D.text" = "Renovar QR";

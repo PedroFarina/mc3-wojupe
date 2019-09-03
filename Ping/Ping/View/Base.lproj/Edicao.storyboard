@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I43-w6-9zt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CO2-8X-1ch">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -45,6 +45,9 @@
                                                 <constraint firstItem="hZJ-b4-Pd5" firstAttribute="centerX" secondItem="PSq-G2-aOW" secondAttribute="centerX" id="rv5-m1-TwA"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="txtField" destination="hZJ-b4-Pd5" id="BSM-cn-r0p"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -77,7 +80,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="txtView" destination="B4T-35-LQc" id="6Gw-Ac-0yz"/>
+                                            <outlet property="txtView" destination="B4T-35-LQc" id="Ct8-sB-9EC"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -109,20 +112,20 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="lblBtn" destination="icz-cc-66D" id="2QR-PL-ag7"/>
+                                            <outlet property="lblBtn" destination="icz-cc-66D" id="iS4-XY-sD7"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bB8-Lf-KGZ" customClass="ButtonTableViewCell" customModule="Ping" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="KFg-AD-bb1" customClass="ButtonTableViewCell" customModule="Ping" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="326.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bB8-Lf-KGZ" id="4Kr-IN-mDG">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KFg-AD-bb1" id="vw0-0a-ivs">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apagar QR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gSk-Sk-BJq">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apagar QR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gb-xQ-VS5">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="43.5" id="JTz-rt-Mbg"/>
+                                                        <constraint firstAttribute="height" constant="43.5" id="dAp-mc-TXn"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
@@ -130,14 +133,14 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="gSk-Sk-BJq" firstAttribute="width" secondItem="4Kr-IN-mDG" secondAttribute="width" id="DqU-7P-AP7"/>
-                                                <constraint firstItem="gSk-Sk-BJq" firstAttribute="centerY" secondItem="4Kr-IN-mDG" secondAttribute="centerY" id="LbA-Q7-hd3"/>
-                                                <constraint firstItem="gSk-Sk-BJq" firstAttribute="height" secondItem="4Kr-IN-mDG" secondAttribute="height" id="OAz-bS-xco"/>
-                                                <constraint firstItem="gSk-Sk-BJq" firstAttribute="centerX" secondItem="4Kr-IN-mDG" secondAttribute="centerX" id="gyb-gO-LcY"/>
+                                                <constraint firstItem="9gb-xQ-VS5" firstAttribute="height" secondItem="vw0-0a-ivs" secondAttribute="height" id="Lg9-K1-v8a"/>
+                                                <constraint firstItem="9gb-xQ-VS5" firstAttribute="width" secondItem="vw0-0a-ivs" secondAttribute="width" id="Ri7-1A-s8b"/>
+                                                <constraint firstItem="9gb-xQ-VS5" firstAttribute="centerX" secondItem="vw0-0a-ivs" secondAttribute="centerX" id="U9Y-6b-GNf"/>
+                                                <constraint firstItem="9gb-xQ-VS5" firstAttribute="centerY" secondItem="vw0-0a-ivs" secondAttribute="centerY" id="jKe-Rc-2Hg"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="lblBtn" destination="gSk-Sk-BJq" id="DG8-74-MlZ"/>
+                                            <outlet property="lblBtn" destination="9gb-xQ-VS5" id="5vB-s5-gqZ"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -161,16 +164,38 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cellApagarButton" destination="bB8-Lf-KGZ" id="KKD-Jv-9Mt"/>
-                        <outlet property="cellDescricao" destination="7q3-sf-WKY" id="z8S-4Y-RcW"/>
-                        <outlet property="cellRenovarButton" destination="cTa-P7-eCx" id="wAF-56-7lh"/>
-                        <outlet property="cellTitulo" destination="SnC-1g-czh" id="tYv-oF-PZh"/>
+                        <outlet property="cellApagarButton" destination="KFg-AD-bb1" id="Twp-bh-cag"/>
+                        <outlet property="cellDescricao" destination="7q3-sf-WKY" id="3p0-MP-90x"/>
+                        <outlet property="cellRenovarButton" destination="cTa-P7-eCx" id="UYG-Nc-43X"/>
+                        <outlet property="cellTitulo" destination="SnC-1g-czh" id="ZAA-T9-ub7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fQ-Lu-Z7N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-909" y="-26"/>
+            <point key="canvasLocation" x="0.0" y="-26.116071428571427"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="i0D-dj-bkK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CO2-8X-1ch" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iVh-bV-x80">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="I43-w6-9zt" kind="relationship" relationship="rootViewController" id="zby-rh-aWW"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fWz-1w-ITM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-910.14492753623199" y="-26.116071428571427"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="1" green="0.57637232540000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
 </document>

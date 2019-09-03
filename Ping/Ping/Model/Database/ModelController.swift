@@ -31,14 +31,24 @@ public class ModelController {
         return .successful
     }
 
+    // MARK: Renovar campainha
+    public func renewCampainha(target campainha: Campainha) -> ModelActionAnswer {
+        return .successful
+    }
+
     // MARK: Editar campainha
-    public func editCampainha(target campainha: Campainha, newTitulo titulo: String?,
+    public func editCampainha(target campainha: Campainha, newTitulo titulo: String?, newSenha senha: String?,
                               newDescricao descricao: String?, newUrl url: String?) -> ModelActionAnswer {
         var hasModifications: Bool = false
 
         //Vendo se alteraremos o titulo
         if let titulo = titulo, titulo != campainha.titulo {
             campainha.titulo = titulo
+            hasModifications = true
+        }
+        //Vendo se alteramos a senha
+        if let senha = senha, senha != campainha.senha {
+            campainha.senha = senha
             hasModifications = true
         }
         //Vendo se alteraremos a descricao
@@ -80,13 +90,13 @@ public class ModelController {
             let usuario = NSEntityDescription.insertNewObject(forEntityName: "Usuario",
                                                                     into: context) as? Usuario
             else {
-                return .fail(description: "Não foi possível criar um Usuario.".localized())
+                return .fail(description: "Não foi possível criar um usuario.".localized())
         }
         usuario.usuarioId = UUID()
         do {
             try _saveContext()
         } catch {
-            return .fail(description: "Não foi possível salvar uma campainha.".localized())
+            return .fail(description: "Não foi possível salvar um usuario.".localized())
         }
         return .successful
     }

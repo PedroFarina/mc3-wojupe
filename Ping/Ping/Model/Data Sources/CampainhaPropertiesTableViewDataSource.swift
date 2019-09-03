@@ -10,7 +10,7 @@ import UIKit
 
 public class CampainhaPropertiesTableViewDataSource: NSObject, UITableViewDataSource {
     public var campainha: Campainha?
-    private var senhaEnabled:Bool = false
+    private var senhaEnabled: Bool = false
 
     public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -49,7 +49,8 @@ public class CampainhaPropertiesTableViewDataSource: NSObject, UITableViewDataSo
                 cell.maxCharacters = 4
                 cell.completionCharacters = {(senha) in
                     if let campainha = self.campainha {
-                        campainha.senha = senha
+                        let answer: ModelActionAnswer = ModelController.shared().editCampainha(
+                        target: campainha, newTitulo: nil, newSenha: senha, newDescricao: nil, newUrl: nil)
                     }
                 }
                 cell.txtField.keyboardType = .numberPad

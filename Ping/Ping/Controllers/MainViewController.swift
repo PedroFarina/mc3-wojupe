@@ -10,9 +10,11 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    @IBOutlet weak var imgQR: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        imgQR.image = QRCodeGenerator.qrImage(from: "placeholder")
     }
 
 }
