@@ -22,7 +22,7 @@ public class EdicaoTableViewController: UITableViewController {
         ale.addAction(UIAlertAction(title: "Não".localized(), style: .cancel, handler: nil))
 
         ale.addAction(UIAlertAction(title: "Sim".localized(), style: .destructive, handler: { (_) in
-            _ = ModelController.shared().renewCampainha(target: self.campainha)
+            self.campainha.renewURL()
         }))
 
         return ale
@@ -34,7 +34,7 @@ public class EdicaoTableViewController: UITableViewController {
         ale.addAction(UIAlertAction(title: "Não".localized(), style: .cancel, handler: nil))
 
         ale.addAction(UIAlertAction(title: "Sim".localized(), style: .destructive, handler: { (_) in
-            _ = ModelController.shared().removeCampainha(target: self.campainha)
+            DataController.shared().removeCampainha(target: self.campainha)
         }))
 
         return ale
@@ -46,7 +46,7 @@ public class EdicaoTableViewController: UITableViewController {
     @IBAction func saveTap(_ sender: Any) {
         let newTitulo = cellTitulo.txtText
         let newDescricao = cellDescricao.txtText
-        _ = ModelController.shared().editCampainha(target: campainha, newTitulo: newTitulo,
+        DataController.shared().editCampainha(target: campainha, newTitulo: newTitulo,
                                                    newSenha: nil, newDescricao: newDescricao, newUrl: nil)
         self.dismiss(animated: true, completion: nil)
     }

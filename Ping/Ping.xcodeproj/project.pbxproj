@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		021FF573231DD530009D02AB /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021FF572231DD530009D02AB /* CloudKit.framework */; };
+		022621F32320276E0055A8FA /* DataEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022621F22320276E0055A8FA /* DataEntity.swift */; };
 		024B1F602319B01D00E3C527 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B1F5F2319B01D00E3C527 /* DataController.swift */; };
 		024B1F702319C20100E3C527 /* DataActionAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B1F6F2319C20100E3C527 /* DataActionAnswer.swift */; };
 		024B1F772319C47D00E3C527 /* LocalizedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B1F762319C47C00E3C527 /* LocalizedStringExtension.swift */; };
@@ -30,6 +31,8 @@
 		02E42463231EE078000F4C8C /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E42462231EE078000F4C8C /* QRCodeGenerator.swift */; };
 		02E42465231EF50F000F4C8C /* Campainha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E42464231EF50F000F4C8C /* Campainha.swift */; };
 		02E42467231EF53E000F4C8C /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E42466231EF53E000F4C8C /* Usuario.swift */; };
+		02E42469231F0A49000F4C8C /* DataFetchAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E42468231F0A49000F4C8C /* DataFetchAnswer.swift */; };
+		02E4246B231F113C000F4C8C /* DataProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4246A231F113C000F4C8C /* DataProperty.swift */; };
 		79372433231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79372432231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift */; };
 		79372435231D8E3C00665B2D /* CampainhaPropertiesTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79372434231D8E3C00665B2D /* CampainhaPropertiesTableViewDelegate.swift */; };
 		79372437231D913F00665B2D /* CampainhaPropertiesTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79372436231D913F00665B2D /* CampainhaPropertiesTableViewDataSource.swift */; };
@@ -41,6 +44,7 @@
 /* Begin PBXFileReference section */
 		021FF56E231DD0AC009D02AB /* Ping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ping.entitlements; sourceTree = "<group>"; };
 		021FF572231DD530009D02AB /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		022621F22320276E0055A8FA /* DataEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEntity.swift; sourceTree = "<group>"; };
 		024B1F5F2319B01D00E3C527 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		024B1F6F2319C20100E3C527 /* DataActionAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataActionAnswer.swift; sourceTree = "<group>"; };
 		024B1F762319C47C00E3C527 /* LocalizedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringExtension.swift; sourceTree = "<group>"; };
@@ -72,6 +76,8 @@
 		02E42462231EE078000F4C8C /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
 		02E42464231EF50F000F4C8C /* Campainha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campainha.swift; sourceTree = "<group>"; };
 		02E42466231EF53E000F4C8C /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
+		02E42468231F0A49000F4C8C /* DataFetchAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchAnswer.swift; sourceTree = "<group>"; };
+		02E4246A231F113C000F4C8C /* DataProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProperty.swift; sourceTree = "<group>"; };
 		79372432231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampainhaPropertiesTableViewController.swift; sourceTree = "<group>"; };
 		79372434231D8E3C00665B2D /* CampainhaPropertiesTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampainhaPropertiesTableViewDelegate.swift; sourceTree = "<group>"; };
 		79372436231D913F00665B2D /* CampainhaPropertiesTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampainhaPropertiesTableViewDataSource.swift; sourceTree = "<group>"; };
@@ -105,7 +111,7 @@
 			children = (
 				02E4245F231EDF21000F4C8C /* Database */,
 				02E42461231EDF55000F4C8C /* Data Sources */,
-				02E4245C231EDEBD000F4C8C /* Extensions */,
+				02E4245C231EDEBD000F4C8C /* Swift Extensions */,
 				7937243C231DA82A00665B2D /* Settings.swift */,
 				025ECB49231ED5D20009E29C /* Localizable.strings */,
 			);
@@ -181,19 +187,21 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
-		02E4245C231EDEBD000F4C8C /* Extensions */ = {
+		02E4245C231EDEBD000F4C8C /* Swift Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				024B1F762319C47C00E3C527 /* LocalizedStringExtension.swift */,
 				02E4245D231EDED0000F4C8C /* CIImageExtension.swift */,
 			);
-			path = Extensions;
+			path = "Swift Extensions";
 			sourceTree = "<group>";
 		};
 		02E4245F231EDF21000F4C8C /* Database */ = {
 			isa = PBXGroup;
 			children = (
 				024B1F5F2319B01D00E3C527 /* DataController.swift */,
+				02E4246A231F113C000F4C8C /* DataProperty.swift */,
+				02E42468231F0A49000F4C8C /* DataFetchAnswer.swift */,
 				024B1F6F2319C20100E3C527 /* DataActionAnswer.swift */,
 				02E42460231EDF3A000F4C8C /* Entitites */,
 			);
@@ -205,6 +213,7 @@
 			children = (
 				02E42464231EF50F000F4C8C /* Campainha.swift */,
 				02E42466231EF53E000F4C8C /* Usuario.swift */,
+				022621F22320276E0055A8FA /* DataEntity.swift */,
 			);
 			path = Entitites;
 			sourceTree = "<group>";
@@ -326,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02E42469231F0A49000F4C8C /* DataFetchAnswer.swift in Sources */,
 				02B2F3342316E9DE00140BE8 /* MainViewController.swift in Sources */,
 				024B1F772319C47D00E3C527 /* LocalizedStringExtension.swift in Sources */,
 				02B2F3322316E9DE00140BE8 /* AppDelegate.swift in Sources */,
@@ -337,11 +347,13 @@
 				02E42467231EF53E000F4C8C /* Usuario.swift in Sources */,
 				02E42457231EDC11000F4C8C /* TextViewTableViewCell.swift in Sources */,
 				024B1F602319B01D00E3C527 /* DataController.swift in Sources */,
+				02E4246B231F113C000F4C8C /* DataProperty.swift in Sources */,
 				79372437231D913F00665B2D /* CampainhaPropertiesTableViewDataSource.swift in Sources */,
 				79372439231D9ECB00665B2D /* TextWithTitleTableViewCell.swift in Sources */,
 				02E42465231EF50F000F4C8C /* Campainha.swift in Sources */,
 				02B2F35D23171CE700140BE8 /* ButtonTableViewCell.swift in Sources */,
 				024B1F702319C20100E3C527 /* DataActionAnswer.swift in Sources */,
+				022621F32320276E0055A8FA /* DataEntity.swift in Sources */,
 				02E4245E231EDED0000F4C8C /* CIImageExtension.swift in Sources */,
 				02B2F36223171FDD00140BE8 /* TextTableViewCell.swift in Sources */,
 				79372433231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift in Sources */,

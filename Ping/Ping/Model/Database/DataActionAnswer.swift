@@ -1,5 +1,5 @@
 //
-//  ModelActionsAnswer.swift
+//  DataActionsAnswer.swift
 //  Ping
 //
 //  Created by Pedro Giuliano Farina on 30/08/19.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum ModelActionAnswer {
-    case fail(description:String)
+public enum DataActionAnswer {
+    case fail(description: String)
     case successful
 }

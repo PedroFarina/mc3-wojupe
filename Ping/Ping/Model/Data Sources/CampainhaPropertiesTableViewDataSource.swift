@@ -49,7 +49,7 @@ public class CampainhaPropertiesTableViewDataSource: NSObject, UITableViewDataSo
                 cell.maxCharacters = 4
                 cell.completionCharacters = {(senha) in
                     if let campainha = self.campainha {
-                        let answer: ModelActionAnswer = ModelController.shared().editCampainha(
+                        DataController.shared().editCampainha(
                         target: campainha, newTitulo: nil, newSenha: senha, newDescricao: nil, newUrl: nil)
                     }
                 }
