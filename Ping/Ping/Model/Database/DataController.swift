@@ -89,7 +89,10 @@ public class DataController {
     }
 
     // MARK: Acessores de Usuario
-    public func createUsuario() -> Usuario {
+    private func createUsuario() -> Usuario {
+        if let usuario = _usuario {
+            return usuario
+        }
         let usuario = Usuario()
         saveObject(database: privateDB, object: usuario) { (answer) in
             switch answer {
@@ -102,12 +105,73 @@ public class DataController {
         return usuario
     }
 
+    // MARK: Fetch Usuario
+    private func fetchUsuario(fetchCampainhas: Bool, completionHandler: @escaping () -> Void) {
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: Usuario.recordType, predicate: predicate)
+        fetch(query: query, database: privateDB) { (answer) in
+            switch answer {
+            case .fail(let description):
+                fatalError(description)
+            case .successful(let results):
+                guard let results = results, results.count <= 1 else {
+                    fatalError("Não foi possível dar fetch no Usuario " +
+                        "ou havia mais de um usuário cadastrado na mesma conta.")
+                }
+                if results.isEmpty {
+                    self._usuario = self.createUsuario()
+                } else {
+                    self._usuario = Usuario(record: results[0])
+                }
+                if fetchCampainhas {
+                    self.fetchCampainhas(completionHandler: completionHandler)
+                } else {
+                    completionHandler()
+                }
+            }
+        }
+    }
+
+    // MARK: Fetch Campainhas
+    private func fetchCampainhas(completionHandler: @escaping () -> Void) {
+        guard let usuario = _usuario else {
+            fatalError("Não existe um usuario cadastrado.")
+        }
+        _campainhas = []
+        let predicate = NSPredicate(value: true)
+        let query = CKQuery(recordType: Campainha.recordType, predicate: predicate)
+        fetch(query: query, database: privateDB) { (answer) in
+            switch answer {
+            case .fail(let description):
+                fatalError(description)
+            case .successful(let results):
+                guard let results = results else {
+                    fatalError("Não foi poossivel dar fetch nas Campainhas")
+                }
+                for result in results {
+                    self._campainhas.append(Campainha(dono: usuario, record: result))
+                }
+                completionHandler()
+            }
+        }
+    }
+
+    // MARK: Refresh
+    public func refresh() {
+        refresh {
+        }
+    }
+    public func refresh(completionHandler: @escaping () -> Void) {
+        fetchUsuario(fetchCampainhas: true, completionHandler: completionHandler)
+    }
+
     // MARK: Singleton Properties
     private init() {
         container = CKContainer.default()
         privateDB = container.privateCloudDatabase
         sharedDB = container.sharedCloudDatabase
         publicDB = container.publicCloudDatabase
+        refresh()
     }
 
     class func shared() -> DataController {
