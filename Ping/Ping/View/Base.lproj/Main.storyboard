@@ -13,7 +13,7 @@
         <!--Campainha-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="Ping" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CampainhaViewController" customModule="Ping" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,6 +143,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imgQR" destination="TXw-QN-PsM" id="EG0-GG-I7Y"/>
+                        <outlet property="lblDescricao" destination="g9b-gq-CbN" id="VMb-p7-mMO"/>
+                        <outlet property="navBar" destination="RYp-BJ-gVl" id="Yy7-Xk-W7W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

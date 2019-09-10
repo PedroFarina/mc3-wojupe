@@ -8,8 +8,11 @@
 
 import UIKit
 
-class TextTableViewCell: UITableViewCell {
+class TextTableViewCell: UITableViewCell, UITextFieldDelegate {
     @IBOutlet public weak var txtField: UITextField!
+    override func awakeFromNib() {
+        txtField.delegate = self
+    }
 
     @IBInspectable public var txtText: String? {
         get {
@@ -18,5 +21,10 @@ class TextTableViewCell: UITableViewCell {
         set {
             txtField.text = newValue
         }
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

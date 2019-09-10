@@ -10,11 +10,24 @@ import UIKit
 
 public class LoadViewController: UIViewController {
     public override func viewDidLoad() {
-        Timer.scheduledTimer(withTimeInterval: 0.3, repeats: false) { (_) in
+        DataController.shared().refresh {
             self.performSegue(withIdentifier: "main", sender: self)
         }
-//        DataController.shared().refresh {
-//            self.performSegue(withIdentifier: "main", sender: self)
-//        }
+    }
+
+    public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let nav = segue.destination as? UINavigationController,
+            let viewC = nav.topViewController as? CampainhaViewController {
+
+            if DataController.shared().getCampainhas.isEmpty {
+                if let user = DataController.shared().getUsuario {
+                    viewC.campainha = DataController.shared().createCampainha(
+                        dono: user, titulo: "Sua campainha".localized(),
+                        descricao: "Campainha Acessivel\nRespeite!".localized(), url: "placeholder")
+                }
+            } else {
+                viewC.campainha = DataController.shared().getCampainhas.first
+            }
+        }
     }
 }
