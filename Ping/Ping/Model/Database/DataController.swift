@@ -103,8 +103,8 @@ public class DataController {
             hasModifications = true
         }
         //Vendo se alteramos a senha
-        if let senha = senha, senha != campainha.senha {
-            campainha.senha.value = senha
+        if let senha = senha, let grupo = campainha.grupo.value, senha != grupo.senha {
+            grupo.senha.value = senha
             hasModifications = true
         }
         //Vendo se alteraremos a descricao

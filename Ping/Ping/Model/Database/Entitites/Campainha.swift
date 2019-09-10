@@ -15,7 +15,6 @@ public class Campainha: NSObject, EntityObject {
     public private(set) var grupo: ReferenceField<GrupoCampainha>
     public private(set) var titulo: DataProperty<String>
     public private(set) var descricao: DataProperty<String>
-    public private(set) var senha: DataProperty<String>
     public private(set) var URL: DataProperty<String>
 
     public init(dono: Usuario, record: CKRecord) {
@@ -24,7 +23,6 @@ public class Campainha: NSObject, EntityObject {
         self.grupo = ReferenceField(record: record, key: "Grupo", action: .none)
         self.titulo = DataProperty(record: record, key: "Titulo")
         self.descricao = DataProperty(record: record, key: "Descricao")
-        self.senha = DataProperty(record: record, key: "Senha")
         self.URL = DataProperty(record: record, key: "URL")
         super.init()
     }

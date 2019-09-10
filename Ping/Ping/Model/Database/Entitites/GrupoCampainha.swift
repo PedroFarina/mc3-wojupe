@@ -14,11 +14,13 @@ public class GrupoCampainha: NSObject, EntityObject {
 
     public private(set) var campainha: ReferenceField<Campainha>
     public private(set) var usuarios: ReferenceList<Usuario>
+    public private(set) var senha: DataProperty<String>
 
     public init(campainha: Campainha, record: CKRecord) {
         self.record = record
         self.campainha = ReferenceField(record: record, key: "Campainha", action: .deleteSelf)
         self.usuarios = ReferenceList(record: record, key: "Usuarios")
+        self.senha = DataProperty(record: record, key: "Senha")
         super.init()
 
         campainha.setGrupo(self)
