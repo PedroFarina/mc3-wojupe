@@ -308,6 +308,7 @@ public class DataController {
         privateDB = container.privateCloudDatabase
         sharedDB = container.sharedCloudDatabase
         publicDB = container.publicCloudDatabase
+        alertCloudKit()
     }
 
     class func shared() -> DataController {
@@ -320,6 +321,27 @@ public class DataController {
     }()
 
     // MARK: CloudKit
+
+    // MARK: Alerting iCloudCredentials
+    private func alertCloudKit() {
+        container.accountStatus { (status, error) in
+            if let error = error {
+                fatalError(error.localizedDescription)
+            }
+            if status == .noAccount {
+                let alert = UIAlertController(title: "Faça o login no iCloud".localized(),
+                message: "Esse aplicativo usa o iCloud Drive para manter seus dados seguros.".localized() +
+                    "Para ativar, vá em ajustes, iCloud, e entre com seu Apple ID.".localized(), preferredStyle: .alert)
+
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                if let topController = UIApplication.shared.keyWindow?.rootViewController {
+                    if let presentedController = topController.presentedViewController {
+                        presentedController.present(alert, animated: true)
+                    }
+                }
+            }
+        }
+    }
 
     // MARK: Saving Object
     private func saveObject(database: CKDatabase, object: EntityObject,

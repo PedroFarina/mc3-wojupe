@@ -19,6 +19,8 @@
 		025ECB42231ED5640009E29C /* Edicao.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 025ECB44231ED5640009E29C /* Edicao.storyboard */; };
 		025ECB4B231ED5D20009E29C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 025ECB49231ED5D20009E29C /* Localizable.strings */; };
 		026B521D2326CEFA001D8D27 /* ReferenceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B521C2326CEFA001D8D27 /* ReferenceList.swift */; };
+		026B522023283382001D8D27 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B521F23283382001D8D27 /* AppDelegateExtension.swift */; };
+		026B5222232834E6001D8D27 /* CloudKit Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B5221232834E6001D8D27 /* CloudKit Notification.swift */; };
 		02B2F3322316E9DE00140BE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2F3312316E9DE00140BE8 /* AppDelegate.swift */; };
 		02B2F3342316E9DE00140BE8 /* CampainhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2F3332316E9DE00140BE8 /* CampainhaViewController.swift */; };
 		02B2F3372316E9DE00140BE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02B2F3352316E9DE00140BE8 /* Main.storyboard */; };
@@ -65,6 +67,8 @@
 		025ECB4A231ED5D20009E29C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		025ECB4C231ED5DA0009E29C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		026B521C2326CEFA001D8D27 /* ReferenceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceList.swift; sourceTree = "<group>"; };
+		026B521F23283382001D8D27 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
+		026B5221232834E6001D8D27 /* CloudKit Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudKit Notification.swift"; sourceTree = "<group>"; };
 		02B2F32E2316E9DE00140BE8 /* Ping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02B2F3312316E9DE00140BE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02B2F3332316E9DE00140BE8 /* CampainhaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampainhaViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 		024B1F5E2319AFE100E3C527 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				026B521E2328336D001D8D27 /* Notification */,
 				02E4245F231EDF21000F4C8C /* Database */,
 				02E42461231EDF55000F4C8C /* Data Sources */,
 				02E4245C231EDEBD000F4C8C /* Swift Extensions */,
@@ -126,6 +131,15 @@
 				025ECB49231ED5D20009E29C /* Localizable.strings */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		026B521E2328336D001D8D27 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				026B521F23283382001D8D27 /* AppDelegateExtension.swift */,
+				026B5221232834E6001D8D27 /* CloudKit Notification.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 		02B2F3252316E9DE00140BE8 = {
@@ -351,6 +365,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				026B5222232834E6001D8D27 /* CloudKit Notification.swift in Sources */,
 				02E42469231F0A49000F4C8C /* DataFetchAnswer.swift in Sources */,
 				022621F923204ACA0055A8FA /* LoadViewController.swift in Sources */,
 				02B2F3342316E9DE00140BE8 /* CampainhaViewController.swift in Sources */,
@@ -376,6 +391,7 @@
 				02E4245E231EDED0000F4C8C /* CIImageExtension.swift in Sources */,
 				02B2F36223171FDD00140BE8 /* TextTableViewCell.swift in Sources */,
 				022621FB2322C6DE0055A8FA /* GrupoCampainha.swift in Sources */,
+				026B522023283382001D8D27 /* AppDelegateExtension.swift in Sources */,
 				79372433231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
