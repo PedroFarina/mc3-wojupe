@@ -15,26 +15,81 @@ public class DataController {
     private let sharedDB: CKDatabase
     private let publicDB: CKDatabase
 
+    private var completionHandlerDefault: (DataActionAnswer) -> Void = {
+        (answer) in
+        switch answer {
+        case .fail(let description):
+            fatalError(description)
+        default:
+            return
+        }
+    }
+
+    private var recordsToSave: [EntityObject] = []
+
+    public var refreshing: Bool = false {
+        didSet {
+            if !refreshing {
+                completionHandlers = []
+            }
+        }
+    }
+    private var completionHandlers:[() -> Void] = []
+
     private var _usuario: Usuario?
     private var _campainhas: [Campainha] = []
+    private var _gruposCampainhas: [GrupoCampainha] = []
+
+    public func getEntityByID(_ entityId: CKRecord.ID) -> EntityObject? {
+        if _usuario?.record.recordID == entityId {
+            return _usuario
+        }
+
+        if let entity = _campainhas.first(where: { (ent) -> Bool in
+            return ent.record.recordID == entityId
+        }) {
+            return entity
+        }
+
+        if let entity = _gruposCampainhas.first(where: { (ent) -> Bool in
+            return ent.record.recordID == entityId
+        }) {
+            return entity
+        }
+
+        return nil
+    }
+
+    fileprivate var usuarioID: CKRecord.ID?
+    public var getUsuario: Usuario? {
+        return _usuario
+    }
+    public var getCampainhas: [Campainha] {
+        return _campainhas
+    }
     // MARK: Acessores de campainhas
 
     // MARK: Criar campainha
     public func createCampainha(dono: Usuario, titulo: String, descricao: String, url: String) -> Campainha {
-        let campainha = Campainha(dono: dono)
+        let campainha: Campainha = Campainha(dono: dono)
         campainha.titulo.value = titulo
         campainha.descricao.value = descricao
         campainha.URL.value = url
         _campainhas.append(campainha)
-        saveObject(database: privateDB, object: campainha, completionHandler: { (answer) in
-            switch answer {
-            case .fail(let description):
-                fatalError(description)
-            default:
-                return
-            }
-        })
+        let grupo = createGrupoCampainha(owner: campainha)
+
+        dono.addCampainha(campainha)
+        dono.addToGrupo(grupo)
+
+        recordsToSave.append(contentsOf: [dono, campainha])
+        saveData(database: publicDB)
+
         return campainha
+    }
+
+    // MARK: Salvar campainha
+    private func saveCampainha(campainha: Campainha) {
+        saveObject(database: publicDB, object: campainha, completionHandler: completionHandlerDefault)
     }
 
     // MARK: Editar campainha
@@ -65,70 +120,131 @@ public class DataController {
 
         //Se algo foi alterado, salvamos
         if hasModifications {
-            saveObject(database: privateDB, object: campainha, completionHandler: { (answer) in
-                switch answer {
-                case .fail(let description):
-                    fatalError(description)
-                default:
-                    return
-                }
-            })
+            saveCampainha(campainha: campainha)
         }
     }
 
     // MARK: Remover campainha
     public func removeCampainha(target campainha: Campainha) {
-        deleteObject(database: privateDB, object: campainha) { (answer) in
-            switch answer {
-            case .fail(let description):
-                fatalError(description)
-            default:
-                return
+        if let index = _campainhas.firstIndex(of: campainha) {
+            _campainhas.remove(at: index)
+        }
+        deleteObject(database: publicDB, object: campainha, completionHandler: completionHandlerDefault)
+    }
+
+    // MARK: Acessores de Grupos de Campainha
+
+    // MARK: Criar Grupo de Campainha
+    public func createGrupoCampainha(owner campainha: Campainha) -> GrupoCampainha {
+        let grupo = GrupoCampainha(campainha: campainha)
+        _gruposCampainhas.append(grupo)
+
+        recordsToSave.append(contentsOf: [grupo, campainha])
+        saveData(database: publicDB)
+
+        return grupo
+    }
+
+    // MARK: Salvar grupo de campainha
+    private func saveGrupo(grupo: GrupoCampainha) {
+        saveObject(database: publicDB, object: grupo, completionHandler: completionHandlerDefault)
+    }
+
+    // MARK: Editar Grupo de Campainha
+    public func editarGrupoCampainha(target grupo: GrupoCampainha, newCampainha campainha: Campainha?,
+                                     newUsuarios usuarios: [Usuario]?) {
+        var hasModifications: Bool = false
+
+        if let usuarios = usuarios, usuarios != grupo.usuarios {
+            for userReference in grupo.usuarios.references {
+                recordsToSave.append(userReference)
             }
+            for newUser in usuarios {
+                if !recordsToSave.contains(where: { (aUser) -> Bool in
+                    return newUser == aUser
+                }) {
+                    recordsToSave.append(newUser)
+                }
+            }
+            saveData(database: privateDB)
+
+            grupo.removeUsuarios()
+            grupo.addUsuarios(usuarios)
+            hasModifications = true
+        }
+
+        if let campainha = campainha, campainha != grupo.campainha {
+            if let oldCampainha = grupo.campainha.value {
+                recordsToSave.append(oldCampainha)
+            }
+            recordsToSave.append(campainha)
+
+            grupo.campainha.value?.removeGrupo()
+            campainha.setGrupo(grupo)
+            hasModifications = true
+        }
+
+        if hasModifications {
+            recordsToSave.append(grupo)
+            saveData(database: publicDB)
         }
     }
 
+    // MARK: Remover Grupo de Campainha
+    public func removeGrupoCampainha(target grupo: GrupoCampainha) {
+        if let index = _gruposCampainhas.firstIndex(of: grupo) {
+            _gruposCampainhas.remove(at: index)
+        }
+        deleteObject(database: publicDB, object: grupo, completionHandler: completionHandlerDefault)
+    }
+
     // MARK: Acessores de Usuario
+
+    // MARK: Criar usuário
     private func createUsuario() -> Usuario {
         if let usuario = _usuario {
             return usuario
         }
-        let usuario = Usuario()
-        saveObject(database: privateDB, object: usuario) { (answer) in
-            switch answer {
-            case .fail(let description):
-                fatalError(description)
-            default:
-                return
-            }
-        }
+        let usuario: Usuario = Usuario()
+        saveUsuario(usuario: usuario)
         return usuario
+    }
+
+    // MARK: Salvar usuário
+    public func saveUsuario(usuario: Usuario) {
+        saveObject(database: publicDB, object: usuario, completionHandler: completionHandlerDefault)
     }
 
     // MARK: Fetch Usuario
     private func fetchUsuario(fetchCampainhas: Bool, completionHandler: @escaping () -> Void) {
-        let predicate = NSPredicate(value: true)
-        let query = CKQuery(recordType: Usuario.recordType, predicate: predicate)
-        fetch(query: query, database: privateDB) { (answer) in
-            switch answer {
-            case .fail(let description):
-                fatalError(description)
-            case .successful(let results):
-                guard let results = results, results.count <= 1 else {
-                    fatalError("Não foi possível dar fetch no Usuario " +
-                        "ou havia mais de um usuário cadastrado na mesma conta.")
+        if let userID = usuarioID {
+            let predicate = NSPredicate(format: "idUsuario == %@", userID.recordName)
+            let query = CKQuery(recordType: "Usuario", predicate: predicate)
+            self.fetch(query: query, completionHandler: { (answer) in
+                switch answer {
+                case .fail(let description):
+                    fatalError(description)
+                case .successful(let results):
+                    guard let results = results, results.count <= 1 else {
+                        fatalError("Não foi possível dar fetch no Usuario " +
+                            "ou havia mais de um usuário cadastrado na mesma conta.")
+                    }
+                    if results.isEmpty && self._usuario == nil {
+                        self._usuario = self.createUsuario()
+                    } else {
+                        self._usuario = Usuario(record: results[0])
+                    }
+                    if fetchCampainhas {
+                        self.fetchCampainhas(completionHandler: completionHandler)
+                    } else {
+                        for comp in self.completionHandlers {
+                            comp()
+                        }
+                        self.refreshing = false
+                        completionHandler()
+                    }
                 }
-                if results.isEmpty {
-                    self._usuario = self.createUsuario()
-                } else {
-                    self._usuario = Usuario(record: results[0])
-                }
-                if fetchCampainhas {
-                    self.fetchCampainhas(completionHandler: completionHandler)
-                } else {
-                    completionHandler()
-                }
-            }
+            })
         }
     }
 
@@ -140,7 +256,7 @@ public class DataController {
         _campainhas = []
         let predicate = NSPredicate(value: true)
         let query = CKQuery(recordType: Campainha.recordType, predicate: predicate)
-        fetch(query: query, database: privateDB) { (answer) in
+        fetch(query: query, database: publicDB) { (answer) in
             switch answer {
             case .fail(let description):
                 fatalError(description)
@@ -151,6 +267,10 @@ public class DataController {
                 for result in results {
                     self._campainhas.append(Campainha(dono: usuario, record: result))
                 }
+                for comp in self.completionHandlers {
+                    comp()
+                }
+                self.refreshing = false
                 completionHandler()
             }
         }
@@ -162,7 +282,24 @@ public class DataController {
         }
     }
     public func refresh(completionHandler: @escaping () -> Void) {
-        fetchUsuario(fetchCampainhas: true, completionHandler: completionHandler)
+        if refreshing {
+            completionHandlers.append(completionHandler)
+            return
+        }
+        refreshing = true
+        if usuarioID != nil {
+            fetchUsuario(fetchCampainhas: true, completionHandler: completionHandler)
+        } else {
+            fetchUserID { (answer) in
+                switch answer {
+                case .fail(let description):
+                    fatalError(description)
+                default:
+                    self.fetchUsuario(fetchCampainhas: true, completionHandler: completionHandler)
+                    return
+                }
+            }
+        }
     }
 
     // MARK: Singleton Properties
@@ -171,7 +308,6 @@ public class DataController {
         privateDB = container.privateCloudDatabase
         sharedDB = container.sharedCloudDatabase
         publicDB = container.publicCloudDatabase
-        refresh()
     }
 
     class func shared() -> DataController {
@@ -185,7 +321,7 @@ public class DataController {
 
     // MARK: CloudKit
 
-    // MARK: Saving Objects
+    // MARK: Saving Object
     private func saveObject(database: CKDatabase, object: EntityObject,
                             completionHandler: @escaping ((DataActionAnswer) -> Void)) {
         database.save(object.record) { (_, error) in
@@ -203,7 +339,20 @@ public class DataController {
         }
     }
 
-    // MARK: Deleting Objects
+    // MARK: Saving Objects
+    private func saveData(database: CKDatabase) {
+        var records: [CKRecord] = []
+        for obj in recordsToSave {
+            records.append(obj.record)
+        }
+        recordsToSave = []
+        let operation: CKModifyRecordsOperation = CKModifyRecordsOperation(
+            recordsToSave: records, recordIDsToDelete: nil)
+        operation.savePolicy = .changedKeys
+        database.add(operation)
+    }
+
+    // MARK: Deleting Object
     private func deleteObject(database: CKDatabase, object: EntityObject,
                               completionHandler: @escaping ((DataActionAnswer) -> Void)) {
         database.delete(withRecordID: object.record.recordID) { (_, error) in
@@ -222,13 +371,24 @@ public class DataController {
     }
 
     // MARK: Fetching
+    private func fetchUserID(completionHandler: @escaping (DataFetchAnswer) -> Void) {
+        container.fetchUserRecordID { (userID, error) in
+            self.usuarioID = userID
+            if let error = error {
+                completionHandler(.fail(description: error.localizedDescription))
+                return
+            }
+            completionHandler(.successful(results: nil))
+        }
+    }
+
     private func fetch(recordType: String, completionHandler: @escaping (DataFetchAnswer) -> Void) {
         let predicate = NSPredicate(value: true)
         fetch(query: CKQuery(recordType: recordType, predicate: predicate), completionHandler: completionHandler)
     }
 
     private func fetch(query: CKQuery, completionHandler: @escaping (DataFetchAnswer) -> Void) {
-        fetch(query: query, database: privateDB, completionHandler: completionHandler)
+        fetch(query: query, database: publicDB, completionHandler: completionHandler)
     }
 
     private func fetch(query: CKQuery, database: CKDatabase, completionHandler: @escaping (DataFetchAnswer) -> Void ) {
@@ -249,17 +409,27 @@ public class DataController {
     }
 }
 
-extension Usuario {
-    fileprivate convenience override init() {
-        let record = CKRecord(recordType: Usuario.recordType)
-        self.init(record: record)
-        idUsuario.value = UUID().uuidString
-    }
-}
-
 extension Campainha {
     fileprivate convenience init(dono: Usuario) {
         let record = CKRecord(recordType: Campainha.recordType)
         self.init(dono: dono, record: record)
+    }
+}
+
+extension GrupoCampainha {
+    fileprivate convenience init(campainha: Campainha) {
+        let record = CKRecord(recordType: GrupoCampainha.recordType)
+        self.init(campainha: campainha, record: record)
+    }
+}
+
+extension Usuario {
+    fileprivate convenience override init() {
+        let record = CKRecord(recordType: Usuario.recordType)
+        self.init(record: record)
+        guard let usuarioID = DataController.shared().usuarioID else {
+            fatalError("Não autenticado")
+        }
+        idUsuario.value = usuarioID.recordName
     }
 }

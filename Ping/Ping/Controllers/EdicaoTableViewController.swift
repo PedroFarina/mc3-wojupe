@@ -13,7 +13,15 @@ public class EdicaoTableViewController: UITableViewController {
     @IBOutlet weak var cellDescricao: TextViewTableViewCell!
     @IBOutlet weak var cellRenovarButton: ButtonTableViewCell!
     @IBOutlet weak var cellApagarButton: ButtonTableViewCell!
-    public var campainha: Campainha!
+    public var campainha: Campainha?
+
+    public override func viewWillAppear(_ animated: Bool) {
+        guard let campainha = campainha else {
+            fatalError("Campainha inexistente.")
+        }
+        cellTitulo.txtText = campainha.titulo.value
+        cellDescricao.txtText = campainha.descricao.value
+    }
 
     private lazy var alertRenew: UIAlertController = {
         let ale = UIAlertController(title: "Tem certeza disso?".localized(),
@@ -22,19 +30,22 @@ public class EdicaoTableViewController: UITableViewController {
         ale.addAction(UIAlertAction(title: "Não".localized(), style: .cancel, handler: nil))
 
         ale.addAction(UIAlertAction(title: "Sim".localized(), style: .destructive, handler: { (_) in
-            self.campainha.renewURL()
+            self.campainha?.renewURL()
         }))
 
         return ale
     }()
     private lazy var alertDelete: UIAlertController = {
+        guard let campainha = self.campainha else {
+            fatalError("Campainha inexistente.")
+        }
         let ale = UIAlertController(title: "Tem certeza disso?".localized(),
                                     message: "Esta ação deletará a campainha permanentemente.".localized(),
                                     preferredStyle: .alert)
         ale.addAction(UIAlertAction(title: "Não".localized(), style: .cancel, handler: nil))
 
         ale.addAction(UIAlertAction(title: "Sim".localized(), style: .destructive, handler: { (_) in
-            DataController.shared().removeCampainha(target: self.campainha)
+            DataController.shared().removeCampainha(target: campainha)
         }))
 
         return ale
@@ -44,6 +55,10 @@ public class EdicaoTableViewController: UITableViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func saveTap(_ sender: Any) {
+        guard let campainha = self.campainha else {
+            fatalError("Campainha inexistente.")
+        }
+
         let newTitulo = cellTitulo.txtText
         let newDescricao = cellDescricao.txtText
         DataController.shared().editCampainha(target: campainha, newTitulo: newTitulo,

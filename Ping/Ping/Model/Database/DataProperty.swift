@@ -36,7 +36,6 @@ extension DataProperty {
     static func != (lhs: T, rhs: DataProperty) -> Bool {
         return lhs != rhs.value
     }
-
     static func == (lhs: DataProperty, rhs: T) -> Bool {
         return lhs.value == rhs
     }
