@@ -21,6 +21,10 @@
 		026B521D2326CEFA001D8D27 /* ReferenceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B521C2326CEFA001D8D27 /* ReferenceList.swift */; };
 		026B522023283382001D8D27 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B521F23283382001D8D27 /* AppDelegateExtension.swift */; };
 		026B5222232834E6001D8D27 /* CloudKit Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B5221232834E6001D8D27 /* CloudKit Notification.swift */; };
+		026B523123284959001D8D27 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 026B523023284959001D8D27 /* Tutorial.storyboard */; };
+		026B5235232849BD001D8D27 /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B5232232849BD001D8D27 /* CustomPageViewController.swift */; };
+		026B5236232849BD001D8D27 /* IntroducaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B5233232849BD001D8D27 /* IntroducaoViewController.swift */; };
+		026B5237232849BD001D8D27 /* ProtecaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B5234232849BD001D8D27 /* ProtecaoViewController.swift */; };
 		02B2F3322316E9DE00140BE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2F3312316E9DE00140BE8 /* AppDelegate.swift */; };
 		02B2F3342316E9DE00140BE8 /* CampainhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2F3332316E9DE00140BE8 /* CampainhaViewController.swift */; };
 		02B2F3372316E9DE00140BE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02B2F3352316E9DE00140BE8 /* Main.storyboard */; };
@@ -69,6 +73,10 @@
 		026B521C2326CEFA001D8D27 /* ReferenceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceList.swift; sourceTree = "<group>"; };
 		026B521F23283382001D8D27 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 		026B5221232834E6001D8D27 /* CloudKit Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudKit Notification.swift"; sourceTree = "<group>"; };
+		026B523023284959001D8D27 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
+		026B5232232849BD001D8D27 /* CustomPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
+		026B5233232849BD001D8D27 /* IntroducaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroducaoViewController.swift; sourceTree = "<group>"; };
+		026B5234232849BD001D8D27 /* ProtecaoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProtecaoViewController.swift; sourceTree = "<group>"; };
 		02B2F32E2316E9DE00140BE8 /* Ping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02B2F3312316E9DE00140BE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02B2F3332316E9DE00140BE8 /* CampainhaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampainhaViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +150,34 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		026B522323284517001D8D27 /* Campainha Selecionada */ = {
+			isa = PBXGroup;
+			children = (
+				79372432231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift */,
+				79372434231D8E3C00665B2D /* CampainhaPropertiesTableViewDelegate.swift */,
+				02B2F3332316E9DE00140BE8 /* CampainhaViewController.swift */,
+			);
+			path = "Campainha Selecionada";
+			sourceTree = "<group>";
+		};
+		026B522423284538001D8D27 /* Campainha Edicao */ = {
+			isa = PBXGroup;
+			children = (
+				02E42454231EDBDE000F4C8C /* EdicaoTableViewController.swift */,
+			);
+			path = "Campainha Edicao";
+			sourceTree = "<group>";
+		};
+		026B522523284547001D8D27 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				026B5232232849BD001D8D27 /* CustomPageViewController.swift */,
+				026B5233232849BD001D8D27 /* IntroducaoViewController.swift */,
+				026B5234232849BD001D8D27 /* ProtecaoViewController.swift */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
 		02B2F3252316E9DE00140BE8 = {
 			isa = PBXGroup;
 			children = (
@@ -177,10 +213,9 @@
 		02B2F3432316E9E900140BE8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				02E42454231EDBDE000F4C8C /* EdicaoTableViewController.swift */,
-				79372432231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift */,
-				79372434231D8E3C00665B2D /* CampainhaPropertiesTableViewDelegate.swift */,
-				02B2F3332316E9DE00140BE8 /* CampainhaViewController.swift */,
+				026B522523284547001D8D27 /* Tutorial */,
+				026B522423284538001D8D27 /* Campainha Edicao */,
+				026B522323284517001D8D27 /* Campainha Selecionada */,
 				022621F823204ACA0055A8FA /* LoadViewController.swift */,
 			);
 			path = Controllers;
@@ -192,6 +227,7 @@
 				02B2F34F231711F400140BE8 /* TableViewCell */,
 				02B2F3352316E9DE00140BE8 /* Main.storyboard */,
 				025ECB44231ED5640009E29C /* Edicao.storyboard */,
+				026B523023284959001D8D27 /* Tutorial.storyboard */,
 				022621F623204ABC0055A8FA /* Load.storyboard */,
 			);
 			path = View;
@@ -333,6 +369,7 @@
 				02B2F3392316E9E100140BE8 /* Assets.xcassets in Resources */,
 				025ECB42231ED5640009E29C /* Edicao.storyboard in Resources */,
 				02B2F36323171FDD00140BE8 /* TextTableViewCell.xib in Resources */,
+				026B523123284959001D8D27 /* Tutorial.storyboard in Resources */,
 				02B2F3372316E9DE00140BE8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,6 +406,7 @@
 				02E42469231F0A49000F4C8C /* DataFetchAnswer.swift in Sources */,
 				022621F923204ACA0055A8FA /* LoadViewController.swift in Sources */,
 				02B2F3342316E9DE00140BE8 /* CampainhaViewController.swift in Sources */,
+				026B5236232849BD001D8D27 /* IntroducaoViewController.swift in Sources */,
 				024B1F772319C47D00E3C527 /* LocalizedStringExtension.swift in Sources */,
 				022621FD2322CB4B0055A8FA /* ReferenceField.swift in Sources */,
 				02B2F3322316E9DE00140BE8 /* AppDelegate.swift in Sources */,
@@ -385,12 +423,14 @@
 				79372439231D9ECB00665B2D /* TextWithTitleTableViewCell.swift in Sources */,
 				02E42465231EF50F000F4C8C /* Campainha.swift in Sources */,
 				02B2F35D23171CE700140BE8 /* ButtonTableViewCell.swift in Sources */,
+				026B5237232849BD001D8D27 /* ProtecaoViewController.swift in Sources */,
 				026B521D2326CEFA001D8D27 /* ReferenceList.swift in Sources */,
 				024B1F702319C20100E3C527 /* DataActionAnswer.swift in Sources */,
 				022621F32320276E0055A8FA /* EntityObject.swift in Sources */,
 				02E4245E231EDED0000F4C8C /* CIImageExtension.swift in Sources */,
 				02B2F36223171FDD00140BE8 /* TextTableViewCell.swift in Sources */,
 				022621FB2322C6DE0055A8FA /* GrupoCampainha.swift in Sources */,
+				026B5235232849BD001D8D27 /* CustomPageViewController.swift in Sources */,
 				026B522023283382001D8D27 /* AppDelegateExtension.swift in Sources */,
 				79372433231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift in Sources */,
 			);
