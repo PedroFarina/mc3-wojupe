@@ -15,11 +15,55 @@ public class DataController {
     private let sharedDB: CKDatabase
     private let publicDB: CKDatabase
 
+    private static func errorHandler(error: CKError, description: String? = nil) {
+        switch error.code {
+        case .notAuthenticated:
+            let alert = UIAlertController(
+                title: "Faça o login no iCloud".localized(),
+                message: "Esse aplicativo usa o iCloud Drive para manter seus dados seguros.".localized() + " " +
+                "Para ativar, vá em ajustes, iCloud, e entre com seu Apple ID.".localized(), preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Abrir Ajustes", style: .default, handler: { (_) in
+                if let url = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+            }))
+            if let topController = UIApplication.shared.keyWindow?.rootViewController {
+                if let presented = topController.presentedViewController {
+                    presented.present(alert, animated: true)
+                } else {
+                    topController.present(alert, animated: true)
+                }
+            }
+        case .networkUnavailable, .networkFailure:
+            let alert = UIAlertController(
+                title: "Não foi possível se comunicar com o servidor.".localized(),
+                message: "Esse aplicativo depende de uma conexão de internet.".localized() + " " +
+                "Cheque sua conexão e tente novamente.".localized(), preferredStyle: .alert)
+
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            if let topController = UIApplication.shared.keyWindow?.rootViewController {
+                if let presented = topController.presentedViewController {
+                    presented.present(alert, animated: true)
+                } else {
+                    topController.present(alert, animated: true)
+                }
+            }
+        default:
+            if let description = description {
+                fatalError(description)
+            } else {
+                fatalError(error.localizedDescription)
+            }
+        }
+    }
+
     private var completionHandlerDefault: (DataActionAnswer) -> Void = {
         (answer) in
         switch answer {
-        case .fail(let description):
-            fatalError(description)
+        case .fail(let error, let desc):
+            errorHandler(error: error, description: desc)
         default:
             return
         }
@@ -222,8 +266,8 @@ public class DataController {
             let query = CKQuery(recordType: "Usuario", predicate: predicate)
             self.fetch(query: query, completionHandler: { (answer) in
                 switch answer {
-                case .fail(let description):
-                    fatalError(description)
+                case .fail(let error, _):
+                    DataController.errorHandler(error: error)
                 case .successful(let results):
                     guard let results = results, results.count <= 1 else {
                         fatalError("Não foi possível dar fetch no Usuario " +
@@ -258,8 +302,8 @@ public class DataController {
         let query = CKQuery(recordType: Campainha.recordType, predicate: predicate)
         fetch(query: query, database: publicDB) { (answer) in
             switch answer {
-            case .fail(let description):
-                fatalError(description)
+            case .fail(let error, _):
+                DataController.errorHandler(error: error)
             case .successful(let results):
                 guard let results = results else {
                     fatalError("Não foi poossivel dar fetch nas Campainhas")
@@ -292,8 +336,8 @@ public class DataController {
         } else {
             fetchUserID { (answer) in
                 switch answer {
-                case .fail(let description):
-                    fatalError(description)
+                case .fail(let error, _):
+                    DataController.errorHandler(error: error)
                 default:
                     self.fetchUsuario(fetchCampainhas: true, completionHandler: completionHandler)
                     return
@@ -308,7 +352,6 @@ public class DataController {
         privateDB = container.privateCloudDatabase
         sharedDB = container.sharedCloudDatabase
         publicDB = container.publicCloudDatabase
-        alertCloudKit()
     }
 
     class func shared() -> DataController {
@@ -322,34 +365,13 @@ public class DataController {
 
     // MARK: CloudKit
 
-    // MARK: Alerting iCloudCredentials
-    private func alertCloudKit() {
-        container.accountStatus { (status, error) in
-            if let error = error {
-                fatalError(error.localizedDescription)
-            }
-            if status == .noAccount {
-                let alert = UIAlertController(title: "Faça o login no iCloud".localized(),
-                message: "Esse aplicativo usa o iCloud Drive para manter seus dados seguros.".localized() +
-                    "Para ativar, vá em ajustes, iCloud, e entre com seu Apple ID.".localized(), preferredStyle: .alert)
-
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                if let topController = UIApplication.shared.keyWindow?.rootViewController {
-                    if let presentedController = topController.presentedViewController {
-                        presentedController.present(alert, animated: true)
-                    }
-                }
-            }
-        }
-    }
-
     // MARK: Saving Object
     private func saveObject(database: CKDatabase, object: EntityObject,
                             completionHandler: @escaping ((DataActionAnswer) -> Void)) {
         database.save(object.record) { (_, error) in
-            guard error == nil else {
+            if let error = error as? CKError {
                 DispatchQueue.main.async {
-                    completionHandler(.fail(description:
+                    completionHandler(.fail(error: error, description:
                         "Erro em salvar o objeto na Cloud - Save: \(String(describing: error))"))
                 }
                 return
@@ -378,9 +400,9 @@ public class DataController {
     private func deleteObject(database: CKDatabase, object: EntityObject,
                               completionHandler: @escaping ((DataActionAnswer) -> Void)) {
         database.delete(withRecordID: object.record.recordID) { (_, error) in
-            guard error == nil else {
+            if let error = error as? CKError{
                 DispatchQueue.main.async {
-                    completionHandler(.fail(description:
+                    completionHandler(.fail(error: error, description:
                         "Erro em deletar o objeto na Cloud - Delete: \(String(describing: error))"))
                 }
                 return
@@ -396,8 +418,11 @@ public class DataController {
     private func fetchUserID(completionHandler: @escaping (DataFetchAnswer) -> Void) {
         container.fetchUserRecordID { (userID, error) in
             self.usuarioID = userID
-            if let error = error {
-                completionHandler(.fail(description: error.localizedDescription))
+            if let error = error as? CKError {
+                DispatchQueue.main.async {
+                    completionHandler(.fail(error: error, description:
+                        "Erro no Query da Cloud - Fetch: \(String(describing: error))"))
+                }
                 return
             }
             completionHandler(.successful(results: nil))
@@ -414,11 +439,10 @@ public class DataController {
     }
 
     private func fetch(query: CKQuery, database: CKDatabase, completionHandler: @escaping (DataFetchAnswer) -> Void ) {
-        database.perform(query, inZoneWith: nil) { results, error in
-            //Vendo se não tivemos erros
-            guard error == nil else {
+        database.perform(query, inZoneWith: nil) { (results, error) in
+            if let error = error as? CKError {
                 DispatchQueue.main.async {
-                    completionHandler(.fail(description:
+                    completionHandler(.fail(error: error, description:
                         "Erro no Query da Cloud - Fetch: \(String(describing: error))"))
                 }
                 return

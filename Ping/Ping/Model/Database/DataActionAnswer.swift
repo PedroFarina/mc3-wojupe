@@ -6,9 +6,9 @@
 //  Copyright © 2019 Pedro Giuliano Farina. All rights reserved.
 //
 
-import Foundation
+import CloudKit
 
 public enum DataActionAnswer {
-    case fail(description: String)
+    case fail(error: CKError, description: String)
     case successful
 }
