@@ -1,0 +1,33 @@
+
+/* Class = "UILabel"; text = "Modo Silencioso"; ObjectID = "0Xc-05-fiX"; */
+"0Xc-05-fiX.text" = "Modo Silencioso";
+
+/* Class = "UILabel"; text = "Senha"; ObjectID = "6Ug-jV-ltr"; */
+"6Ug-jV-ltr.text" = "Senha";
+
+/* Class = "UIViewController"; title = "Introducao"; ObjectID = "7Ec-2k-Uz4"; */
+"7Ec-2k-Uz4.title" = "Introducao";
+
+/* Class = "UILabel"; text = "O Modo Silencioso serve para aquele momento em que não deseja ser incomodado. Porém, não esqueça de ativá-la posteriormente para receber seus avisos de campainha!"; ObjectID = "ObM-Tv-BUu"; */
+"ObM-Tv-BUu.text" = "O Modo Silencioso serve para aquele momento em que não deseja ser incomodado. Porém, não esqueça de ativá-la posteriormente para receber seus avisos de campainha!";
+
+/* Class = "UILabel"; text = "Com um código QR sua campainha pode se tornar acessível!\nDesta forma, quem chegar em sua residência pode escanear o código e lhe enviar um aviso com identificação!"; ObjectID = "Thl-Pn-rgl"; */
+"Thl-Pn-rgl.text" = "Com um código QR sua campainha pode se tornar acessível!\nDesta forma, quem chegar em sua residência pode escanear o código e lhe enviar um aviso com identificação!";
+
+/* Class = "UILabel"; text = "Logo que o visitante escanear o código QR, se este campo estiver ativo, o visitante deve preencher a senha definida."; ObjectID = "bc1-Rg-8Sy"; */
+"bc1-Rg-8Sy.text" = "Logo que o visitante escanear o código QR, se este campo estiver ativo, o visitante deve preencher a senha definida.";
+
+/* Class = "UILabel"; text = "Compartilhar"; ObjectID = "dAm-Oh-DAL"; */
+"dAm-Oh-DAL.text" = "Compartilhar";
+
+/* Class = "UILabel"; text = "Introdução"; ObjectID = "dOD-ic-l1g"; */
+"dOD-ic-l1g.text" = "Introdução";
+
+/* Class = "UILabel"; text = "É onde o código QR pode ser exportado para posterior impressão. \nEscolha onde deseja salvá-lo!"; ObjectID = "qF3-vo-Ob8"; */
+"qF3-vo-Ob8.text" = "É onde o código QR pode ser exportado para posterior impressão. \nEscolha onde deseja salvá-lo!";
+
+/* Class = "UILabel"; text = "Proteção por Senha"; ObjectID = "tE8-Xb-rsJ"; */
+"tE8-Xb-rsJ.text" = "Proteção por Senha";
+
+/* Class = "UIButton"; normalTitle = "Começar"; ObjectID = "zRk-ft-esk"; */
+"zRk-ft-esk.normalTitle" = "Começar";

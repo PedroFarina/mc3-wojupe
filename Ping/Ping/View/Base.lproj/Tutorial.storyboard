@@ -236,7 +236,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="70"/>
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="62"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -428,8 +428,14 @@ Escolha onde deseja salvá-lo!</string>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRk-ft-esk">
-                                <rect key="frame" x="156.66666666666666" y="675" width="62" height="30"/>
-                                <state key="normal" title="Começar"/>
+                                <rect key="frame" x="152.66666666666666" y="675" width="70" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <state key="normal" title="Começar">
+                                    <color key="titleColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                </variation>
                                 <connections>
                                     <segue destination="oII-4O-8In" kind="presentation" id="SSW-PJ-Hvs"/>
                                 </connections>
