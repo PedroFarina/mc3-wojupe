@@ -79,11 +79,15 @@
                                     <constraint firstItem="p7Y-0S-pGP" firstAttribute="top" secondItem="hC7-KO-IeO" secondAttribute="top" constant="89" id="ZSs-oE-Gfn"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sharebutton" translatesAutoresizingMaskIntoConstraints="NO" id="tXl-bx-e9s">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sharebutton" translatesAutoresizingMaskIntoConstraints="NO" id="tXl-bx-e9s">
                                 <rect key="frame" x="165.5" y="759" width="83" height="83"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="tXl-bx-e9s" secondAttribute="height" multiplier="1:1" id="gQ3-Qv-JcC"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="DzW-ih-ap2" appends="YES" id="TEZ-bi-hS6"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.95686918497085571" green="0.9568513035774231" blue="0.95686346292495728" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -145,9 +149,15 @@
                         <outlet property="imgQR" destination="TXw-QN-PsM" id="EG0-GG-I7Y"/>
                         <outlet property="lblDescricao" destination="g9b-gq-CbN" id="VMb-p7-mMO"/>
                         <outlet property="navBar" destination="RYp-BJ-gVl" id="Yy7-Xk-W7W"/>
+                        <outlet property="pageView" destination="hC7-KO-IeO" id="agp-hq-KOF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="DzW-ih-ap2">
+                    <connections>
+                        <action selector="shareTap:" destination="BYZ-38-t0r" id="kxg-gS-c7g"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="947.43777452415804" y="138.28125"/>
         </scene>
