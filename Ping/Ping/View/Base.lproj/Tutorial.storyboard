@@ -114,7 +114,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="zRc-Gr-7eT">
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="zRc-Gr-7eT">
                                 <rect key="frame" x="160" y="636.33333333333337" width="55" height="37"/>
                                 <color key="pageIndicatorTintColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="currentPageIndicatorTintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
@@ -225,7 +225,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="cxk-JT-d3o">
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="cxk-JT-d3o">
                                 <rect key="frame" x="160" y="636.33333333333337" width="55" height="37"/>
                                 <color key="pageIndicatorTintColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="currentPageIndicatorTintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
@@ -320,7 +320,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="j2O-dW-0XX">
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="j2O-dW-0XX">
                                 <rect key="frame" x="160" y="636.33333333333337" width="55" height="37"/>
                                 <color key="pageIndicatorTintColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="currentPageIndicatorTintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
@@ -413,7 +413,7 @@ Escolha onde deseja salvá-lo!</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="3" translatesAutoresizingMaskIntoConstraints="NO" id="raF-nt-Za9">
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="3" translatesAutoresizingMaskIntoConstraints="NO" id="raF-nt-Za9">
                                 <rect key="frame" x="160" y="636.33333333333337" width="55" height="37"/>
                                 <color key="pageIndicatorTintColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
                                 <color key="currentPageIndicatorTintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>

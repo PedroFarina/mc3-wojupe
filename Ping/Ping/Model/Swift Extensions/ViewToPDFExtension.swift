@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIView {
-    public func toPDF(fileName: String) -> NSData? {
+    public func toPDF() -> NSData? {
         let pdfData = NSMutableData()
         let pdfMetadata = [
             kCGPDFContextCreator: "QR Bell",

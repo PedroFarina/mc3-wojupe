@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import PDFKit
 
 class CampainhaViewController: UIViewController {
 
+    @IBOutlet weak var pageView: UIView!
     @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var lblDescricao: UILabel!
     @IBOutlet weak var imgQR: UIImageView!
@@ -17,7 +19,7 @@ class CampainhaViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        CloudKitNotification.askPermission()
+        //CloudKitNotification.askPermission()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -35,5 +37,16 @@ class CampainhaViewController: UIViewController {
 
             viewE.campainha = self.campainha
         }
+    }
+
+    @IBAction func shareTap(_ sender: UITapGestureRecognizer) {
+        guard let btn = sender.view else {
+            return
+        }
+        let objectsToShare: [Any] = [pageView.toPDF() as Any]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+
+        activityVC.popoverPresentationController?.sourceView = btn
+        self.present(activityVC, animated: true, completion: nil)
     }
 }
