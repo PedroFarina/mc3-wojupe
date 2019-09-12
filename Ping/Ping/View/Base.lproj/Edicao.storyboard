@@ -29,6 +29,7 @@
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZJ-b4-Pd5">
                                                     <rect key="frame" x="12" y="0.0" width="390" height="43.5"/>
+                                                    <accessibility key="accessibilityConfiguration" label="Insira o título do seu código QR"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43.5" id="1FD-VO-flm"/>
                                                     </constraints>
@@ -79,6 +80,7 @@
                                                 <constraint firstItem="B4T-35-LQc" firstAttribute="centerY" secondItem="tFw-QW-Jez" secondAttribute="centerY" id="vVp-YM-jsw"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" label="Insira uma descrição para seu código QR"/>
                                         <connections>
                                             <outlet property="txtView" destination="B4T-35-LQc" id="Ct8-sB-9EC"/>
                                         </connections>
@@ -96,6 +98,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Renovar QR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icz-cc-66D">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <accessibility key="accessibilityConfiguration" label="Renovar QR"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43.5" id="mRf-e6-WKL"/>
                                                     </constraints>
@@ -124,6 +127,7 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apagar QR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gb-xQ-VS5">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <accessibility key="accessibilityConfiguration" label="Apagar QR"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43.5" id="dAp-mc-TXn"/>
                                                     </constraints>
