@@ -17,6 +17,7 @@ class CampainhaViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        CloudKitNotification.askPermission()
     }
 
     override func viewWillAppear(_ animated: Bool) {

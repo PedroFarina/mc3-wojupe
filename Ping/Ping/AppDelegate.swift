@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //App foi inicializado
     func application(_ application: UIApplication, didFinishLaunchingWithOptions
         launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        UNUserNotificationCenter.current().delegate = self
+
+        application.applicationIconBadgeNumber = 0
+
+        let defaults = UserDefaults.standard
+        if !defaults.bool(forKey: "firstTime") {
+            let storyboard = UIStoryboard(name: "Tutorial", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "Tutorial")
+            guard let window = self.window else {
+                return true
+            }
+            window.rootViewController = viewController
+            window.makeKeyAndVisible()        
+        }
         return true
     }
 
@@ -31,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     //App vai entrar em tela
     func applicationWillEnterForeground(_ application: UIApplication) {
-
+        application.applicationIconBadgeNumber = 0
     }
 
     //App ficou ativo
@@ -43,5 +59,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
 
     }
-
 }

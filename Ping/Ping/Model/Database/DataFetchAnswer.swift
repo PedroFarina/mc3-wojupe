@@ -9,6 +9,6 @@
 import CloudKit
 
 public enum DataFetchAnswer {
-    case fail(description:String)
+    case fail(error: CKError, description: String)
     case successful(results:[CKRecord]?)
 }
