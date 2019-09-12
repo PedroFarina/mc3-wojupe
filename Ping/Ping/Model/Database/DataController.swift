@@ -23,8 +23,8 @@ public class DataController {
                 message: "Esse aplicativo usa o iCloud Drive para manter seus dados seguros.".localized() + " " +
                 "Para ativar, vá em ajustes, iCloud, e entre com seu Apple ID.".localized(), preferredStyle: .alert)
 
-            alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: "Abrir Ajustes", style: .default, handler: { (_) in
+            alert.addAction(UIAlertAction(title: "Cancelar".localized(), style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Abrir Ajustes".localized(), style: .default, handler: { (_) in
                 if let url = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 }

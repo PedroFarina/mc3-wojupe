@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return true
             }
             window.rootViewController = viewController
-            window.makeKeyAndVisible()        
+            window.makeKeyAndVisible()
         }
         return true
     }
