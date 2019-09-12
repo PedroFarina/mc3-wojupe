@@ -8,7 +8,8 @@
 "Modo Silencioso" = "Silent mode";
 "Proteção por Senha" = "Password Protection";
 "Senha" = "Password";
-"%1$@ está na sua porta." = "%1$@ is at your door.";
+"Alguém está na %1$@" = "Someone is at %1$@";
+"%1$@ chegou!" = "%1$@ is here!";
 "Faça o login no iCloud" = "Sign in with iCloud";
 "Esse aplicativo usa o iCloud Drive para manter seus dados seguros." = "This app uses iCloud Drive to ensure your data is protected.";
 "Para ativar, vá em ajustes, iCloud, e entre com seu Apple ID." = "To activate it, go to Settings, iCloud, and sign in with your Apple ID.";

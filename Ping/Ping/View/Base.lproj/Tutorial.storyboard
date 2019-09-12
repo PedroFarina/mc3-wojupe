@@ -352,10 +352,10 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
             </objects>
             <point key="canvasLocation" x="1300" y="112"/>
         </scene>
-        <!--View Controller-->
+        <!--Compartilhar View Controller-->
         <scene sceneID="sdx-vn-Fgf">
             <objects>
-                <viewController storyboardIdentifier="Compartilhar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lPZ-xA-zXT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Compartilhar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lPZ-xA-zXT" customClass="CompartilharViewController" customModule="Ping" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nc6-bo-T7g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -437,6 +437,7 @@ Escolha onde deseja salvá-lo!</string>
                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 </variation>
                                 <connections>
+                                    <action selector="comecarTap:" destination="lPZ-xA-zXT" eventType="touchUpInside" id="dJu-ad-vGY"/>
                                     <segue destination="oII-4O-8In" kind="presentation" id="SSW-PJ-Hvs"/>
                                 </connections>
                             </button>
@@ -447,7 +448,7 @@ Escolha onde deseja salvá-lo!</string>
                             <constraint firstItem="j20-Eo-5mh" firstAttribute="centerX" secondItem="THg-Gb-T1T" secondAttribute="centerX" id="CjZ-KS-xfd"/>
                             <constraint firstItem="zRk-ft-esk" firstAttribute="centerX" secondItem="raF-nt-Za9" secondAttribute="centerX" id="CpZ-v6-r8Z"/>
                             <constraint firstItem="j20-Eo-5mh" firstAttribute="width" secondItem="nc6-bo-T7g" secondAttribute="width" multiplier="0.8" id="EUg-mC-jJD"/>
-                            <constraint firstItem="zRk-ft-esk" firstAttribute="firstBaseline" secondItem="raF-nt-Za9" secondAttribute="baseline" constant="22" symbolType="layoutAnchor" id="Mdu-ot-lXg"/>
+                            <constraint firstItem="zRk-ft-esk" firstAttribute="firstBaseline" secondItem="raF-nt-Za9" secondAttribute="baseline" constant="24.333333333333332" symbolType="layoutAnchor" id="Mdu-ot-lXg"/>
                             <constraint firstItem="raF-nt-Za9" firstAttribute="centerX" secondItem="j20-Eo-5mh" secondAttribute="centerX" id="Okf-8U-NQ2"/>
                             <constraint firstItem="raF-nt-Za9" firstAttribute="firstBaseline" secondItem="j20-Eo-5mh" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="dj9-KK-wsh"/>
                             <constraint firstItem="dAm-Oh-DAL" firstAttribute="firstBaseline" secondItem="JNt-9V-cHt" secondAttribute="firstBaseline" multiplier="0.6" id="gk8-Nn-ARb"/>

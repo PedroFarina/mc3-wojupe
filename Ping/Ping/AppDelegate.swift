@@ -24,14 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         let defaults = UserDefaults.standard
         if !defaults.bool(forKey: "firstTime") {
-            defaults.setValue(true, forKey: "firstTime")
             let storyboard = UIStoryboard(name: "Tutorial", bundle: nil)
             let viewController = storyboard.instantiateViewController(withIdentifier: "Tutorial")
             guard let window = self.window else {
                 return true
             }
             window.rootViewController = viewController
-            window.makeKeyAndVisible()
+            window.makeKeyAndVisible()        
         }
         return true
     }

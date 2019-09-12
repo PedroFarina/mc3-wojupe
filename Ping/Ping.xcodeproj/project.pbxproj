@@ -25,6 +25,9 @@
 		026B5236232849BD001D8D27 /* IntroducaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B5233232849BD001D8D27 /* IntroducaoViewController.swift */; };
 		026B5237232849BD001D8D27 /* ProtecaoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B5234232849BD001D8D27 /* ProtecaoViewController.swift */; };
 		026B523A232973A7001D8D27 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 026B523C232973A7001D8D27 /* Tutorial.storyboard */; };
+		026B5242232980CC001D8D27 /* CompartilharViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B5241232980CC001D8D27 /* CompartilharViewController.swift */; };
+		026B524423298CD5001D8D27 /* StringInImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B524323298CD5001D8D27 /* StringInImageExtension.swift */; };
+		026B5246232991D5001D8D27 /* ViewToPDFExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B5245232991D5001D8D27 /* ViewToPDFExtension.swift */; };
 		02B2F3322316E9DE00140BE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2F3312316E9DE00140BE8 /* AppDelegate.swift */; };
 		02B2F3342316E9DE00140BE8 /* CampainhaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2F3332316E9DE00140BE8 /* CampainhaViewController.swift */; };
 		02B2F3372316E9DE00140BE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02B2F3352316E9DE00140BE8 /* Main.storyboard */; };
@@ -79,6 +82,9 @@
 		026B523B232973A7001D8D27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tutorial.storyboard; sourceTree = "<group>"; };
 		026B523E232973AC001D8D27 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Tutorial.strings"; sourceTree = "<group>"; };
 		026B5240232973B0001D8D27 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Tutorial.strings; sourceTree = "<group>"; };
+		026B5241232980CC001D8D27 /* CompartilharViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompartilharViewController.swift; sourceTree = "<group>"; };
+		026B524323298CD5001D8D27 /* StringInImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringInImageExtension.swift; sourceTree = "<group>"; };
+		026B5245232991D5001D8D27 /* ViewToPDFExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewToPDFExtension.swift; sourceTree = "<group>"; };
 		02B2F32E2316E9DE00140BE8 /* Ping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02B2F3312316E9DE00140BE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02B2F3332316E9DE00140BE8 /* CampainhaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampainhaViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +182,7 @@
 				026B5232232849BD001D8D27 /* CustomPageViewController.swift */,
 				026B5233232849BD001D8D27 /* IntroducaoViewController.swift */,
 				026B5234232849BD001D8D27 /* ProtecaoViewController.swift */,
+				026B5241232980CC001D8D27 /* CompartilharViewController.swift */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -256,6 +263,8 @@
 			children = (
 				024B1F762319C47C00E3C527 /* LocalizedStringExtension.swift */,
 				02E4245D231EDED0000F4C8C /* CIImageExtension.swift */,
+				026B524323298CD5001D8D27 /* StringInImageExtension.swift */,
+				026B5245232991D5001D8D27 /* ViewToPDFExtension.swift */,
 			);
 			path = "Swift Extensions";
 			sourceTree = "<group>";
@@ -404,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				026B5242232980CC001D8D27 /* CompartilharViewController.swift in Sources */,
 				026B5222232834E6001D8D27 /* CloudKit Notification.swift in Sources */,
 				02E42469231F0A49000F4C8C /* DataFetchAnswer.swift in Sources */,
 				022621F923204ACA0055A8FA /* LoadViewController.swift in Sources */,
@@ -419,6 +429,7 @@
 				02E42455231EDBDE000F4C8C /* EdicaoTableViewController.swift in Sources */,
 				02E42467231EF53E000F4C8C /* Usuario.swift in Sources */,
 				02E42457231EDC11000F4C8C /* TextViewTableViewCell.swift in Sources */,
+				026B524423298CD5001D8D27 /* StringInImageExtension.swift in Sources */,
 				024B1F602319B01D00E3C527 /* DataController.swift in Sources */,
 				02E4246B231F113C000F4C8C /* DataProperty.swift in Sources */,
 				79372437231D913F00665B2D /* CampainhaPropertiesTableViewDataSource.swift in Sources */,
@@ -432,6 +443,7 @@
 				02E4245E231EDED0000F4C8C /* CIImageExtension.swift in Sources */,
 				02B2F36223171FDD00140BE8 /* TextTableViewCell.swift in Sources */,
 				022621FB2322C6DE0055A8FA /* GrupoCampainha.swift in Sources */,
+				026B5246232991D5001D8D27 /* ViewToPDFExtension.swift in Sources */,
 				026B5235232849BD001D8D27 /* CustomPageViewController.swift in Sources */,
 				026B522023283382001D8D27 /* AppDelegateExtension.swift in Sources */,
 				79372433231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift in Sources */,

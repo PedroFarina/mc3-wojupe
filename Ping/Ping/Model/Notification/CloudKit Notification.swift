@@ -28,8 +28,10 @@ public class CloudKitNotification {
 
         let info = CKSubscription.NotificationInfo()
 
-        info.titleLocalizationKey = "%1$@ está na sua porta.".localized()
-        info.titleLocalizationArgs = ["Nome"]
+        info.titleLocalizationKey = "Alguém está na %1$@".localized()
+        info.titleLocalizationArgs = ["NomeCampainha"]
+        info.subtitleLocalizationKey = "%1$@ chegou!"
+        info.subtitleLocalizationArgs = ["NomeVisitante"]
 
         info.shouldBadge = true
 
@@ -38,10 +40,8 @@ public class CloudKitNotification {
         subscription.notificationInfo = info
 
         CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: { _, error in
-            if error == nil {
-                // Subscription saved successfully
-            } else {
-                // Error occurred
+            if let error = error {
+                fatalError(error.localizedDescription)
             }
         })
     }
