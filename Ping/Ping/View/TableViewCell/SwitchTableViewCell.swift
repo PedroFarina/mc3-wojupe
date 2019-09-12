@@ -13,8 +13,22 @@ class SwitchTableViewCell: UITableViewCell {
     static let identifier: String = "SwitchTableViewCell"
 
     @IBOutlet var lblTitle: UILabel!
-    @IBOutlet var onOff: UISwitch!
+    public lazy var onOff: UISwitch = {
+        let onOff = UISwitch()
+        onOff.addTarget(self, action: #selector(onOffOccur), for: .valueChanged)
+        onOff.onTintColor = #colorLiteral(red: 1, green: 0.6235294118, blue: 0.03921568627, alpha: 1)
+
+        return onOff
+    }()
+
     public var onOffChanged: ((UISwitch) -> Void)?
+
+    override func awakeFromNib() {
+        self.isAccessibilityElement = true
+        self.accessibilityNavigationStyle = .combined
+        self.accessibilityLabel = lblText
+        self.accessoryView = onOff
+    }
 
     public var lblText: String? {
         get {
@@ -22,14 +36,14 @@ class SwitchTableViewCell: UITableViewCell {
         }
         set {
             lblTitle.text = newValue
+            self.accessibilityLabel = newValue
         }
     }
-
-    @IBAction func onOffOccur (_  sender: UISwitch) {
+    @objc public func onOffOccur() {
         guard let onOffChanged = onOffChanged else {
             return
         }
-        onOffChanged(sender)
+        onOffChanged(onOff)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

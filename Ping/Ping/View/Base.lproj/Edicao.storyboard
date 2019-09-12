@@ -29,7 +29,7 @@
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZJ-b4-Pd5">
                                                     <rect key="frame" x="12" y="0.0" width="390" height="43.5"/>
-                                                    <accessibility key="accessibilityConfiguration" label="Insira o título do seu código QR"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Este campo será usado para  te notificar qual campainha foi tocada. Toque duas vezes para editar." label="Nome da campainha na notificação. Campo de texto."/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43.5" id="1FD-VO-flm"/>
                                                     </constraints>
@@ -64,6 +64,7 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="B4T-35-LQc">
                                                     <rect key="frame" x="12" y="0.0" width="390" height="87.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Esta descrição ficará abaixo do código QR quando impresso. Toque duas vezes para editar." label="Descrição impressa junto do código QR da campainha. Campo de texto."/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="87" id="X9W-hR-qFn"/>
                                                     </constraints>
@@ -80,7 +81,6 @@
                                                 <constraint firstItem="B4T-35-LQc" firstAttribute="centerY" secondItem="tFw-QW-Jez" secondAttribute="centerY" id="vVp-YM-jsw"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <accessibility key="accessibilityConfiguration" label="Insira uma descrição para seu código QR"/>
                                         <connections>
                                             <outlet property="txtView" destination="B4T-35-LQc" id="Ct8-sB-9EC"/>
                                         </connections>
@@ -98,7 +98,9 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Renovar QR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icz-cc-66D">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                                    <accessibility key="accessibilityConfiguration" label="Renovar QR"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Será gerado um código QR novo para esta campainha. Toque duas vezes para renovar." label="Renovar código QR. Será necessário imprimir a campainha novamente.">
+                                                        <accessibilityTraits key="traits" button="YES" staticText="YES"/>
+                                                    </accessibility>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43.5" id="mRf-e6-WKL"/>
                                                     </constraints>
@@ -127,7 +129,9 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apagar QR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gb-xQ-VS5">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                                    <accessibility key="accessibilityConfiguration" label="Apagar QR"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="Uma vez apagado, a campainha fica desabilitada até a criação de um novo código QR. Toque duas vezes para apagar." label="Apagar código QR. Esta ação desabilitará a campainha.">
+                                                        <accessibilityTraits key="traits" button="YES" staticText="YES"/>
+                                                    </accessibility>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43.5" id="dAp-mc-TXn"/>
                                                     </constraints>

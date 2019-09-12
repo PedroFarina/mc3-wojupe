@@ -69,6 +69,10 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.9999879002571106" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration" label="O Código QR da sua campainha junto da descrição dela.">
+                                    <accessibilityTraits key="traits" image="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstItem="p7Y-0S-pGP" firstAttribute="leading" secondItem="hC7-KO-IeO" secondAttribute="leading" constant="28" id="7aP-Gn-rH9"/>
                                     <constraint firstItem="p7Y-0S-pGP" firstAttribute="centerX" secondItem="hC7-KO-IeO" secondAttribute="centerX" id="8Mt-Tq-kaL"/>
@@ -81,6 +85,10 @@
                             </view>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sharebutton" translatesAutoresizingMaskIntoConstraints="NO" id="tXl-bx-e9s">
                                 <rect key="frame" x="165.5" y="759" width="83" height="83"/>
+                                <accessibility key="accessibilityConfiguration" label="Compartilhar imagem da campainha.">
+                                    <accessibilityTraits key="traits" button="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="tXl-bx-e9s" secondAttribute="height" multiplier="1:1" id="gQ3-Qv-JcC"/>
@@ -173,7 +181,7 @@
         <scene sceneID="rjv-Eq-9gT">
             <objects>
                 <tableViewController id="Xcx-Hn-e1I" customClass="CampainhaPropertiesTableViewController" customModule="Ping" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1ZP-pt-8r6">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1ZP-pt-8r6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="132"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

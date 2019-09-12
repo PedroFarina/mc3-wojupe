@@ -14,4 +14,5 @@ class IntroducaoViewController: UIViewController {
         super.viewDidLoad()
         imgView.image = QRCodeGenerator.qrImage(from: "placeholder")
     }
+
 }

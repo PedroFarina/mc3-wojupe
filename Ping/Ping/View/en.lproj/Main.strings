@@ -1,6 +1,13 @@
 
 /* Class = "UINavigationItem"; title = "Campainha"; ObjectID = "RYp-BJ-gVl"; */
-"RYp-BJ-gVl.title" = "Your doorbell";
+"RYp-BJ-gVl.title" = "Doorbell";
 
 /* Class = "UILabel"; text = "Campainha Acessível"; ObjectID = "g9b-gq-CbN"; */
 "g9b-gq-CbN.text" = "Accessible Doorbell";
+
+/* Class = "UIView"; accessibilityLabel = "O Código QR da sua campainha junto da descrição dela."; ObjectID = "hC7-KO-IeO"; */
+"hC7-KO-IeO.accessibilityLabel" = "The QR Code of your doorbell along with its description.";
+
+/* Class = "UIImageView"; accessibilityLabel = "Compartilhar imagem da campainha."; ObjectID = "tXl-bx-e9s"; */
+"tXl-bx-e9s.accessibilityLabel" = "Share doorbell's image.";
+

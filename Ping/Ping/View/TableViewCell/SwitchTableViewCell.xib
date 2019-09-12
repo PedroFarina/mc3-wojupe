@@ -19,12 +19,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HzI-1f-73g">
-                        <rect key="frame" x="259" y="6.5" width="51" height="31"/>
-                        <connections>
-                            <action selector="onOffOccur:" destination="KGk-i7-Jjw" eventType="valueChanged" id="BBd-cN-il1"/>
-                        </connections>
-                    </switch>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcg-bs-A5D">
                         <rect key="frame" x="12" y="11" width="42" height="20.5"/>
                         <constraints>
@@ -36,8 +30,6 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="HzI-1f-73g" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="4e9-dO-3DK"/>
-                    <constraint firstAttribute="trailing" secondItem="HzI-1f-73g" secondAttribute="trailing" constant="12" id="8gb-FQ-KsL"/>
                     <constraint firstItem="fcg-bs-A5D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="8oJ-co-vRN"/>
                     <constraint firstItem="fcg-bs-A5D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="gD3-Pc-veJ"/>
                 </constraints>
@@ -45,8 +37,8 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="lblTitle" destination="fcg-bs-A5D" id="5o7-It-YFA"/>
-                <outlet property="onOff" destination="HzI-1f-73g" id="Y6h-9i-F6m"/>
             </connections>
+            <point key="canvasLocation" x="47.826086956521742" y="34.821428571428569"/>
         </tableViewCell>
     </objects>
 </document>

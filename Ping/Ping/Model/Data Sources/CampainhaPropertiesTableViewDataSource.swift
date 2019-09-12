@@ -44,7 +44,7 @@ public class CampainhaPropertiesTableViewDataSource: NSObject, UITableViewDataSo
             if let cell = tableView.dequeueReusableCell(withIdentifier: TextWithTitleTableViewCell.identifier)
                 as? TextWithTitleTableViewCell {
                 cell.isHidden = !senhaEnabled
-                cell.lblText = "Senha"
+                cell.lblText = "Senha".localized()
                 cell.txtPlaceholder = "----"
                 cell.maxCharacters = 4
                 cell.completionCharacters = {(senha) in

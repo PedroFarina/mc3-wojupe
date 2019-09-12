@@ -1,9 +1,21 @@
 
+/* Class = "UILabel"; accessibilityHint = "Uma vez apagado, a campainha fica desabilitada até a criação de um novo código QR. Toque duas vezes para apagar."; ObjectID = "9gb-xQ-VS5"; */
+"9gb-xQ-VS5.accessibilityHint" = "Uma vez apagado, a campainha fica desabilitada até a criação de um novo código QR.";
+
+/* Class = "UILabel"; accessibilityLabel = "Apagar código QR. Esta ação desabilitará a campainha."; ObjectID = "9gb-xQ-VS5"; */
+"9gb-xQ-VS5.accessibilityLabel" = "Apagar código QR. Esta ação desabilitará a campainha.";
+
 /* Class = "UILabel"; text = "Apagar QR"; ObjectID = "9gb-xQ-VS5"; */
 "9gb-xQ-VS5.text" = "Apagar QR";
 
 /* Class = "UINavigationItem"; title = "Editando"; ObjectID = "AcP-1M-Smm"; */
 "AcP-1M-Smm.title" = "Editando";
+
+/* Class = "UITextView"; accessibilityHint = "Esta descrição ficará abaixo do código QR quando impresso. Toque duas vezes para editar."; ObjectID = "B4T-35-LQc"; */
+"B4T-35-LQc.accessibilityHint" = "Esta descrição ficará abaixo do código QR quando impresso.";
+
+/* Class = "UITextView"; accessibilityLabel = "Descrição impressa junto do código QR da campainha. Campo de texto."; ObjectID = "B4T-35-LQc"; */
+"B4T-35-LQc.accessibilityLabel" = "Descrição impressa junto do código QR da campainha.";
 
 /* Class = "UITableViewSection"; footerTitle = "As ações QR não podem ser desfeitas."; ObjectID = "DMX-ap-bl4"; */
 "DMX-ap-bl4.footerTitle" = "As ações QR não podem ser desfeitas.";
@@ -19,6 +31,18 @@
 
 /* Class = "UITableViewSection"; headerTitle = "Título"; ObjectID = "TeG-UL-2TU"; */
 "TeG-UL-2TU.headerTitle" = "Título";
+
+/* Class = "UITextField"; accessibilityHint = "Este campo será usado para  te notificar qual campainha foi tocada. Toque duas vezes para editar."; ObjectID = "hZJ-b4-Pd5"; */
+"hZJ-b4-Pd5.accessibilityHint" = "Este campo será usado para te notificar qual campainha foi tocada.";
+
+/* Class = "UITextField"; accessibilityLabel = "Nome da campainha na notificação. Campo de texto."; ObjectID = "hZJ-b4-Pd5"; */
+"hZJ-b4-Pd5.accessibilityLabel" = "Nome da campainha na notificação.";
+
+/* Class = "UILabel"; accessibilityHint = "Será gerado um código QR novo para esta campainha. Toque duas vezes para renovar."; ObjectID = "icz-cc-66D"; */
+"icz-cc-66D.accessibilityHint" = "Será gerado um código QR novo para esta campainha.";
+
+/* Class = "UILabel"; accessibilityLabel = "Renovar código QR. Será necessário imprimir a campainha novamente."; ObjectID = "icz-cc-66D"; */
+"icz-cc-66D.accessibilityLabel" = "Renovar código QR. Será necessário imprimir a campainha novamente.";
 
 /* Class = "UILabel"; text = "Renovar QR"; ObjectID = "icz-cc-66D"; */
 "icz-cc-66D.text" = "Renovar QR";
