@@ -390,6 +390,12 @@ public class DataController {
 
     // MARK: CloudKit
 
+    // MARK: Reseting badges
+    public func resetBadges() {
+        let resetOperation = CKModifyBadgeOperation(badgeValue: 0)
+        container.add(resetOperation)
+    }
+
     // MARK: Saving Object
     private func saveObject(database: CKDatabase, object: EntityObject,
                             completionHandler: @escaping ((DataActionAnswer) -> Void)) {
