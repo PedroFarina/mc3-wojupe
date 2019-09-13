@@ -149,6 +149,7 @@ public class DataController {
         //Vendo se alteramos a senha
         if let senha = senha, let grupo = campainha.grupo.value, senha != grupo.senha {
             grupo.senha.value = senha
+            saveGrupo(grupo: grupo)
             hasModifications = true
         }
         //Vendo se alteraremos a descricao
@@ -183,7 +184,11 @@ public class DataController {
         let grupo = GrupoCampainha(campainha: campainha)
         _gruposCampainhas.append(grupo)
 
-        recordsToSave.append(contentsOf: [grupo, campainha])
+        guard let usuario = _usuario else {
+            fatalError("Não havia um dono para a campainha")
+        }
+        recordsToSave.append(contentsOf: [grupo, campainha, usuario])
+
         saveData(database: publicDB)
 
         return grupo
@@ -298,6 +303,15 @@ public class DataController {
             fatalError("Não existe um usuario cadastrado.")
         }
         _campainhas = []
+        guard !usuario.campainhas.recordReferences.isEmpty else {
+            for comp in self.completionHandlers {
+                comp()
+            }
+            self.refreshing = false
+            completionHandler()
+            return
+        }
+
         let predicate = NSPredicate(format: "%K IN %@", "recordID", usuario.campainhas.recordReferences)
         let query = CKQuery(recordType: Campainha.recordType, predicate: predicate)
         fetch(query: query, database: publicDB) { (answer) in
@@ -320,6 +334,17 @@ public class DataController {
         guard let usuario = _usuario else {
             fatalError("Não existe um usuario cadastrado")
         }
+
+        guard !usuario.grupos.recordReferences.isEmpty else {
+            for comp in self.completionHandlers {
+                comp()
+            }
+            self.refreshing = false
+            completionHandler()
+            return
+        }
+
+        _gruposCampainhas = []
         let predicate = NSPredicate(format: "%K IN %@", "recordID", usuario.grupos.recordReferences)
         let query = CKQuery(recordType: GrupoCampainha.recordType, predicate: predicate)
         fetch(query: query, database: publicDB) { (answer) in

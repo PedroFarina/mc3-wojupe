@@ -31,7 +31,10 @@ public class CloudKitNotification {
     }
 
     public static func createSubscription() {
-        let predicate = NSPredicate(format: "TRUEPREDICATE")
+        guard let usuario = DataController.shared().getUsuario else {
+            fatalError("Não existe um usuário para fazer a subscription")
+        }
+        let predicate = NSPredicate(format: "idGrupo IN %@", usuario.grupos.recordReferences)
         let subscription = CKQuerySubscription(
             recordType: "Notification", predicate: predicate, options: .firesOnRecordCreation)
 

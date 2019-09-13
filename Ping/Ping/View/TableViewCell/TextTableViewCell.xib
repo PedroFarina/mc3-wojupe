@@ -20,7 +20,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Df-1G-vap">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                        <rect key="frame" x="16" y="0.0" width="288" height="43.5"/>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -29,7 +29,7 @@
                 <constraints>
                     <constraint firstItem="0Df-1G-vap" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="CHT-y8-S83"/>
                     <constraint firstItem="0Df-1G-vap" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="NOh-gY-jvu"/>
-                    <constraint firstItem="0Df-1G-vap" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" id="SZU-9P-ioE"/>
+                    <constraint firstItem="0Df-1G-vap" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.9" id="SZU-9P-ioE"/>
                     <constraint firstItem="0Df-1G-vap" firstAttribute="height" secondItem="H2p-sc-9uM" secondAttribute="height" id="qOS-CN-1Jk"/>
                 </constraints>
             </tableViewCellContentView>

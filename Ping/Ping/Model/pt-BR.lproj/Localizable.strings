@@ -19,3 +19,5 @@
 "Não foi possível se comunicar com o servidor." = "Não foi possível se comunicar com o servidor.";
 "Cancelar" = "Cancelar";
 "Senha" = "Senha";
+"Campo de senha da sua campainha." = "Campo numerico de senha da sua campainha. Use quatro digitos.";
+"Este campo será exigido do visitante ao tentar tocar sua campainha." = "Este campo será exigido do visitante ao tentar tocar sua campainha.";

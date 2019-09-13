@@ -19,3 +19,5 @@
 "Não foi possível se comunicar com o servidor." = "Conection error!";
 "Cancelar" = "Cancel";
 "Senha" = "Password";
+"Campo de senha da sua campainha." = "Numeric password field for your doorbell. Use four digits.";
+"Este campo será exigido do visitante ao tentar tocar sua campainha." = "This field will be required for the visitor when trying to ring your bell.";

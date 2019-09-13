@@ -45,7 +45,10 @@ public class EdicaoTableViewController: UITableViewController {
         ale.addAction(UIAlertAction(title: "Não".localized(), style: .cancel, handler: nil))
 
         ale.addAction(UIAlertAction(title: "Sim".localized(), style: .destructive, handler: { (_) in
-            DataController.shared().removeCampainha(target: campainha)
+            guard let grupo = self.campainha?.grupo.value else {
+                return
+            }
+            DataController.shared().removeGrupoCampainha(target: grupo)
         }))
 
         return ale
@@ -68,11 +71,12 @@ public class EdicaoTableViewController: UITableViewController {
 
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 2 {
-            if indexPath.row == 1 {
-                self.present(alertDelete, animated: true)
-            } else if indexPath.row == 2 {
+            if indexPath.row == 0 {
                 self.present(alertRenew, animated: true)
+            } else if indexPath.row == 1 {
+                self.present(alertDelete, animated: true)
             }
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

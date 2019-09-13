@@ -36,6 +36,9 @@ class CampainhaViewController: UIViewController {
             let viewE = nav.topViewController as? EdicaoTableViewController {
 
             viewE.campainha = self.campainha
+        } else if let tableController = segue.destination
+            as? CampainhaPropertiesTableViewController {
+            tableController.campainha = self.campainha
         }
     }
 

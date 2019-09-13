@@ -14,7 +14,7 @@ public class GrupoCampainha: NSObject, EntityObject {
 
     public private(set) var campainha: ReferenceField<Campainha>
     public private(set) var usuarios: ReferenceList<Usuario>
-    public private(set) var senha: DataProperty<String>
+    public private(set) var senha: DataProperty<String?>
 
     public init(campainha: Campainha, record: CKRecord) {
         self.record = record

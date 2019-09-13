@@ -51,5 +51,15 @@ public class Campainha: NSObject, EntityObject {
 
     public func renewURL() {
         //Fazer requerimento e atribuir a URL
+        guard let grupo = grupo.value else {
+            return
+        }
+        grupo.removeUsuarios()
+        DataController.shared().removeGrupoCampainha(target: grupo)
+        let grupoNovo = DataController.shared().createGrupoCampainha(owner: self)
+        setGrupo(grupoNovo)
+        if let usuario = dono.value {
+            usuario.addToGrupo(grupoNovo)
+        }
     }
 }
