@@ -298,7 +298,7 @@ public class DataController {
             fatalError("Não existe um usuario cadastrado.")
         }
         _campainhas = []
-        let predicate = NSPredicate(value: true)
+        let predicate = NSPredicate(format: "%K IN %@", "recordID", usuario.campainhas.recordReferences)
         let query = CKQuery(recordType: Campainha.recordType, predicate: predicate)
         fetch(query: query, database: publicDB) { (answer) in
             switch answer {
@@ -310,6 +310,31 @@ public class DataController {
                 }
                 for result in results {
                     self._campainhas.append(Campainha(dono: usuario, record: result))
+                }
+                self.fetchGrupoCampainha(completionHandler: completionHandler)
+            }
+        }
+    }
+
+    private func fetchGrupoCampainha(completionHandler: @escaping () -> Void) {
+        guard let usuario = _usuario else {
+            fatalError("Não existe um usuario cadastrado")
+        }
+        let predicate = NSPredicate(format: "%K IN %@", "recordID", usuario.grupos.recordReferences)
+        let query = CKQuery(recordType: GrupoCampainha.recordType, predicate: predicate)
+        fetch(query: query, database: publicDB) { (answer) in
+            switch answer {
+            case .fail(let error, _):
+                DataController.errorHandler(error: error)
+            case .successful(let results):
+                guard let results = results else {
+                    fatalError("Não foi poossivel dar fetch nos grupos de campainhas")
+                }
+                for result in results {
+                    if let reference = result["Campainha"] as? CKRecord.Reference,
+                        let campainha = self.getEntityByID(reference.recordID) as? Campainha {
+                        self._gruposCampainhas.append(GrupoCampainha(campainha: campainha, record: result))
+                    }
                 }
                 for comp in self.completionHandlers {
                     comp()
@@ -400,7 +425,7 @@ public class DataController {
     private func deleteObject(database: CKDatabase, object: EntityObject,
                               completionHandler: @escaping ((DataActionAnswer) -> Void)) {
         database.delete(withRecordID: object.record.recordID) { (_, error) in
-            if let error = error as? CKError{
+            if let error = error as? CKError {
                 DispatchQueue.main.async {
                     completionHandler(.fail(error: error, description:
                         "Erro em deletar o objeto na Cloud - Delete: \(String(describing: error))"))
