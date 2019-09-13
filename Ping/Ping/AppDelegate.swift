@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().delegate = self
 
         application.applicationIconBadgeNumber = 0
+        CloudKitNotification.resetBadge()
 
         let defaults = UserDefaults.standard
         if !defaults.bool(forKey: "firstTime") {
@@ -48,6 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //App vai entrar em tela
     func applicationWillEnterForeground(_ application: UIApplication) {
         application.applicationIconBadgeNumber = 0
+        CloudKitNotification.resetBadge()
     }
 
     //App ficou ativo

@@ -32,11 +32,12 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     }
 
     func perparePushNotifications(for application: UIApplication) {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert]) { (_, error) in
+        UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert]) { (permitted, error)
+            in
             if let error = error {
                 fatalError(error.localizedDescription)
             }
-
+            CloudKitNotification.permitted = permitted
             DispatchQueue.main.async {
                 application.registerForRemoteNotifications()
             }

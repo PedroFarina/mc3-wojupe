@@ -19,14 +19,14 @@ class CampainhaViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //CloudKitNotification.askPermission()
+        CloudKitNotification.askPermission()
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        guard let campainha = campainha else {
+        guard let campainha = campainha, let grupo = campainha.grupo.referenceValue else {
             fatalError("Não existe uma campainha!")
         }
-        imgQR.image = QRCodeGenerator.qrImage(from: campainha.URL.value)
+        imgQR.image = QRCodeGenerator.qrImage(from: "http://18.221.163.6/?i=\(grupo.recordID.recordName)")
         navBar.title = campainha.titulo.value
         lblDescricao.text = campainha.descricao.value
     }
