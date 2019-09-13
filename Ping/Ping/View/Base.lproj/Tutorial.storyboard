@@ -43,8 +43,21 @@
         <!--Custom Page View Controller-->
         <scene sceneID="5es-qN-H47">
             <objects>
-                <pageViewController storyboardIdentifier="CustomPageViewController" autoresizesArchivedViewToFullSize="NO" providesPresentationContextTransitionStyle="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" doubleSided="YES" id="Cez-iD-JN3" customClass="CustomPageViewController" customModule="Ping" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="CustomPageViewController" autoresizesArchivedViewToFullSize="NO" providesPresentationContextTransitionStyle="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" doubleSided="YES" id="Cez-iD-JN3" customClass="CustomPageViewController" customModule="Ping" customModuleProvider="target" sceneMemberID="viewController">
+                    <connections>
+                        <outlet property="pgControl" destination="vH2-wA-mLw" id="ZH7-eO-QHR"/>
+                    </connections>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6v-5H-afu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" id="vH2-wA-mLw">
+                    <rect key="frame" x="0.0" y="0.0" width="39" height="37"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="pageIndicatorTintColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
+                    <color key="currentPageIndicatorTintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                    <connections>
+                        <action selector="pageChanged:" destination="Cez-iD-JN3" eventType="valueChanged" id="o4o-OO-1SJ"/>
+                    </connections>
+                </pageControl>
             </objects>
             <point key="canvasLocation" x="-701" y="113"/>
         </scene>
@@ -72,6 +85,10 @@
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" label="Exemplo de código QR.">
+                                            <accessibilityTraits key="traits" image="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstItem="8Gm-ax-CMc" firstAttribute="centerX" secondItem="V7R-c1-bbU" secondAttribute="centerX" id="0hr-tJ-0cx"/>
                                             <constraint firstItem="8Gm-ax-CMc" firstAttribute="centerY" secondItem="V7R-c1-bbU" secondAttribute="centerY" id="BLO-W5-53R"/>
@@ -114,11 +131,6 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="zRc-Gr-7eT">
-                                <rect key="frame" x="160" y="636.33333333333337" width="55" height="37"/>
-                                <color key="pageIndicatorTintColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                <color key="currentPageIndicatorTintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
-                            </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introdução" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOD-ic-l1g">
                                 <rect key="frame" x="125.33333333333331" y="208.33333333333334" width="124.66666666666669" height="31.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
@@ -133,9 +145,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                         <constraints>
                             <constraint firstItem="8wa-1e-JW5" firstAttribute="width" secondItem="GHD-FJ-dFW" secondAttribute="width" multiplier="0.8" id="9Fg-bI-iO7"/>
                             <constraint firstItem="8wa-1e-JW5" firstAttribute="centerX" secondItem="hVI-Fs-4bY" secondAttribute="centerX" id="Vdf-WX-kVK"/>
-                            <constraint firstItem="zRc-Gr-7eT" firstAttribute="firstBaseline" secondItem="8wa-1e-JW5" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="b90-Gs-BL4"/>
                             <constraint firstItem="8wa-1e-JW5" firstAttribute="centerY" secondItem="hVI-Fs-4bY" secondAttribute="centerY" id="bgR-zY-Kxt"/>
-                            <constraint firstItem="zRc-Gr-7eT" firstAttribute="centerX" secondItem="8wa-1e-JW5" secondAttribute="centerX" id="kEg-wN-VNr"/>
                             <constraint firstItem="dOD-ic-l1g" firstAttribute="firstBaseline" secondItem="V7R-c1-bbU" secondAttribute="firstBaseline" multiplier="0.6" id="mPE-sU-c69"/>
                             <constraint firstItem="dOD-ic-l1g" firstAttribute="centerX" secondItem="8wa-1e-JW5" secondAttribute="centerX" id="uQ0-OX-8j6"/>
                         </constraints>
@@ -165,10 +175,17 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                         <subviews>
                                             <switch opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dim-m6-uNi">
                                                 <rect key="frame" x="73" y="82" width="51" height="31"/>
+                                                <accessibility key="accessibilityConfiguration">
+                                                    <bool key="isElement" value="NO"/>
+                                                </accessibility>
                                                 <color key="onTintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                                             </switch>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" label="Uma opção ligando e um campo de senha.">
+                                            <accessibilityTraits key="traits" image="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstItem="Dim-m6-uNi" firstAttribute="centerX" secondItem="Rg5-pp-32V" secondAttribute="centerX" id="0FG-Kk-9CZ"/>
                                             <constraint firstItem="Dim-m6-uNi" firstAttribute="centerY" secondItem="Rg5-pp-32V" secondAttribute="centerY" id="Kpy-nM-dAv"/>
@@ -190,10 +207,13 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                         </variation>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellSenha" translatesAutoresizingMaskIntoConstraints="NO" id="zf2-Wz-IpG">
-                                        <rect key="frame" x="62.000000000000014" y="195.33333333333334" width="175.66666666666669" height="33"/>
+                                        <rect key="frame" x="62.000000000000014" y="195.33333333333334" width="175.66666666666674" height="33"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ug-jV-ltr">
                                         <rect key="frame" x="73.333333333333343" y="201.33333333333334" width="48" height="21"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -225,11 +245,6 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="1" translatesAutoresizingMaskIntoConstraints="NO" id="cxk-JT-d3o">
-                                <rect key="frame" x="160" y="636.33333333333337" width="55" height="37"/>
-                                <color key="pageIndicatorTintColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                <color key="currentPageIndicatorTintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
-                            </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proteção por Senha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tE8-Xb-rsJ">
                                 <rect key="frame" x="74" y="208.33333333333334" width="227" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
@@ -243,9 +258,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6kJ-lU-BgQ" firstAttribute="width" secondItem="n8u-Oe-cCg" secondAttribute="width" multiplier="0.8" id="3GW-vi-7ED"/>
-                            <constraint firstItem="cxk-JT-d3o" firstAttribute="firstBaseline" secondItem="6kJ-lU-BgQ" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="NhM-9n-eOO"/>
                             <constraint firstItem="6kJ-lU-BgQ" firstAttribute="centerX" secondItem="nxx-p8-EW1" secondAttribute="centerX" id="d6f-Q5-TQ8"/>
-                            <constraint firstItem="cxk-JT-d3o" firstAttribute="centerX" secondItem="6kJ-lU-BgQ" secondAttribute="centerX" id="e7K-wj-yMF"/>
                             <constraint firstItem="tE8-Xb-rsJ" firstAttribute="centerX" secondItem="6kJ-lU-BgQ" secondAttribute="centerX" id="uGd-FX-K4h"/>
                             <constraint firstItem="6kJ-lU-BgQ" firstAttribute="centerY" secondItem="nxx-p8-EW1" secondAttribute="centerY" id="viY-7k-Bd8"/>
                             <constraint firstItem="tE8-Xb-rsJ" firstAttribute="firstBaseline" secondItem="Rg5-pp-32V" secondAttribute="firstBaseline" multiplier="0.6" id="vwi-Mc-u9B"/>
@@ -279,6 +292,10 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" label="Um sino sendo silenciado.">
+                                            <accessibilityTraits key="traits" image="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstItem="dw9-DS-qHq" firstAttribute="centerX" secondItem="9Ki-mo-OVg" secondAttribute="centerX" id="1qH-uC-yxQ"/>
                                             <constraint firstItem="dw9-DS-qHq" firstAttribute="height" secondItem="9Ki-mo-OVg" secondAttribute="height" multiplier="0.8" id="3fN-Ic-R15"/>
@@ -320,11 +337,6 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="2" translatesAutoresizingMaskIntoConstraints="NO" id="j2O-dW-0XX">
-                                <rect key="frame" x="160" y="636.33333333333337" width="55" height="37"/>
-                                <color key="pageIndicatorTintColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                <color key="currentPageIndicatorTintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
-                            </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modo Silencioso" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xc-05-fiX">
                                 <rect key="frame" x="92" y="208.33333333333334" width="191" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
@@ -337,13 +349,11 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="j2O-dW-0XX" firstAttribute="centerX" secondItem="dPN-pg-AHP" secondAttribute="centerX" id="02X-Cc-m3y"/>
                             <constraint firstItem="0Xc-05-fiX" firstAttribute="firstBaseline" secondItem="9Ki-mo-OVg" secondAttribute="firstBaseline" multiplier="0.6" id="07Y-Xx-EIh"/>
                             <constraint firstItem="dPN-pg-AHP" firstAttribute="centerX" secondItem="brt-zU-poX" secondAttribute="centerX" id="FqV-a9-OFp"/>
                             <constraint firstItem="dPN-pg-AHP" firstAttribute="centerY" secondItem="brt-zU-poX" secondAttribute="centerY" id="Fv8-zK-QdJ"/>
                             <constraint firstItem="dPN-pg-AHP" firstAttribute="width" secondItem="Ci6-gh-DAV" secondAttribute="width" multiplier="0.8" id="Ijc-nN-oLU"/>
                             <constraint firstItem="0Xc-05-fiX" firstAttribute="centerX" secondItem="dPN-pg-AHP" secondAttribute="centerX" id="Tfl-OF-iNL"/>
-                            <constraint firstItem="j2O-dW-0XX" firstAttribute="firstBaseline" secondItem="dPN-pg-AHP" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="ovY-Fp-nXk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="brt-zU-poX"/>
                     </view>
@@ -371,6 +381,10 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" label="Uma ação de compartilhar.">
+                                            <accessibilityTraits key="traits" image="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="JNt-9V-cHt" secondAttribute="height" multiplier="1:1" id="Cwg-rs-c0V"/>
                                             <constraint firstItem="iX6-D3-Saa" firstAttribute="height" secondItem="JNt-9V-cHt" secondAttribute="height" multiplier="0.5" id="EQh-9g-xgX"/>
@@ -413,11 +427,6 @@ Escolha onde deseja salvá-lo!</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" currentPage="3" translatesAutoresizingMaskIntoConstraints="NO" id="raF-nt-Za9">
-                                <rect key="frame" x="160" y="636.33333333333337" width="55" height="37"/>
-                                <color key="pageIndicatorTintColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
-                                <color key="currentPageIndicatorTintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
-                            </pageControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compartilhar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAm-Oh-DAL">
                                 <rect key="frame" x="112" y="208.33333333333334" width="151" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
@@ -444,13 +453,11 @@ Escolha onde deseja salvá-lo!</string>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="zRk-ft-esk" firstAttribute="top" secondItem="j20-Eo-5mh" secondAttribute="bottom" constant="46.666666666666629" id="8oc-s2-onr"/>
                             <constraint firstItem="dAm-Oh-DAL" firstAttribute="centerX" secondItem="j20-Eo-5mh" secondAttribute="centerX" id="Cfu-Mo-KAr"/>
                             <constraint firstItem="j20-Eo-5mh" firstAttribute="centerX" secondItem="THg-Gb-T1T" secondAttribute="centerX" id="CjZ-KS-xfd"/>
-                            <constraint firstItem="zRk-ft-esk" firstAttribute="centerX" secondItem="raF-nt-Za9" secondAttribute="centerX" id="CpZ-v6-r8Z"/>
                             <constraint firstItem="j20-Eo-5mh" firstAttribute="width" secondItem="nc6-bo-T7g" secondAttribute="width" multiplier="0.8" id="EUg-mC-jJD"/>
-                            <constraint firstItem="zRk-ft-esk" firstAttribute="firstBaseline" secondItem="raF-nt-Za9" secondAttribute="baseline" constant="24.333333333333332" symbolType="layoutAnchor" id="Mdu-ot-lXg"/>
-                            <constraint firstItem="raF-nt-Za9" firstAttribute="centerX" secondItem="j20-Eo-5mh" secondAttribute="centerX" id="Okf-8U-NQ2"/>
-                            <constraint firstItem="raF-nt-Za9" firstAttribute="firstBaseline" secondItem="j20-Eo-5mh" secondAttribute="baseline" constant="8" symbolType="layoutAnchor" id="dj9-KK-wsh"/>
+                            <constraint firstItem="zRk-ft-esk" firstAttribute="centerX" secondItem="j20-Eo-5mh" secondAttribute="centerX" id="QaT-mc-mbQ"/>
                             <constraint firstItem="dAm-Oh-DAL" firstAttribute="firstBaseline" secondItem="JNt-9V-cHt" secondAttribute="firstBaseline" multiplier="0.6" id="gk8-Nn-ARb"/>
                             <constraint firstItem="j20-Eo-5mh" firstAttribute="centerY" secondItem="THg-Gb-T1T" secondAttribute="centerY" id="wzG-vn-BCf"/>
                         </constraints>

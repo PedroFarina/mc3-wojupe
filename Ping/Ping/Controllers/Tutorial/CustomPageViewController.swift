@@ -11,18 +11,33 @@ import UIKit
 class CustomPageViewController: UIPageViewController, UIPageViewControllerDelegate,
 UIPageViewControllerDataSource, UIScrollViewDelegate {
 
+    @IBOutlet weak var pgControl: UIPageControl!
     lazy var orderedViewControllers: [UIViewController] = {
         return [self.newVc(viewController: "Introducao"),
                 self.newVc(viewController: "Protecao"),
                 self.newVc(viewController: "Silencioso"),
                 self.newVc(viewController: "Compartilhar")]
     }()
-    var pageControl = UIPageControl()
+    var ultimoIndice: Int = 0
+    @IBAction func pageChanged(_ sender: Any) {
+        var direction: UIPageViewController.NavigationDirection = .forward
+        if pgControl.currentPage < ultimoIndice {
+            direction = .reverse
+        }
+
+        setViewControllers([orderedViewControllers[pgControl.currentPage]],
+                           direction: direction,
+                           animated: true,
+                           completion: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSource = self
         self.delegate = self
+        view.addSubview(pgControl)
+        pgControl.center = view.center
+        pgControl.center.y += view.frame.height / 10 * 3
 
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController],
@@ -32,7 +47,8 @@ UIPageViewControllerDataSource, UIScrollViewDelegate {
         }
     }
     func newVc(viewController: String) -> UIViewController {
-        return UIStoryboard(name: "Tutorial", bundle: nil).instantiateViewController(withIdentifier: viewController)
+        return UIStoryboard(name: "Tutorial", bundle: nil)
+            .instantiateViewController(withIdentifier: viewController)
     }
     func pageViewController(_ pageViewController: UIPageViewController,
                             viewControllerBefore viewController: UIViewController) -> UIViewController? {
@@ -41,12 +57,15 @@ UIPageViewControllerDataSource, UIScrollViewDelegate {
         }
         let previousIndex = viewControllerIndex - 1
 
+        pgControl.currentPage = viewControllerIndex
+
         guard previousIndex >= 0 else {
             return nil
         }
         guard orderedViewControllers.count > previousIndex else {
             return nil
         }
+        ultimoIndice = previousIndex
         return orderedViewControllers[previousIndex]
     }
     func pageViewController(_ pageViewController: UIPageViewController,
@@ -55,6 +74,9 @@ UIPageViewControllerDataSource, UIScrollViewDelegate {
             return nil
         }
         let nextIndex = viewControllerIndex + 1
+
+        pgControl.currentPage = viewControllerIndex
+
         let orderedViewControllersCount = orderedViewControllers.count
 
         guard orderedViewControllersCount != nextIndex else {
@@ -64,6 +86,7 @@ UIPageViewControllerDataSource, UIScrollViewDelegate {
         guard orderedViewControllersCount > nextIndex else {
             return nil
         }
+        ultimoIndice = nextIndex
         return orderedViewControllers[nextIndex]
     }
 

@@ -1,18 +1,30 @@
 
+/* Class = "UILabel"; accessibilityHint = "Uma vez apagado, a campainha fica desabilitada até a criação de um novo código QR. Toque duas vezes para apagar."; ObjectID = "9gb-xQ-VS5"; */
+"9gb-xQ-VS5.accessibilityHint" = "Once erased, the doorbell will be disabled until the creation of a new QR Code.";
+
+/* Class = "UILabel"; accessibilityLabel = "Apagar código QR. Esta ação desabilitará a campainha."; ObjectID = "9gb-xQ-VS5"; */
+"9gb-xQ-VS5.accessibilityLabel" = "Erase QR code. This action will disable the doorbell.";
+
 /* Class = "UILabel"; text = "Apagar QR"; ObjectID = "9gb-xQ-VS5"; */
-"9gb-xQ-VS5.text" = "Erase QR";
+"9gb-xQ-VS5.text" = "Erase QR code";
 
 /* Class = "UINavigationItem"; title = "Editando"; ObjectID = "AcP-1M-Smm"; */
 "AcP-1M-Smm.title" = "Editing";
 
+/* Class = "UITextView"; accessibilityHint = "Esta descrição ficará abaixo do código QR quando impresso. Toque duas vezes para editar."; ObjectID = "B4T-35-LQc"; */
+"B4T-35-LQc.accessibilityHint" = "This description will be below the QR code when printed.";
+
+/* Class = "UITextView"; accessibilityLabel = "Descrição impressa junto do código QR da campainha. Campo de texto."; ObjectID = "B4T-35-LQc"; */
+"B4T-35-LQc.accessibilityLabel" = "Description printed among the QR Code.";
+
 /* Class = "UITableViewSection"; footerTitle = "As ações QR não podem ser desfeitas."; ObjectID = "DMX-ap-bl4"; */
-"DMX-ap-bl4.footerTitle" = "The QR code actions can't be undone.";
+"DMX-ap-bl4.footerTitle" = "The QR code actions can't be undone";
 
 /* Class = "UITableViewSection"; headerTitle = "Ações QR"; ObjectID = "DMX-ap-bl4"; */
-"DMX-ap-bl4.headerTitle" = "QR Actions";
+"DMX-ap-bl4.headerTitle" = "QR code actions";
 
 /* Class = "UITableViewSection"; footerTitle = "Este texto será impresso abaixo do código QR."; ObjectID = "IRq-50-r8v"; */
-"IRq-50-r8v.footerTitle" = "This text will be printed right below the QR code.";
+"IRq-50-r8v.footerTitle" = "This text will be printed below the QR code.";
 
 /* Class = "UITableViewSection"; headerTitle = "Descrição"; ObjectID = "IRq-50-r8v"; */
 "IRq-50-r8v.headerTitle" = "Description";
@@ -20,5 +32,17 @@
 /* Class = "UITableViewSection"; headerTitle = "Título"; ObjectID = "TeG-UL-2TU"; */
 "TeG-UL-2TU.headerTitle" = "Title";
 
+/* Class = "UITextField"; accessibilityHint = "Este campo será usado para  te notificar qual campainha foi tocada. Toque duas vezes para editar."; ObjectID = "hZJ-b4-Pd5"; */
+"hZJ-b4-Pd5.accessibilityHint" = "This will be the name of the doorbell on the notification.";
+
+/* Class = "UITextField"; accessibilityLabel = "Nome da campainha na notificação. Campo de texto."; ObjectID = "hZJ-b4-Pd5"; */
+"hZJ-b4-Pd5.accessibilityLabel" = "Doorbell's identifier on the notification.";
+
+/* Class = "UILabel"; accessibilityHint = "Será gerado um código QR novo para esta campainha. Toque duas vezes para renovar."; ObjectID = "icz-cc-66D"; */
+"icz-cc-66D.accessibilityHint" = "A new QR code will be generated for this doorbell.";
+
+/* Class = "UILabel"; accessibilityLabel = "Renovar código QR. Será necessário imprimir a campainha novamente."; ObjectID = "icz-cc-66D"; */
+"icz-cc-66D.accessibilityLabel" = "Renew QR code. It'll be necessary to print it again.";
+
 /* Class = "UILabel"; text = "Renovar QR"; ObjectID = "icz-cc-66D"; */
-"icz-cc-66D.text" = "Renew QR";
+"icz-cc-66D.text" = "Renew QR code";
