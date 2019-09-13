@@ -11,13 +11,13 @@ import CloudKit
 public class ReferenceList<T: EntityObject> {
     private let record: CKRecord
     private let key: String
-    private var _references: [CKRecord.Reference] = []
+    public private(set) var recordReferences: [CKRecord.Reference] = []
     public private(set) var references: [T] = []
 
     public init(record: CKRecord, key: String) {
         self.record = record
         if let refs = record.value(forKey: key) as? [CKRecord.Reference] {
-            self._references = refs
+            self.recordReferences = refs
         }
         self.key = key
     }
@@ -25,8 +25,8 @@ public class ReferenceList<T: EntityObject> {
     public func append(_ value: T, action: CKRecord_Reference_Action) {
         references.append(value)
         let ref = CKRecord.Reference(recordID: value.record.recordID, action: action)
-        _references.append(ref)
-        record[key] = _references
+        recordReferences.append(ref)
+        record[key] = recordReferences
     }
 
     public func firstIndex(of value: T) -> Int? {
@@ -39,8 +39,8 @@ public class ReferenceList<T: EntityObject> {
 
     public func remove(at index: Int) {
         references.remove(at: index)
-        _references.remove(at: index)
-        record.setValue(_references, forKey: key)
+        recordReferences.remove(at: index)
+        record.setValue(recordReferences, forKey: key)
     }
 }
 //public class ReferenceList<T: EntityObject> {
