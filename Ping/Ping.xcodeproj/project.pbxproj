@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02122E34232FF8EA00265AF0 /* Stickers.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02122E33232FF8EA00265AF0 /* Stickers.xcassets */; };
+		02122E38232FF8EA00265AF0 /* Bell Stickers.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 02122E31232FF8E800265AF0 /* Bell Stickers.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		021FF573231DD530009D02AB /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 021FF572231DD530009D02AB /* CloudKit.framework */; };
 		022621F32320276E0055A8FA /* EntityObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022621F22320276E0055A8FA /* EntityObject.swift */; };
 		022621F723204ABC0055A8FA /* Load.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 022621F623204ABC0055A8FA /* Load.storyboard */; };
@@ -55,7 +57,34 @@
 		7937243D231DA82A00665B2D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7937243C231DA82A00665B2D /* Settings.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		02122E36232FF8EA00265AF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02B2F3262316E9DE00140BE8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 02122E30232FF8E800265AF0;
+			remoteInfo = "Bell Stickers";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		02122E3C232FF8EA00265AF0 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				02122E38232FF8EA00265AF0 /* Bell Stickers.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		02122E31232FF8E800265AF0 /* Bell Stickers.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Bell Stickers.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		02122E33232FF8EA00265AF0 /* Stickers.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Stickers.xcassets; sourceTree = "<group>"; };
+		02122E35232FF8EA00265AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		021FF56E231DD0AC009D02AB /* Ping.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Ping.entitlements; sourceTree = "<group>"; };
 		021FF572231DD530009D02AB /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		022621F22320276E0055A8FA /* EntityObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityObject.swift; sourceTree = "<group>"; };
@@ -128,6 +157,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02122E32232FF8E800265AF0 /* Bell Stickers */ = {
+			isa = PBXGroup;
+			children = (
+				02122E33232FF8EA00265AF0 /* Stickers.xcassets */,
+				02122E35232FF8EA00265AF0 /* Info.plist */,
+			);
+			path = "Bell Stickers";
+			sourceTree = "<group>";
+		};
 		021FF56F231DD0FB009D02AB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				02B2F3302316E9DE00140BE8 /* Ping */,
+				02122E32232FF8E800265AF0 /* Bell Stickers */,
 				02B2F32F2316E9DE00140BE8 /* Products */,
 				021FF56F231DD0FB009D02AB /* Frameworks */,
 			);
@@ -200,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				02B2F32E2316E9DE00140BE8 /* Ping.app */,
+				02122E31232FF8E800265AF0 /* Bell Stickers.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -306,6 +346,21 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		02122E30232FF8E800265AF0 /* Bell Stickers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02122E3B232FF8EA00265AF0 /* Build configuration list for PBXNativeTarget "Bell Stickers" */;
+			buildPhases = (
+				02122E2F232FF8E800265AF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bell Stickers";
+			productName = "Bell Stickers";
+			productReference = 02122E31232FF8E800265AF0 /* Bell Stickers.appex */;
+			productType = "com.apple.product-type.app-extension.messages-sticker-pack";
+		};
 		02B2F32D2316E9DE00140BE8 /* Ping */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 02B2F3402316E9E100140BE8 /* Build configuration list for PBXNativeTarget "Ping" */;
@@ -314,10 +369,12 @@
 				02B2F32B2316E9DE00140BE8 /* Frameworks */,
 				02B2F32C2316E9DE00140BE8 /* Resources */,
 				02B2F34E231708CC00140BE8 /* Swift Lint */,
+				02122E3C232FF8EA00265AF0 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				02122E37232FF8EA00265AF0 /* PBXTargetDependency */,
 			);
 			name = Ping;
 			productName = Ping;
@@ -334,6 +391,9 @@
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Pedro Giuliano Farina";
 				TargetAttributes = {
+					02122E30232FF8E800265AF0 = {
+						CreatedOnToolsVersion = 10.3;
+					};
 					02B2F32D2316E9DE00140BE8 = {
 						CreatedOnToolsVersion = 10.3;
 						SystemCapabilities = {
@@ -363,11 +423,20 @@
 			projectRoot = "";
 			targets = (
 				02B2F32D2316E9DE00140BE8 /* Ping */,
+				02122E30232FF8E800265AF0 /* Bell Stickers */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		02122E2F232FF8E800265AF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02122E34232FF8EA00265AF0 /* Stickers.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		02B2F32C2316E9DE00140BE8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -453,6 +522,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		02122E37232FF8EA00265AF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 02122E30232FF8E800265AF0 /* Bell Stickers */;
+			targetProxy = 02122E36232FF8EA00265AF0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		025ECB44231ED5640009E29C /* Edicao.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -506,6 +583,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		02122E39232FF8EA00265AF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BVZY57RJZG;
+				INFOPLIST_FILE = "Bell Stickers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "PGF.Ping.Bell-Stickers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		02122E3A232FF8EA00265AF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = BVZY57RJZG;
+				INFOPLIST_FILE = "Bell Stickers/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "PGF.Ping.Bell-Stickers";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		02B2F33E2316E9E100140BE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -665,6 +772,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		02122E3B232FF8EA00265AF0 /* Build configuration list for PBXNativeTarget "Bell Stickers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02122E39232FF8EA00265AF0 /* Debug */,
+				02122E3A232FF8EA00265AF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		02B2F3292316E9DE00140BE8 /* Build configuration list for PBXProject "Ping" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

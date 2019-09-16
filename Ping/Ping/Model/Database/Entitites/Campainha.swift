@@ -40,12 +40,14 @@ public class Campainha: NSObject, EntityObject {
             self.grupo.value = grupo
             grupo.setCampainha(self)
         }
+        DataController.shared().editarGrupoCampainha(target: grupo, newCampainha: self, newUsuarios: nil)
     }
 
     public func removeGrupo() {
         if let grupo = grupo.value {
             self.grupo.value = nil
             grupo.removeCampainha()
+            DataController.shared().saveModifications(obj: [self, grupo])
         }
     }
 
@@ -54,12 +56,12 @@ public class Campainha: NSObject, EntityObject {
         guard let grupo = grupo.value else {
             return
         }
-        grupo.removeUsuarios()
         DataController.shared().removeGrupoCampainha(target: grupo)
         let grupoNovo = DataController.shared().createGrupoCampainha(owner: self)
         setGrupo(grupoNovo)
         if let usuario = dono.value {
             usuario.addToGrupo(grupoNovo)
         }
+        CloudKitNotification.updateSubscription()
     }
 }

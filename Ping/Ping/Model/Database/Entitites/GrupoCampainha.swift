@@ -50,11 +50,13 @@ public class GrupoCampainha: NSObject, EntityObject {
         for usuario in usuarios.references {
             usuario.removeFromGrupo(self)
         }
+        DataController.shared().editarGrupoCampainha(target: self, newCampainha: nil, newUsuarios: [])
     }
 
     public func addUsuarios(_ usuarios: [Usuario]) {
         for usuario in usuarios {
             usuario.addToGrupo(self)
         }
+        DataController.shared().editarGrupoCampainha(target: self, newCampainha: nil, newUsuarios: [])
     }
 }

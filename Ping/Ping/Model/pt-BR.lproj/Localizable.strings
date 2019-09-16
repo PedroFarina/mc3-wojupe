@@ -21,3 +21,8 @@
 "Senha" = "Senha";
 "Campo de senha da sua campainha." = "Campo numerico de senha da sua campainha. Use quatro digitos.";
 "Este campo será exigido do visitante ao tentar tocar sua campainha." = "Este campo será exigido do visitante ao tentar tocar sua campainha.";
+"Tem certeza disso?" = "Tem certeza disso?";
+"Esta ação invalidará a campainha atual e gerará uma nova." = "Esta ação invalidará a campainha atual e gerará uma nova.";
+"Não" = "Não";
+"Sim" = "Sim";
+"Esta ação deletará a campainha permanentemente e o app fechará." = "Esta ação deletará a campainha permanentemente e limpar os dados do aplicativo.";

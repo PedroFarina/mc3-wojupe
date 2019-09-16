@@ -16,7 +16,7 @@ public class CampainhaPropertiesTableViewDataSource: NSObject, UITableViewDataSo
                 guard let campainha = self.campainha else {
                     return
                 }
-                DataController.shared().editCampainha(target: campainha, newTitulo: nil,
+                DataController.shared().editarCampainha(target: campainha, newTitulo: nil,
                                                       newSenha: "", newDescricao: nil, newUrl: nil)
             }
         }
@@ -68,7 +68,7 @@ public class CampainhaPropertiesTableViewDataSource: NSObject, UITableViewDataSo
                 cell.completionCharacters = {(senha) in
                     cell.txtField.resignFirstResponder()
                     if let campainha = self.campainha {
-                        DataController.shared().editCampainha(
+                        DataController.shared().editarCampainha(
                         target: campainha, newTitulo: nil, newSenha: senha, newDescricao: nil, newUrl: nil)
                     }
                 }
@@ -88,6 +88,7 @@ public class CampainhaPropertiesTableViewDataSource: NSObject, UITableViewDataSo
             }
             if let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.identifier)
                 as? SwitchTableViewCell {
+                cell.isHidden = true
                 cell.lblText = title
                 cell.onOffChanged = exe
                 return cell

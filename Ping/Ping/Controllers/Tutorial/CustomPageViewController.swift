@@ -15,7 +15,6 @@ UIPageViewControllerDataSource, UIScrollViewDelegate {
     lazy var orderedViewControllers: [UIViewController] = {
         return [self.newVc(viewController: "Introducao"),
                 self.newVc(viewController: "Protecao"),
-                self.newVc(viewController: "Silencioso"),
                 self.newVc(viewController: "Compartilhar")]
     }()
     var ultimoIndice: Int = 0

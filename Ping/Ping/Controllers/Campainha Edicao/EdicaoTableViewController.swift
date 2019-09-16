@@ -39,16 +39,20 @@ public class EdicaoTableViewController: UITableViewController {
         guard let campainha = self.campainha else {
             fatalError("Campainha inexistente.")
         }
-        let ale = UIAlertController(title: "Tem certeza disso?".localized(),
-                                    message: "Esta ação deletará a campainha permanentemente.".localized(),
+        let ale = UIAlertController(
+            title: "Tem certeza disso?".localized(),
+            message: "Esta ação deletará a campainha permanentemente e o app fechará.".localized(),
                                     preferredStyle: .alert)
         ale.addAction(UIAlertAction(title: "Não".localized(), style: .cancel, handler: nil))
 
         ale.addAction(UIAlertAction(title: "Sim".localized(), style: .destructive, handler: { (_) in
-            guard let grupo = self.campainha?.grupo.value else {
+            guard let usuario = DataController.shared().getUsuario else {
                 return
             }
-            DataController.shared().removeGrupoCampainha(target: grupo)
+            UserDefaults.standard.setValue(false, forKey: "firstTime")
+            DataController.shared().removeUsuario(target: usuario, completionHandler: {
+                exit(0)
+            })
         }))
 
         return ale
@@ -64,7 +68,7 @@ public class EdicaoTableViewController: UITableViewController {
 
         let newTitulo = cellTitulo.txtText
         let newDescricao = cellDescricao.txtText
-        DataController.shared().editCampainha(target: campainha, newTitulo: newTitulo,
+        DataController.shared().editarCampainha(target: campainha, newTitulo: newTitulo,
                                                    newSenha: nil, newDescricao: newDescricao, newUrl: nil)
         self.dismiss(animated: true, completion: nil)
     }

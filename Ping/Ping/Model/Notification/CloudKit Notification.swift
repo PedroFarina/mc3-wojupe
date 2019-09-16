@@ -51,15 +51,44 @@ public class CloudKitNotification {
 
         subscription.notificationInfo = info
 
-        CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: { _, error in
+        CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: { record, error in
             if let error = error {
                 fatalError(error.localizedDescription)
+            }
+            if let record = record {
+                DataController.shared().editarUsuario(target: usuario, idSubscription: record.subscriptionID)
             }
         })
     }
 
     public static func updateSubscription() {
+        deleteSubscription {
+            createSubscription()
+        }
+    }
 
+    public static func deleteSubscription(completionHandler: @escaping () -> Void) {
+        guard let usuario = DataController.shared().getUsuario else {
+            fatalError("Não existe um usuário para puxar a subscription")
+        }
+        guard let idSubscription = usuario.idSubscription.value else{
+            completionHandler()
+            return
+        }
+        let publicDB = CKContainer.default().publicCloudDatabase
+        publicDB.fetch(withSubscriptionID: idSubscription) { (sub, error) in
+            if let error = error {
+                fatalError(error.localizedDescription)
+            }
+            if let sub = sub {
+                publicDB.delete(withSubscriptionID: sub.subscriptionID, completionHandler: { (_, error) in
+                    if let error = error {
+                        fatalError(error.localizedDescription)
+                    }
+                    completionHandler()
+                })
+            }
+        }
     }
 
     public static func resetBadge() {

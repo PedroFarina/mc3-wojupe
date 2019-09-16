@@ -137,7 +137,7 @@ public class DataController {
     }
 
     // MARK: Editar campainha
-    public func editCampainha(target campainha: Campainha, newTitulo titulo: String?, newSenha senha: String?,
+    public func editarCampainha(target campainha: Campainha, newTitulo titulo: String?, newSenha senha: String?,
                               newDescricao descricao: String?, newUrl url: String?) {
         var hasModifications: Bool = false
 
@@ -149,7 +149,10 @@ public class DataController {
         //Vendo se alteramos a senha
         if let senha = senha, let grupo = campainha.grupo.value, senha != grupo.senha {
             grupo.senha.value = senha
-            saveGrupo(grupo: grupo)
+            if let usuario = _usuario {
+                recordsToSave.append(usuario)
+            }
+            recordsToSave.append(grupo)
             hasModifications = true
         }
         //Vendo se alteraremos a descricao
@@ -165,7 +168,8 @@ public class DataController {
 
         //Se algo foi alterado, salvamos
         if hasModifications {
-            saveCampainha(campainha: campainha)
+            recordsToSave.append(campainha)
+            saveData(database: publicDB)
         }
     }
 
@@ -195,7 +199,7 @@ public class DataController {
     }
 
     // MARK: Salvar grupo de campainha
-    private func saveGrupo(grupo: GrupoCampainha) {
+    private func saveGrupoCampainha(grupo: GrupoCampainha) {
         saveObject(database: publicDB, object: grupo, completionHandler: completionHandlerDefault)
     }
 
@@ -215,7 +219,6 @@ public class DataController {
                     recordsToSave.append(newUser)
                 }
             }
-            saveData(database: privateDB)
 
             grupo.removeUsuarios()
             grupo.addUsuarios(usuarios)
@@ -241,6 +244,12 @@ public class DataController {
 
     // MARK: Remover Grupo de Campainha
     public func removeGrupoCampainha(target grupo: GrupoCampainha) {
+        let users = grupo.usuarios.references
+        for user in users {
+            user.grupos.removeAll()
+        }
+        saveModifications(obj: users)
+
         if let index = _gruposCampainhas.firstIndex(of: grupo) {
             _gruposCampainhas.remove(at: index)
         }
@@ -255,13 +264,33 @@ public class DataController {
             return usuario
         }
         let usuario: Usuario = Usuario()
-        saveUsuario(usuario: usuario)
+        recordsToSave.append(usuario)
+        saveData(database: publicDB)
         return usuario
     }
 
     // MARK: Salvar usuário
     public func saveUsuario(usuario: Usuario) {
         saveObject(database: publicDB, object: usuario, completionHandler: completionHandlerDefault)
+    }
+
+    // MARK: Editar usuário
+    public func editarUsuario(target usuario: Usuario, idSubscription: String) {
+        if usuario.idSubscription.value != idSubscription {
+            usuario.idSubscription.value = idSubscription
+            recordsToSave.append(usuario)
+            saveData(database: publicDB)
+        }
+    }
+
+    // MARK: Remover usuário
+    public func removeUsuario(target usuario: Usuario, completionHandler: @escaping () -> Void) {
+        _usuario = nil
+        _campainhas = []
+        _gruposCampainhas = []
+        deleteObject(database: publicDB, object: usuario) { (_) in
+            completionHandler()
+        }
     }
 
     // MARK: Fetch Usuario
@@ -396,6 +425,22 @@ public class DataController {
         }
     }
 
+    // MARK: Save modifications
+    public func saveModifications() {
+        if let usuario = _usuario {
+            recordsToSave.append(usuario)
+        }
+        recordsToSave.append(contentsOf: _campainhas)
+        recordsToSave.append(contentsOf: _gruposCampainhas)
+        saveData(database: publicDB)
+    }
+
+    // MARK: Save object
+    public func saveModifications(obj: [EntityObject]) {
+        recordsToSave.append(contentsOf: obj)
+        saveData(database: publicDB)
+    }
+
     // MARK: Singleton Properties
     private init() {
         container = CKContainer.default()
@@ -526,7 +571,7 @@ extension GrupoCampainha {
 }
 
 extension Usuario {
-    fileprivate convenience override init() {
+    fileprivate convenience init(_ confused: String? = nil) {
         let record = CKRecord(recordType: Usuario.recordType)
         self.init(record: record)
         guard let usuarioID = DataController.shared().usuarioID else {
