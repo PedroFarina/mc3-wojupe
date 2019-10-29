@@ -12,4 +12,9 @@ public class CompartilharViewController: UIViewController {
     @IBAction func comecarTap(_ sender: Any) {
         UserDefaults.standard.setValue(true, forKey: "firstTime")
     }
+
+    public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination
+        controller.modalPresentationStyle = .fullScreen
+    }
 }

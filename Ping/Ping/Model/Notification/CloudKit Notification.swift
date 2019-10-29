@@ -25,9 +25,7 @@ public class CloudKitNotification {
         guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError("O app não tem um App Delegate.")
         }
-        if !permitted {
-            delegate.perparePushNotifications(for: UIApplication.shared)
-        }
+        delegate.preparePushNotifications(for: UIApplication.shared)
     }
 
     public static func createSubscription() {

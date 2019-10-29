@@ -137,8 +137,11 @@ public class DataController {
     }
 
     // MARK: Editar campainha
-    public func editarCampainha(target campainha: Campainha, newTitulo titulo: String?, newSenha senha: String?,
-                              newDescricao descricao: String?, newUrl url: String?) {
+    public func editarCampainha(
+        target campainha: Campainha,
+        newTitulo titulo: String?, newSenha senha: String?,
+        newDescricao descricao: String?,
+        newUrl url: String?) {
         var hasModifications: Bool = false
 
         //Vendo se alteraremos o titulo
@@ -285,12 +288,14 @@ public class DataController {
 
     // MARK: Remover usuário
     public func removeUsuario(target usuario: Usuario, completionHandler: @escaping () -> Void) {
-        _usuario = nil
-        _campainhas = []
-        _gruposCampainhas = []
-        deleteObject(database: publicDB, object: usuario) { (_) in
-            completionHandler()
-        }
+        CloudKitNotification.deleteSubscription(completionHandler: {
+            self._usuario = nil
+            self._campainhas = []
+            self._gruposCampainhas = []
+            self.deleteObject(database: self.publicDB, object: usuario) { (_) in
+                completionHandler()
+            }
+        })
     }
 
     // MARK: Fetch Usuario

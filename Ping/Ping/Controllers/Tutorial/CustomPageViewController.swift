@@ -36,7 +36,7 @@ UIPageViewControllerDataSource, UIScrollViewDelegate {
         self.delegate = self
         view.addSubview(pgControl)
         pgControl.center = view.center
-        pgControl.center.y += view.frame.height / 10 * 3
+        pgControl.center.y += view.frame.height / 10 * 4
 
         if let firstViewController = orderedViewControllers.first {
             setViewControllers([firstViewController],
