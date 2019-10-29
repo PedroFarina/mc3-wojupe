@@ -22,6 +22,7 @@ import UIKit
         self.accessibilityTraits = txtField.accessibilityTraits
         txtField.delegate = self
         txtField.addTarget(self, action: #selector(textFieldEditingChanged), for: .editingChanged)
+        txtField.addTarget(self, action: #selector(textFieldEditingDidEnd(_:)), for: .editingDidEnd)
     }
 
     @IBInspectable public var txtText: String? {
@@ -42,7 +43,13 @@ import UIKit
         }
     }
 
-    @objc public func textFieldEditingChanged(_ textField: UITextField) {
+    @objc private func textFieldEditingDidEnd(_ textField: UITextField) {
+        if textField.text?.count !=  maxCharacters {
+            textField.text = ""
+        }
+    }
+
+    @objc private func textFieldEditingChanged(_ textField: UITextField) {
         guard maxCharacters > 0, let text = textField.text else {
             return
         }

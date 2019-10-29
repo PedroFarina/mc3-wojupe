@@ -47,7 +47,7 @@ public class CampainhaPropertiesTableViewDataSource: NSObject, UITableViewDataSo
                 as? SwitchTableViewCell {
                 cell.lblText = title
                 if let grupo = campainha?.grupo.value, let senha = grupo.senha.value {
-                    cell.onOff.isOn = senha != ""
+                    cell.onOff.isOn = senha != "" || cell.onOff.isOn
                     senhaEnabled = cell.onOff.isOn
                 }
                 cell.onOffChanged = exe
