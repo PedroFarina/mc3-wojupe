@@ -39,13 +39,20 @@ public class EdicaoTableViewController: UITableViewController {
         guard let campainha = self.campainha else {
             fatalError("Campainha inexistente.")
         }
-        let ale = UIAlertController(title: "Tem certeza disso?".localized(),
-                                    message: "Esta ação deletará a campainha permanentemente.".localized(),
+        let ale = UIAlertController(
+            title: "Tem certeza disso?".localized(),
+            message: "Esta ação deletará a campainha permanentemente e o app fechará.".localized(),
                                     preferredStyle: .alert)
         ale.addAction(UIAlertAction(title: "Não".localized(), style: .cancel, handler: nil))
 
         ale.addAction(UIAlertAction(title: "Sim".localized(), style: .destructive, handler: { (_) in
-            DataController.shared().removeCampainha(target: campainha)
+            guard let usuario = DataController.shared().getUsuario else {
+                return
+            }
+            UserDefaults.standard.setValue(false, forKey: "firstTime")
+            DataController.shared().removeUsuario(target: usuario, completionHandler: {
+                exit(0)
+            })
         }))
 
         return ale
@@ -61,18 +68,19 @@ public class EdicaoTableViewController: UITableViewController {
 
         let newTitulo = cellTitulo.txtText
         let newDescricao = cellDescricao.txtText
-        DataController.shared().editCampainha(target: campainha, newTitulo: newTitulo,
+        DataController.shared().editarCampainha(target: campainha, newTitulo: newTitulo,
                                                    newSenha: nil, newDescricao: newDescricao, newUrl: nil)
         self.dismiss(animated: true, completion: nil)
     }
 
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section == 2 {
-            if indexPath.row == 1 {
-                self.present(alertDelete, animated: true)
-            } else if indexPath.row == 2 {
+            if indexPath.row == 0 {
                 self.present(alertRenew, animated: true)
+            } else if indexPath.row == 1 {
+                self.present(alertDelete, animated: true)
             }
         }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

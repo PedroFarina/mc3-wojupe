@@ -137,8 +137,11 @@ public class DataController {
     }
 
     // MARK: Editar campainha
-    public func editCampainha(target campainha: Campainha, newTitulo titulo: String?, newSenha senha: String?,
-                              newDescricao descricao: String?, newUrl url: String?) {
+    public func editarCampainha(
+        target campainha: Campainha,
+        newTitulo titulo: String?, newSenha senha: String?,
+        newDescricao descricao: String?,
+        newUrl url: String?) {
         var hasModifications: Bool = false
 
         //Vendo se alteraremos o titulo
@@ -149,6 +152,10 @@ public class DataController {
         //Vendo se alteramos a senha
         if let senha = senha, let grupo = campainha.grupo.value, senha != grupo.senha {
             grupo.senha.value = senha
+            if let usuario = _usuario {
+                recordsToSave.append(usuario)
+            }
+            recordsToSave.append(grupo)
             hasModifications = true
         }
         //Vendo se alteraremos a descricao
@@ -164,7 +171,8 @@ public class DataController {
 
         //Se algo foi alterado, salvamos
         if hasModifications {
-            saveCampainha(campainha: campainha)
+            recordsToSave.append(campainha)
+            saveData(database: publicDB)
         }
     }
 
@@ -183,14 +191,18 @@ public class DataController {
         let grupo = GrupoCampainha(campainha: campainha)
         _gruposCampainhas.append(grupo)
 
-        recordsToSave.append(contentsOf: [grupo, campainha])
+        guard let usuario = _usuario else {
+            fatalError("Não havia um dono para a campainha")
+        }
+        recordsToSave.append(contentsOf: [grupo, campainha, usuario])
+
         saveData(database: publicDB)
 
         return grupo
     }
 
     // MARK: Salvar grupo de campainha
-    private func saveGrupo(grupo: GrupoCampainha) {
+    private func saveGrupoCampainha(grupo: GrupoCampainha) {
         saveObject(database: publicDB, object: grupo, completionHandler: completionHandlerDefault)
     }
 
@@ -210,7 +222,6 @@ public class DataController {
                     recordsToSave.append(newUser)
                 }
             }
-            saveData(database: privateDB)
 
             grupo.removeUsuarios()
             grupo.addUsuarios(usuarios)
@@ -236,6 +247,12 @@ public class DataController {
 
     // MARK: Remover Grupo de Campainha
     public func removeGrupoCampainha(target grupo: GrupoCampainha) {
+        let users = grupo.usuarios.references
+        for user in users {
+            user.grupos.removeAll()
+        }
+        saveModifications(obj: users)
+
         if let index = _gruposCampainhas.firstIndex(of: grupo) {
             _gruposCampainhas.remove(at: index)
         }
@@ -250,13 +267,35 @@ public class DataController {
             return usuario
         }
         let usuario: Usuario = Usuario()
-        saveUsuario(usuario: usuario)
+        recordsToSave.append(usuario)
+        saveData(database: publicDB)
         return usuario
     }
 
     // MARK: Salvar usuário
     public func saveUsuario(usuario: Usuario) {
         saveObject(database: publicDB, object: usuario, completionHandler: completionHandlerDefault)
+    }
+
+    // MARK: Editar usuário
+    public func editarUsuario(target usuario: Usuario, idSubscription: String) {
+        if usuario.idSubscription.value != idSubscription {
+            usuario.idSubscription.value = idSubscription
+            recordsToSave.append(usuario)
+            saveData(database: publicDB)
+        }
+    }
+
+    // MARK: Remover usuário
+    public func removeUsuario(target usuario: Usuario, completionHandler: @escaping () -> Void) {
+        CloudKitNotification.deleteSubscription(completionHandler: {
+            self._usuario = nil
+            self._campainhas = []
+            self._gruposCampainhas = []
+            self.deleteObject(database: self.publicDB, object: usuario) { (_) in
+                completionHandler()
+            }
+        })
     }
 
     // MARK: Fetch Usuario
@@ -298,6 +337,15 @@ public class DataController {
             fatalError("Não existe um usuario cadastrado.")
         }
         _campainhas = []
+        guard !usuario.campainhas.recordReferences.isEmpty else {
+            for comp in self.completionHandlers {
+                comp()
+            }
+            self.refreshing = false
+            completionHandler()
+            return
+        }
+
         let predicate = NSPredicate(format: "%K IN %@", "recordID", usuario.campainhas.recordReferences)
         let query = CKQuery(recordType: Campainha.recordType, predicate: predicate)
         fetch(query: query, database: publicDB) { (answer) in
@@ -320,6 +368,17 @@ public class DataController {
         guard let usuario = _usuario else {
             fatalError("Não existe um usuario cadastrado")
         }
+
+        guard !usuario.grupos.recordReferences.isEmpty else {
+            for comp in self.completionHandlers {
+                comp()
+            }
+            self.refreshing = false
+            completionHandler()
+            return
+        }
+
+        _gruposCampainhas = []
         let predicate = NSPredicate(format: "%K IN %@", "recordID", usuario.grupos.recordReferences)
         let query = CKQuery(recordType: GrupoCampainha.recordType, predicate: predicate)
         fetch(query: query, database: publicDB) { (answer) in
@@ -369,6 +428,22 @@ public class DataController {
                 }
             }
         }
+    }
+
+    // MARK: Save modifications
+    public func saveModifications() {
+        if let usuario = _usuario {
+            recordsToSave.append(usuario)
+        }
+        recordsToSave.append(contentsOf: _campainhas)
+        recordsToSave.append(contentsOf: _gruposCampainhas)
+        saveData(database: publicDB)
+    }
+
+    // MARK: Save object
+    public func saveModifications(obj: [EntityObject]) {
+        recordsToSave.append(contentsOf: obj)
+        saveData(database: publicDB)
     }
 
     // MARK: Singleton Properties
@@ -501,7 +576,7 @@ extension GrupoCampainha {
 }
 
 extension Usuario {
-    fileprivate convenience override init() {
+    fileprivate convenience init(_ confused: String? = nil) {
         let record = CKRecord(recordType: Usuario.recordType)
         self.init(record: record)
         guard let usuarioID = DataController.shared().usuarioID else {

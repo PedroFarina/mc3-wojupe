@@ -12,7 +12,7 @@
 "9Ki-mo-OVg.accessibilityLabel" = "Um sino sendo silenciado.";
 
 /* Class = "UIView"; accessibilityLabel = "Uma ação de compartilhar."; ObjectID = "JNt-9V-cHt"; */
-"JNt-9V-cHt.accessibilityLabel" = "Uma ação de compartilhar.";
+"JNt-9V-cHt.accessibilityLabel" = "Uma ação de exportar.";
 
 /* Class = "UILabel"; text = "O Modo Silencioso serve para aquele momento em que não deseja ser incomodado. Porém, não esqueça de ativá-la posteriormente para receber seus avisos de campainha!"; ObjectID = "ObM-Tv-BUu"; */
 "ObM-Tv-BUu.text" = "O Modo Silencioso serve para aquele momento em que não deseja ser incomodado. Porém, não esqueça de ativá-la posteriormente para receber seus avisos de campainha!";
@@ -30,7 +30,7 @@
 "bc1-Rg-8Sy.text" = "Logo que o visitante escanear o código QR, se este campo estiver ativo, o visitante deve preencher a senha definida.";
 
 /* Class = "UILabel"; text = "Compartilhar"; ObjectID = "dAm-Oh-DAL"; */
-"dAm-Oh-DAL.text" = "Compartilhar";
+"dAm-Oh-DAL.text" = "Exportar";
 
 /* Class = "UILabel"; text = "Introdução"; ObjectID = "dOD-ic-l1g"; */
 "dOD-ic-l1g.text" = "Introdução";

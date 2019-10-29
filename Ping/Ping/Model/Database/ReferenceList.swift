@@ -42,6 +42,12 @@ public class ReferenceList<T: EntityObject> {
         recordReferences.remove(at: index)
         record.setValue(recordReferences, forKey: key)
     }
+
+    public func removeAll() {
+        references = []
+        recordReferences = []
+        record.setValue(recordReferences, forKey: key)
+    }
 }
 //public class ReferenceList<T: EntityObject> {
 //    private let record: CKRecord

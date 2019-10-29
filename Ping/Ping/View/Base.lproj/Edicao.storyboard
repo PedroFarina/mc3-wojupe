@@ -20,7 +20,7 @@
                         <sections>
                             <tableViewSection headerTitle="Título" id="TeG-UL-2TU">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="SnC-1g-czh" customClass="TextTableViewCell" customModule="Ping" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="SnC-1g-czh" customClass="TextTableViewCell" customModule="Ping" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SnC-1g-czh" id="PSq-G2-aOW">
@@ -54,7 +54,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Descrição" footerTitle="Este texto será impresso abaixo do código QR." id="IRq-50-r8v">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="7q3-sf-WKY" customClass="TextViewTableViewCell" customModule="Ping" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="7q3-sf-WKY" customClass="TextViewTableViewCell" customModule="Ping" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="163" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7q3-sf-WKY" id="tFw-QW-Jez">
@@ -89,7 +89,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Ações QR" footerTitle="As ações QR não podem ser desfeitas." id="DMX-ap-bl4">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cTa-P7-eCx" customClass="ButtonTableViewCell" customModule="Ping" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" id="cTa-P7-eCx" customClass="ButtonTableViewCell" customModule="Ping" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="282.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cTa-P7-eCx" id="VVe-DF-tdh">
@@ -120,7 +120,7 @@
                                             <outlet property="lblBtn" destination="icz-cc-66D" id="iS4-XY-sD7"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="KFg-AD-bb1" customClass="ButtonTableViewCell" customModule="Ping" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" id="KFg-AD-bb1" customClass="ButtonTableViewCell" customModule="Ping" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="326.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KFg-AD-bb1" id="vw0-0a-ivs">

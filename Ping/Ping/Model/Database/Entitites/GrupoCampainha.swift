@@ -14,7 +14,7 @@ public class GrupoCampainha: NSObject, EntityObject {
 
     public private(set) var campainha: ReferenceField<Campainha>
     public private(set) var usuarios: ReferenceList<Usuario>
-    public private(set) var senha: DataProperty<String>
+    public private(set) var senha: DataProperty<String?>
 
     public init(campainha: Campainha, record: CKRecord) {
         self.record = record
@@ -50,11 +50,13 @@ public class GrupoCampainha: NSObject, EntityObject {
         for usuario in usuarios.references {
             usuario.removeFromGrupo(self)
         }
+        DataController.shared().editarGrupoCampainha(target: self, newCampainha: nil, newUsuarios: [])
     }
 
     public func addUsuarios(_ usuarios: [Usuario]) {
         for usuario in usuarios {
             usuario.addToGrupo(self)
         }
+        DataController.shared().editarGrupoCampainha(target: self, newCampainha: nil, newUsuarios: [])
     }
 }

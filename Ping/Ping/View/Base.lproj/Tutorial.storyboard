@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tzA-PC-pex">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tzA-PC-pex">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -49,7 +47,7 @@
                     </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6v-5H-afu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" id="vH2-wA-mLw">
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="vH2-wA-mLw">
                     <rect key="frame" x="0.0" y="0.0" width="39" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="pageIndicatorTintColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
@@ -207,7 +205,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                         </variation>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellSenha" translatesAutoresizingMaskIntoConstraints="NO" id="zf2-Wz-IpG">
-                                        <rect key="frame" x="62.000000000000014" y="195.33333333333334" width="175.66666666666674" height="33"/>
+                                        <rect key="frame" x="62.000000000000014" y="195.33333333333334" width="175.66666666666669" height="33"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ug-jV-ltr">
                                         <rect key="frame" x="73.333333333333343" y="201.33333333333334" width="48" height="21"/>
@@ -427,8 +425,8 @@ Escolha onde deseja salvá-lo!</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compartilhar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAm-Oh-DAL">
-                                <rect key="frame" x="112" y="208.33333333333334" width="151" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exportar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAm-Oh-DAL">
+                                <rect key="frame" x="138.33333333333334" y="208.33333333333334" width="98.333333333333343" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -437,7 +435,7 @@ Escolha onde deseja salvá-lo!</string>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRk-ft-esk">
-                                <rect key="frame" x="152.66666666666666" y="675" width="70" height="33"/>
+                                <rect key="frame" x="152.66666666666666" y="636.33333333333337" width="70" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Começar">
                                     <color key="titleColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
@@ -453,7 +451,7 @@ Escolha onde deseja salvá-lo!</string>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="zRk-ft-esk" firstAttribute="top" secondItem="j20-Eo-5mh" secondAttribute="bottom" constant="46.666666666666629" id="8oc-s2-onr"/>
+                            <constraint firstItem="zRk-ft-esk" firstAttribute="top" secondItem="j20-Eo-5mh" secondAttribute="bottom" constant="8" symbolic="YES" id="8oc-s2-onr"/>
                             <constraint firstItem="dAm-Oh-DAL" firstAttribute="centerX" secondItem="j20-Eo-5mh" secondAttribute="centerX" id="Cfu-Mo-KAr"/>
                             <constraint firstItem="j20-Eo-5mh" firstAttribute="centerX" secondItem="THg-Gb-T1T" secondAttribute="centerX" id="CjZ-KS-xfd"/>
                             <constraint firstItem="j20-Eo-5mh" firstAttribute="width" secondItem="nc6-bo-T7g" secondAttribute="width" multiplier="0.8" id="EUg-mC-jJD"/>

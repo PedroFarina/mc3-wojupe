@@ -14,7 +14,7 @@ public class DataProperty<T: Equatable> {
     public var value: T {
         get {
             guard let val = record.value(forKey: key) as? T else {
-                fatalError("Não foi possível converter a data para a tipagem indicada.".localized())
+                fatalError("Não foi possível converter a data para a tipagem indicada.")
             }
             return val
         }
