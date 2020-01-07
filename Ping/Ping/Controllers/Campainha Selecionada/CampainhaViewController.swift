@@ -19,8 +19,7 @@ class CampainhaViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let idSubscription = DataController.shared().getUsuario?.idSubscription.value
-        if idSubscription == nil || idSubscription == "" {
+        if !CloudKitNotification.permitted {
             CloudKitNotification.askPermission()
         }
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))

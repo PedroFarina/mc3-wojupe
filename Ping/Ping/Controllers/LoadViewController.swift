@@ -23,7 +23,7 @@ public class LoadViewController: UIViewController {
                 if let user = DataController.shared().getUsuario {
                     viewC.campainha = DataController.shared().createCampainha(
                         dono: user, titulo: "Sua campainha".localized(),
-                        descricao: "Campainha Acessivel\nRespeite!".localized(), url: "placeholder")
+                        descricao: "Campainha Acessivel\nRespeite!".localized())
                 }
             } else {
                 viewC.campainha = DataController.shared().getCampainhas.first

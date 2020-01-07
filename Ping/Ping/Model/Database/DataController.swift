@@ -114,11 +114,10 @@ public class DataController {
     // MARK: Acessores de campainhas
 
     // MARK: Criar campainha
-    public func createCampainha(dono: Usuario, titulo: String, descricao: String, url: String) -> Campainha {
+    public func createCampainha(dono: Usuario, titulo: String, descricao: String) -> Campainha {
         let campainha: Campainha = Campainha(dono: dono)
         campainha.titulo.value = titulo
         campainha.descricao.value = descricao
-        campainha.URL.value = url
         _campainhas.append(campainha)
         let grupo = createGrupoCampainha(owner: campainha)
 
@@ -161,11 +160,6 @@ public class DataController {
         //Vendo se alteraremos a descricao
         if let descricao = descricao, descricao != campainha.descricao {
             campainha.descricao.value = descricao
-            hasModifications = true
-        }
-        //Vendo se alteraremos a campainha
-        if let url = url, url != campainha.URL {
-            campainha.URL.value = url
             hasModifications = true
         }
 

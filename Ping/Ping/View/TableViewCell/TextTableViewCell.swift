@@ -44,7 +44,7 @@ import UIKit
     }
 
     @objc private func textFieldEditingDidEnd(_ textField: UITextField) {
-        if textField.text?.count !=  maxCharacters {
+        if maxCharacters != -1 && textField.text?.count !=  maxCharacters {
             textField.text = ""
         }
     }
