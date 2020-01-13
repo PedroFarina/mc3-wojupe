@@ -19,7 +19,15 @@ class CampainhaViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        CloudKitNotification.askPermission()
+        if !CloudKitNotification.permitted {
+            CloudKitNotification.askPermission()
+        }
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+
+    @objc private func dismissKeyboard() {
+        view.endEditing(true)
     }
 
     override func viewWillAppear(_ animated: Bool) {

@@ -116,7 +116,7 @@
 		02942ADE232AD6B600A4B720 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Tutorial.strings"; sourceTree = "<group>"; };
 		02942AE0232AE4EE00A4B720 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		02942AE2232AE4F000A4B720 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		02B2F32E2316E9DE00140BE8 /* Ping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ping.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02B2F32E2316E9DE00140BE8 /* QR Bell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QR Bell.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02B2F3312316E9DE00140BE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02B2F3332316E9DE00140BE8 /* CampainhaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampainhaViewController.swift; sourceTree = "<group>"; };
 		02B2F3362316E9DE00140BE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -238,7 +238,7 @@
 		02B2F32F2316E9DE00140BE8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				02B2F32E2316E9DE00140BE8 /* Ping.app */,
+				02B2F32E2316E9DE00140BE8 /* QR Bell.app */,
 				02122E31232FF8E800265AF0 /* Bell Stickers.appex */,
 			);
 			name = Products;
@@ -378,7 +378,7 @@
 			);
 			name = Ping;
 			productName = Ping;
-			productReference = 02B2F32E2316E9DE00140BE8 /* Ping.app */;
+			productReference = 02B2F32E2316E9DE00140BE8 /* QR Bell.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -586,11 +586,13 @@
 		02122E39232FF8EA00265AF0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BVZY57RJZG;
 				INFOPLIST_FILE = "Bell Stickers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "PGF.Ping.Bell-Stickers";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -601,11 +603,13 @@
 		02122E3A232FF8EA00265AF0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BVZY57RJZG;
 				INFOPLIST_FILE = "Bell Stickers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "PGF.Ping.Bell-Stickers";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -737,14 +741,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Ping/Ping.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BVZY57RJZG;
 				INFOPLIST_FILE = Ping/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = PGF.Ping;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "QR Bell";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -756,14 +762,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Ping/Ping.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BVZY57RJZG;
 				INFOPLIST_FILE = Ping/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = PGF.Ping;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "QR Bell";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

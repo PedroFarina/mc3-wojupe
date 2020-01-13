@@ -50,7 +50,7 @@
                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="vH2-wA-mLw">
                     <rect key="frame" x="0.0" y="0.0" width="39" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="pageIndicatorTintColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
+                    <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="currentPageIndicatorTintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                     <connections>
                         <action selector="pageChanged:" destination="Cez-iD-JN3" eventType="valueChanged" id="o4o-OO-1SJ"/>
@@ -139,7 +139,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8wa-1e-JW5" firstAttribute="width" secondItem="GHD-FJ-dFW" secondAttribute="width" multiplier="0.8" id="9Fg-bI-iO7"/>
                             <constraint firstItem="8wa-1e-JW5" firstAttribute="centerX" secondItem="hVI-Fs-4bY" secondAttribute="centerX" id="Vdf-WX-kVK"/>
@@ -253,7 +253,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6kJ-lU-BgQ" firstAttribute="width" secondItem="n8u-Oe-cCg" secondAttribute="width" multiplier="0.8" id="3GW-vi-7ED"/>
                             <constraint firstItem="6kJ-lU-BgQ" firstAttribute="centerX" secondItem="nxx-p8-EW1" secondAttribute="centerX" id="d6f-Q5-TQ8"/>
@@ -345,7 +345,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0Xc-05-fiX" firstAttribute="firstBaseline" secondItem="9Ki-mo-OVg" secondAttribute="firstBaseline" multiplier="0.6" id="07Y-Xx-EIh"/>
                             <constraint firstItem="dPN-pg-AHP" firstAttribute="centerX" secondItem="brt-zU-poX" secondAttribute="centerX" id="FqV-a9-OFp"/>
@@ -449,7 +449,7 @@ Escolha onde deseja salvá-lo!</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zRk-ft-esk" firstAttribute="top" secondItem="j20-Eo-5mh" secondAttribute="bottom" constant="8" symbolic="YES" id="8oc-s2-onr"/>
                             <constraint firstItem="dAm-Oh-DAL" firstAttribute="centerX" secondItem="j20-Eo-5mh" secondAttribute="centerX" id="Cfu-Mo-KAr"/>
