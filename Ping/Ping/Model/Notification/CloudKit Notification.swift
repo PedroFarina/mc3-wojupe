@@ -32,6 +32,9 @@ public class CloudKitNotification {
         guard let usuario = DataController.shared().getUsuario else {
             fatalError("Não existe um usuário para fazer a subscription")
         }
+        if usuario.idSubscription.value != nil {
+            return
+        }
         let predicate = NSPredicate(format: "idGrupo IN %@", usuario.grupos.recordReferences)
         let subscription = CKQuerySubscription(
             recordType: "Notification", predicate: predicate, options: .firesOnRecordCreation)
@@ -69,7 +72,7 @@ public class CloudKitNotification {
         guard let usuario = DataController.shared().getUsuario else {
             fatalError("Não existe um usuário para puxar a subscription")
         }
-        guard let idSubscription = usuario.idSubscription.value else{
+        guard let idSubscription = usuario.idSubscription.value else {
             completionHandler()
             return
         }
