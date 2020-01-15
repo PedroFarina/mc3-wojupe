@@ -18,6 +18,7 @@
 		024B1F602319B01D00E3C527 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B1F5F2319B01D00E3C527 /* DataController.swift */; };
 		024B1F702319C20100E3C527 /* DataActionAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B1F6F2319C20100E3C527 /* DataActionAnswer.swift */; };
 		024B1F772319C47D00E3C527 /* LocalizedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B1F762319C47C00E3C527 /* LocalizedStringExtension.swift */; };
+		025BD00A23CF9AD500A6510A /* DoorbellSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BD00923CF9AD500A6510A /* DoorbellSelectionTableViewController.swift */; };
 		025ECB42231ED5640009E29C /* Edicao.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 025ECB44231ED5640009E29C /* Edicao.storyboard */; };
 		025ECB4B231ED5D20009E29C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 025ECB49231ED5D20009E29C /* Localizable.strings */; };
 		026B521D2326CEFA001D8D27 /* ReferenceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B521C2326CEFA001D8D27 /* ReferenceList.swift */; };
@@ -55,7 +56,7 @@
 		79372439231D9ECB00665B2D /* TextWithTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79372438231D9ECB00665B2D /* TextWithTitleTableViewCell.swift */; };
 		7937243B231D9F0400665B2D /* TextWithTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7937243A231D9F0400665B2D /* TextWithTitleTableViewCell.xib */; };
 		7937243D231DA82A00665B2D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7937243C231DA82A00665B2D /* Settings.swift */; };
-		796B72C023CE51C00098C683 /* DoorbellTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796B72BF23CE51C00098C683 /* DoorbellTableView.storyboard */; };
+		796B72C023CE51C00098C683 /* DoorbellSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796B72BF23CE51C00098C683 /* DoorbellSelection.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,7 @@
 		024B1F5F2319B01D00E3C527 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		024B1F6F2319C20100E3C527 /* DataActionAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataActionAnswer.swift; sourceTree = "<group>"; };
 		024B1F762319C47C00E3C527 /* LocalizedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringExtension.swift; sourceTree = "<group>"; };
+		025BD00923CF9AD500A6510A /* DoorbellSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorbellSelectionTableViewController.swift; sourceTree = "<group>"; };
 		025ECB32231ED3D10009E29C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		025ECB36231ED42B0009E29C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		025ECB43231ED5640009E29C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Edicao.storyboard; sourceTree = "<group>"; };
@@ -144,7 +146,7 @@
 		79372438231D9ECB00665B2D /* TextWithTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWithTitleTableViewCell.swift; sourceTree = "<group>"; };
 		7937243A231D9F0400665B2D /* TextWithTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextWithTitleTableViewCell.xib; sourceTree = "<group>"; };
 		7937243C231DA82A00665B2D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		796B72BF23CE51C00098C683 /* DoorbellTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DoorbellTableView.storyboard; sourceTree = "<group>"; };
+		796B72BF23CE51C00098C683 /* DoorbellSelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DoorbellSelection.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +189,15 @@
 				025ECB49231ED5D20009E29C /* Localizable.strings */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		025BD00823CF9AB200A6510A /* Seleção Campainha */ = {
+			isa = PBXGroup;
+			children = (
+				025BD00923CF9AD500A6510A /* DoorbellSelectionTableViewController.swift */,
+			);
+			name = "Seleção Campainha";
+			path = "Seleção Campainha";
 			sourceTree = "<group>";
 		};
 		026B521E2328336D001D8D27 /* Notification */ = {
@@ -264,6 +275,7 @@
 		02B2F3432316E9E900140BE8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				025BD00823CF9AB200A6510A /* Seleção Campainha */,
 				026B522523284547001D8D27 /* Tutorial */,
 				026B522423284538001D8D27 /* Campainha Edicao */,
 				026B522323284517001D8D27 /* Campainha Selecionada */,
@@ -277,7 +289,7 @@
 			children = (
 				02B2F34F231711F400140BE8 /* TableViewCell */,
 				02B2F3352316E9DE00140BE8 /* Main.storyboard */,
-				796B72BF23CE51C00098C683 /* DoorbellTableView.storyboard */,
+				796B72BF23CE51C00098C683 /* DoorbellSelection.storyboard */,
 				025ECB44231ED5640009E29C /* Edicao.storyboard */,
 				026B523C232973A7001D8D27 /* Tutorial.storyboard */,
 				022621F623204ABC0055A8FA /* Load.storyboard */,
@@ -450,7 +462,7 @@
 				02B2F357231712ED00140BE8 /* SwitchTableViewCell.xib in Resources */,
 				7937243B231D9F0400665B2D /* TextWithTitleTableViewCell.xib in Resources */,
 				025ECB4B231ED5D20009E29C /* Localizable.strings in Resources */,
-				796B72C023CE51C00098C683 /* DoorbellTableView.storyboard in Resources */,
+				796B72C023CE51C00098C683 /* DoorbellSelection.storyboard in Resources */,
 				02B2F3392316E9E100140BE8 /* Assets.xcassets in Resources */,
 				025ECB42231ED5640009E29C /* Edicao.storyboard in Resources */,
 				02B2F36323171FDD00140BE8 /* TextTableViewCell.xib in Resources */,
@@ -497,6 +509,7 @@
 				022621FD2322CB4B0055A8FA /* ReferenceField.swift in Sources */,
 				02B2F3322316E9DE00140BE8 /* AppDelegate.swift in Sources */,
 				02B2F356231712ED00140BE8 /* SwitchTableViewCell.swift in Sources */,
+				025BD00A23CF9AD500A6510A /* DoorbellSelectionTableViewController.swift in Sources */,
 				02E42463231EE078000F4C8C /* QRCodeGenerator.swift in Sources */,
 				7937243D231DA82A00665B2D /* Settings.swift in Sources */,
 				79372435231D8E3C00665B2D /* CampainhaPropertiesTableViewDelegate.swift in Sources */,

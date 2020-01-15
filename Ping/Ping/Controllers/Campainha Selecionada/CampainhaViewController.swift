@@ -12,7 +12,6 @@ import PDFKit
 class CampainhaViewController: UIViewController {
 
     @IBOutlet weak var pageView: UIView!
-    @IBOutlet weak var navBar: UINavigationItem!
     @IBOutlet weak var lblDescricao: UILabel!
     @IBOutlet weak var imgQR: UIImageView!
     public var campainha: Campainha?
@@ -35,7 +34,7 @@ class CampainhaViewController: UIViewController {
             fatalError("Não existe uma campainha!")
         }
         imgQR.image = QRCodeGenerator.qrImage(from: "http://18.221.163.6/?i=\(grupo.recordID.recordName)")
-        navBar.title = campainha.titulo.value
+        navigationItem.title = campainha.titulo.value
         lblDescricao.text = campainha.descricao.value
     }
 

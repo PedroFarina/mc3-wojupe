@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mNA-lr-HOt">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -11,13 +11,13 @@
         <!--Campainha-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CampainhaViewController" customModule="Ping" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CampainhaViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="146" translatesAutoresizingMaskIntoConstraints="NO" id="ZVU-NA-Ltd">
-                                <rect key="frame" x="0.0" y="526" width="414" height="132"/>
+                                <rect key="frame" x="0.0" y="482" width="414" height="132"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="132" id="R6S-2e-DwV"/>
                                     <constraint firstAttribute="height" constant="132" id="hUh-yE-q4W"/>
@@ -37,7 +37,7 @@
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hC7-KO-IeO">
-                                <rect key="frame" x="67.5" y="111" width="279" height="395"/>
+                                <rect key="frame" x="67.5" y="67" width="279" height="395"/>
                                 <subviews>
                                     <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p7Y-0S-pGP">
                                         <rect key="frame" x="28" y="89" width="223" height="217"/>
@@ -145,17 +145,16 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Campainha" largeTitleDisplayMode="never" id="RYp-BJ-gVl">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="qXM-lt-bCz">
+                    <navigationItem key="navigationItem" title="Campainha" id="DyI-DY-4Ud">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="d2x-J6-dVT">
                             <connections>
-                                <segue destination="Dml-xm-dmN" kind="presentation" id="uMu-ck-PWK"/>
+                                <segue destination="Dml-xm-dmN" kind="show" id="KaY-4X-fLF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="imgQR" destination="TXw-QN-PsM" id="EG0-GG-I7Y"/>
                         <outlet property="lblDescricao" destination="g9b-gq-CbN" id="VMb-p7-mMO"/>
-                        <outlet property="navBar" destination="RYp-BJ-gVl" id="Yy7-Xk-W7W"/>
                         <outlet property="pageView" destination="hC7-KO-IeO" id="agp-hq-KOF"/>
                     </connections>
                 </viewController>
@@ -171,7 +170,9 @@
         <!--Edicao-->
         <scene sceneID="qUQ-eh-Key">
             <objects>
-                <viewControllerPlaceholder storyboardName="Edicao" id="Dml-xm-dmN" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Edicao" id="Dml-xm-dmN" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="0qX-yG-N8c"/>
+                </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9VH-0Q-QjT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1620" y="138"/>
@@ -179,7 +180,7 @@
         <!--Campainha Properties Table View Controller-->
         <scene sceneID="rjv-Eq-9gT">
             <objects>
-                <tableViewController id="Xcx-Hn-e1I" customClass="CampainhaPropertiesTableViewController" customModule="Ping" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Xcx-Hn-e1I" customClass="CampainhaPropertiesTableViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1ZP-pt-8r6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="132"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -193,28 +194,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3nV-ES-06T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="948" y="792"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="7aS-85-cpG">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mNA-lr-HOt" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="42t-8J-MEz">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                            <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aP5-tq-Otm"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EKE-Ui-C5f" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="37.681159420289859" y="138.61607142857142"/>
         </scene>
     </scenes>
     <resources>
