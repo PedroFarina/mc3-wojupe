@@ -13,11 +13,6 @@ public class DoorbellSelectionTableViewController: UITableViewController {
     private var data: [Campainha] = DataController.shared().getCampainhas
 
     public override func viewDidLoad() {
-        if !data.isEmpty {
-            navigationItem.leftBarButtonItem = self.editButtonItem
-        } else {
-            tableView.allowsSelection = false
-        }
         tableView.tableFooterView = UIView()
     }
 
@@ -25,8 +20,15 @@ public class DoorbellSelectionTableViewController: UITableViewController {
         refreshData()
     }
 
-    private func refreshData() {
+    public func refreshData() {
         data = DataController.shared().getCampainhas
+        if !data.isEmpty {
+            navigationItem.leftBarButtonItem = self.editButtonItem
+            tableView.allowsSelection = true
+        } else {
+            navigationItem.leftBarButtonItem = nil
+            tableView.allowsSelection = false
+        }
         tableView.reloadData()
     }
 
@@ -60,6 +62,7 @@ public class DoorbellSelectionTableViewController: UITableViewController {
             self.performSegue(withIdentifier: "campainhaSelected", sender: self)
         }
         tableView.deselectRow(at: indexPath, animated: true)
+        selectedCampainha = nil
     }
 
     public override func tableView(
@@ -71,6 +74,7 @@ public class DoorbellSelectionTableViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.deleteCampainha(self.data[indexPath.row])
                 success(true)
+                self.tableView.isEditing = false
             }
         }
 
@@ -78,6 +82,7 @@ public class DoorbellSelectionTableViewController: UITableViewController {
             DispatchQueue.main.async {
                 self.editCampainha(self.data[indexPath.row])
                 success(true)
+                self.tableView.isEditing = false
             }
         }
         edit.backgroundColor = .systemOrange
@@ -90,6 +95,7 @@ public class DoorbellSelectionTableViewController: UITableViewController {
     private func editCampainha(_ target: Campainha) {
         selectedCampainha = target
         self.performSegue(withIdentifier: "editCampainha", sender: self)
+        selectedCampainha = nil
     }
 
     private func deleteCampainha(_ target: Campainha) {
@@ -114,7 +120,8 @@ public class DoorbellSelectionTableViewController: UITableViewController {
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nav = segue.destination as? UINavigationController,
             let editCont = nav.topViewController as? EdicaoTableViewController {
-                editCont.campainha = selectedCampainha
+            editCont.campainha = selectedCampainha
+            editCont.cont = self
         } else if let selectCont = segue.destination as? CampainhaViewController {
             selectCont.campainha = selectedCampainha
         }

@@ -11,13 +11,22 @@ import UIKit
 public class EdicaoTableViewController: UITableViewController {
     @IBOutlet weak var cellTitulo: TextTableViewCell!
     @IBOutlet weak var cellDescricao: TextViewTableViewCell!
-    @IBOutlet weak var cellRenovarButton: ButtonTableViewCell!
-    @IBOutlet weak var cellApagarButton: ButtonTableViewCell!
-    public var campainha: Campainha?
+    public weak var campainha: Campainha?
+    public weak var cont: DoorbellSelectionTableViewController?
+
+    public override func numberOfSections(in tableView: UITableView) -> Int {
+        var sects = super.numberOfSections(in: tableView)
+        if campainha == nil {
+            sects -= 1
+        }
+        return sects
+    }
 
     public override func viewWillAppear(_ animated: Bool) {
         guard let campainha = campainha else {
-            fatalError("Campainha inexistente.")
+            navigationItem.title = "Criando nova campainha".localized()
+            navigationItem.rightBarButtonItem?.title = "OK".localized()
+            return
         }
         cellTitulo.txtText = campainha.titulo.value
         cellDescricao.txtText = campainha.descricao.value
@@ -62,14 +71,15 @@ public class EdicaoTableViewController: UITableViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func saveTap(_ sender: Any) {
-        guard let campainha = self.campainha else {
-            fatalError("Campainha inexistente.")
-        }
-
-        let newTitulo = cellTitulo.txtText
+        let newTitulo = (cellTitulo.txtText ?? "").isEmpty ? "Porta".localized() : cellTitulo.txtText ?? ""
         let newDescricao = cellDescricao.txtText
-        DataController.shared().editarCampainha(target: campainha, newTitulo: newTitulo,
-                                                   newSenha: nil, newDescricao: newDescricao, newUrl: nil)
+        if let campainha = campainha {
+            DataController.shared().editarCampainha(target: campainha, newTitulo: newTitulo,
+                                                    newSenha: nil, newDescricao: newDescricao, newUrl: nil)
+        } else if let user = DataController.shared().getUsuario {
+            _ = DataController.shared().createCampainha(dono: user, titulo: newTitulo, descricao: newDescricao ?? "")
+            cont?.refreshData()
+        }
         self.dismiss(animated: true, completion: nil)
     }
 

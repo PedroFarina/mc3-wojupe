@@ -39,7 +39,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Campainhas" largeTitleDisplayMode="never" id="9En-Kv-NnV">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jzh-eq-zP8"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jzh-eq-zP8">
+                            <connections>
+                                <segue destination="Z9G-Cj-NkK" kind="presentation" id="4hn-Sg-YBn"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="Slh-ci-Dkc" kind="show" identifier="campainhaSelected" id="I3X-OU-BcY"/>
@@ -69,4 +73,7 @@
             <point key="canvasLocation" x="134" y="40"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="4hn-Sg-YBn"/>
+    </inferredMetricsTieBreakers>
 </document>
