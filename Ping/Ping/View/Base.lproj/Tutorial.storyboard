@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tzA-PC-pex">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tzA-PC-pex">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,7 +41,7 @@
         <!--Custom Page View Controller-->
         <scene sceneID="5es-qN-H47">
             <objects>
-                <pageViewController storyboardIdentifier="CustomPageViewController" autoresizesArchivedViewToFullSize="NO" providesPresentationContextTransitionStyle="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" doubleSided="YES" id="Cez-iD-JN3" customClass="CustomPageViewController" customModule="Ping" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="CustomPageViewController" autoresizesArchivedViewToFullSize="NO" providesPresentationContextTransitionStyle="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" doubleSided="YES" id="Cez-iD-JN3" customClass="CustomPageViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <outlet property="pgControl" destination="vH2-wA-mLw" id="ZH7-eO-QHR"/>
                     </connections>
@@ -62,7 +62,7 @@
         <!--Introducao-->
         <scene sceneID="Nn7-mW-oAC">
             <objects>
-                <viewController storyboardIdentifier="Introducao" title="Introducao" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7Ec-2k-Uz4" customClass="IntroducaoViewController" customModule="Ping" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Introducao" title="Introducao" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7Ec-2k-Uz4" customClass="IntroducaoViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GHD-FJ-dFW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,7 +160,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
         <!--Protecao View Controller-->
         <scene sceneID="Mx2-d6-NmO">
             <objects>
-                <viewController storyboardIdentifier="Protecao" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZiT-2r-45t" customClass="ProtecaoViewController" customModule="Ping" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Protecao" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZiT-2r-45t" customClass="ProtecaoViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n8u-Oe-cCg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -363,7 +363,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
         <!--Compartilhar View Controller-->
         <scene sceneID="sdx-vn-Fgf">
             <objects>
-                <viewController storyboardIdentifier="Compartilhar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lPZ-xA-zXT" customClass="CompartilharViewController" customModule="Ping" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Compartilhar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lPZ-xA-zXT" customClass="CompartilharViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nc6-bo-T7g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
