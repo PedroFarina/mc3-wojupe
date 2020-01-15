@@ -55,6 +55,7 @@
 		79372439231D9ECB00665B2D /* TextWithTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79372438231D9ECB00665B2D /* TextWithTitleTableViewCell.swift */; };
 		7937243B231D9F0400665B2D /* TextWithTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7937243A231D9F0400665B2D /* TextWithTitleTableViewCell.xib */; };
 		7937243D231DA82A00665B2D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7937243C231DA82A00665B2D /* Settings.swift */; };
+		796B72C023CE51C00098C683 /* DoorbellTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796B72BF23CE51C00098C683 /* DoorbellTableView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +144,7 @@
 		79372438231D9ECB00665B2D /* TextWithTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWithTitleTableViewCell.swift; sourceTree = "<group>"; };
 		7937243A231D9F0400665B2D /* TextWithTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextWithTitleTableViewCell.xib; sourceTree = "<group>"; };
 		7937243C231DA82A00665B2D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		796B72BF23CE51C00098C683 /* DoorbellTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DoorbellTableView.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 			children = (
 				02B2F34F231711F400140BE8 /* TableViewCell */,
 				02B2F3352316E9DE00140BE8 /* Main.storyboard */,
+				796B72BF23CE51C00098C683 /* DoorbellTableView.storyboard */,
 				025ECB44231ED5640009E29C /* Edicao.storyboard */,
 				026B523C232973A7001D8D27 /* Tutorial.storyboard */,
 				022621F623204ABC0055A8FA /* Load.storyboard */,
@@ -447,6 +450,7 @@
 				02B2F357231712ED00140BE8 /* SwitchTableViewCell.xib in Resources */,
 				7937243B231D9F0400665B2D /* TextWithTitleTableViewCell.xib in Resources */,
 				025ECB4B231ED5D20009E29C /* Localizable.strings in Resources */,
+				796B72C023CE51C00098C683 /* DoorbellTableView.storyboard in Resources */,
 				02B2F3392316E9E100140BE8 /* Assets.xcassets in Resources */,
 				025ECB42231ED5640009E29C /* Edicao.storyboard in Resources */,
 				02B2F36323171FDD00140BE8 /* TextTableViewCell.xib in Resources */,

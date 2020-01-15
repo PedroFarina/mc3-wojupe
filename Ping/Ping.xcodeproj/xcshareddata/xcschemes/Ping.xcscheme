@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "02B2F32D2316E9DE00140BE8"
-               BuildableName = "Ping.app"
+               BuildableName = "QR Bell.app"
                BlueprintName = "Ping"
                ReferencedContainer = "container:Ping.xcodeproj">
             </BuildableReference>
@@ -27,19 +27,17 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
-      <Testables>
-      </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02B2F32D2316E9DE00140BE8"
-            BuildableName = "Ping.app"
+            BuildableName = "QR Bell.app"
             BlueprintName = "Ping"
             ReferencedContainer = "container:Ping.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
+      <Testables>
+      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -58,13 +56,11 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02B2F32D2316E9DE00140BE8"
-            BuildableName = "Ping.app"
+            BuildableName = "QR Bell.app"
             BlueprintName = "Ping"
             ReferencedContainer = "container:Ping.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -77,7 +73,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02B2F32D2316E9DE00140BE8"
-            BuildableName = "Ping.app"
+            BuildableName = "QR Bell.app"
             BlueprintName = "Ping"
             ReferencedContainer = "container:Ping.xcodeproj">
          </BuildableReference>
