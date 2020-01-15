@@ -127,6 +127,8 @@ public class DataController {
         recordsToSave.append(contentsOf: [dono, campainha])
         saveData(database: publicDB)
 
+        CloudKitNotification.updateSubscription()
+
         return campainha
     }
 
@@ -176,6 +178,7 @@ public class DataController {
             _campainhas.remove(at: index)
         }
         deleteObject(database: publicDB, object: campainha, completionHandler: completionHandlerDefault)
+        CloudKitNotification.updateSubscription()
     }
 
     // MARK: Acessores de Grupos de Campainha
