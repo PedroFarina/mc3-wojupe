@@ -5,6 +5,7 @@
 //  Created by Pedro Giuliano Farina on 30/08/19.
 //  Copyright © 2019 Pedro Giuliano Farina. All rights reserved.
 //
+// swiftlint:disable type_body_length file_length
 
 import CloudKit
 import UIKit
@@ -112,7 +113,6 @@ public class DataController {
         return _campainhas
     }
     // MARK: Acessores de campainhas
-
     // MARK: Criar campainha
     public func createCampainha(dono: Usuario, titulo: String, descricao: String) -> Campainha {
         let campainha: Campainha = Campainha(dono: dono)
@@ -125,9 +125,8 @@ public class DataController {
         dono.addToGrupo(grupo)
 
         recordsToSave.append(contentsOf: [dono, campainha])
-        saveData(database: publicDB)
 
-        CloudKitNotification.updateSubscription()
+        saveData(database: publicDB)
 
         return campainha
     }
@@ -178,7 +177,15 @@ public class DataController {
             _campainhas.remove(at: index)
         }
         deleteObject(database: publicDB, object: campainha, completionHandler: completionHandlerDefault)
-        CloudKitNotification.updateSubscription()
+
+        guard let usuario = _usuario,
+            let grupo = campainha.grupo.value else {
+            return
+        }
+        usuario.removeCampainha(campainha)
+        usuario.removeFromGrupo(grupo)
+        recordsToSave.append(usuario)
+        saveUsuario(usuario: usuario)
     }
 
     // MARK: Acessores de Grupos de Campainha
@@ -196,6 +203,33 @@ public class DataController {
         saveData(database: publicDB)
 
         return grupo
+    }
+
+    // MARK: Histórico de campainhas
+    public func getVisitors(of campainha: Campainha, completionHandler: @escaping ([Visitante]) -> Void) {
+        guard let usuario = _usuario,
+            let referenceValue = campainha.grupo.referenceValue else {
+            fatalError("Não havia um usuário")
+        }
+        let predicate = NSPredicate(format: "idGrupo == %@", referenceValue)
+        let query = CKQuery(recordType: "Notification", predicate: predicate)
+        self.fetch(query: query, completionHandler: { (answer) in
+            switch answer {
+            case  .fail(_, let description):
+                fatalError(description)
+            case  .successful(let results):
+                guard let results = results else {
+                    return
+                }
+                var visitantes: [Visitante] = []
+                for result in results {
+                    if let visitante = Visitante(record: result) {
+                        visitantes.append(visitante)
+                    }
+                }
+                completionHandler(visitantes)
+            }
+        })
     }
 
     // MARK: Salvar grupo de campainha

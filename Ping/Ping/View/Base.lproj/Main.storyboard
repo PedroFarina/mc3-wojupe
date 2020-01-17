@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="146" translatesAutoresizingMaskIntoConstraints="NO" id="ZVU-NA-Ltd">
-                                <rect key="frame" x="0.0" y="482" width="414" height="132"/>
+                                <rect key="frame" x="0.0" y="519" width="414" height="132"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="132" id="R6S-2e-DwV"/>
                                     <constraint firstAttribute="height" constant="132" id="hUh-yE-q4W"/>
@@ -96,12 +96,21 @@
                                     <outletCollection property="gestureRecognizers" destination="DzW-ih-ap2" appends="YES" id="TEZ-bi-hS6"/>
                                 </connections>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1j-tH-REs">
+                                <rect key="frame" x="163.5" y="474" width="87" height="30"/>
+                                <state key="normal" title="Ver histórico"/>
+                                <connections>
+                                    <segue destination="Iey-AE-F3e" kind="presentation" id="RwN-Uj-JZ2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="m1j-tH-REs" firstAttribute="top" secondItem="hC7-KO-IeO" secondAttribute="bottom" constant="12" id="03d-G2-QUA"/>
                             <constraint firstItem="tXl-bx-e9s" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="2XI-rU-HIl"/>
                             <constraint firstItem="hC7-KO-IeO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.675" id="89Y-pc-aM7"/>
-                            <constraint firstItem="ZVU-NA-Ltd" firstAttribute="top" secondItem="hC7-KO-IeO" secondAttribute="bottom" constant="20" id="GxL-0y-kbC"/>
+                            <constraint firstItem="m1j-tH-REs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="CAB-Kj-aV0"/>
+                            <constraint firstItem="ZVU-NA-Ltd" firstAttribute="top" secondItem="m1j-tH-REs" secondAttribute="bottom" constant="15" id="GxL-0y-kbC"/>
                             <constraint firstItem="ZVU-NA-Ltd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="OJE-Uv-oq7"/>
                             <constraint firstItem="tXl-bx-e9s" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Pzh-IP-7g9"/>
                             <constraint firstItem="ZVU-NA-Ltd" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="TPw-Mk-jRX"/>
@@ -176,6 +185,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9VH-0Q-QjT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1620" y="138"/>
+        </scene>
+        <!--Historico-->
+        <scene sceneID="8w6-2L-K1H">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Adding" storyboardName="Historico" id="Iey-AE-F3e" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ihV-GU-9hB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1588" y="205"/>
         </scene>
         <!--Campainha Properties Table View Controller-->
         <scene sceneID="rjv-Eq-9gT">

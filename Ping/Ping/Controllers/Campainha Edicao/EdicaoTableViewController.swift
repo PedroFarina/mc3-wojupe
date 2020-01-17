@@ -12,7 +12,8 @@ public class EdicaoTableViewController: UITableViewController {
     @IBOutlet weak var cellTitulo: TextTableViewCell!
     @IBOutlet weak var cellDescricao: TextViewTableViewCell!
     public weak var campainha: Campainha?
-    public weak var cont: DoorbellSelectionTableViewController?
+    public weak var selected: CampainhaViewController?
+    public weak var selection: DoorbellSelectionTableViewController?
 
     public override func numberOfSections(in tableView: UITableView) -> Int {
         var sects = super.numberOfSections(in: tableView)
@@ -76,9 +77,10 @@ public class EdicaoTableViewController: UITableViewController {
         if let campainha = campainha {
             DataController.shared().editarCampainha(target: campainha, newTitulo: newTitulo,
                                                     newSenha: nil, newDescricao: newDescricao, newUrl: nil)
+            selected?.updateInfo()
         } else if let user = DataController.shared().getUsuario {
             _ = DataController.shared().createCampainha(dono: user, titulo: newTitulo, descricao: newDescricao ?? "")
-            cont?.refreshData()
+            selection?.refreshData()
         }
         self.dismiss(animated: true, completion: nil)
     }

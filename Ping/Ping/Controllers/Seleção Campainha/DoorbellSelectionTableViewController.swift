@@ -125,7 +125,7 @@ public class DoorbellSelectionTableViewController: UITableViewController {
         if let nav = segue.destination as? UINavigationController,
             let editCont = nav.topViewController as? EdicaoTableViewController {
             editCont.campainha = selectedCampainha
-            editCont.cont = self
+            editCont.selection = self
         } else if let selectCont = segue.destination as? CampainhaViewController {
             selectCont.campainha = selectedCampainha
         }

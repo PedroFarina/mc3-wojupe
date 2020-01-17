@@ -9,18 +9,19 @@
 import UIKit
 import PDFKit
 
-class CampainhaViewController: UIViewController {
+public class CampainhaViewController: UIViewController {
 
     @IBOutlet weak var pageView: UIView!
     @IBOutlet weak var lblDescricao: UILabel!
     @IBOutlet weak var imgQR: UIImageView!
     public var campainha: Campainha?
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         if !CloudKitNotification.permitted {
             CloudKitNotification.askPermission()
         }
+        CloudKitNotification.updateSubscription()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
@@ -29,21 +30,30 @@ class CampainhaViewController: UIViewController {
         view.endEditing(true)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
+    override public func viewWillAppear(_ animated: Bool) {
         guard let campainha = campainha, let grupo = campainha.grupo.referenceValue else {
             fatalError("Não existe uma campainha!")
         }
+        updateInfo()
         imgQR.image = QRCodeGenerator.qrImage(from: "http://18.221.163.6/?i=\(grupo.recordID.recordName)")
+    }
+
+    public func updateInfo() {
+        guard let campainha = campainha else {
+            return
+        }
         navigationItem.title = campainha.titulo.value
         lblDescricao.text = campainha.descricao.value
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let nav = segue.destination as? UINavigationController,
-            let viewE = nav.topViewController as? EdicaoTableViewController {
-
-            viewE.campainha = self.campainha
-            nav.modalPresentationStyle = .fullScreen
+    override public func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let nav = segue.destination as? UINavigationController {
+            if let viewE = nav.topViewController as? EdicaoTableViewController {
+                viewE.campainha = self.campainha
+                viewE.selected = self
+            } else if let viewH = nav.topViewController as? HistoricoTableViewController {
+                viewH.campainha = self.campainha
+            }
         } else if let tableController = segue.destination
             as? CampainhaPropertiesTableViewController {
             tableController.campainha = self.campainha

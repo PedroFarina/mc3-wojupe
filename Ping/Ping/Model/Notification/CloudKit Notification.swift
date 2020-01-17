@@ -32,7 +32,7 @@ public class CloudKitNotification {
         guard let usuario = DataController.shared().getUsuario else {
             fatalError("Não existe um usuário para fazer a subscription")
         }
-        if usuario.idSubscription.value != nil {
+        if (usuario.idSubscription.value ?? "") != ""{
             return
         }
         let predicate = NSPredicate(format: "idGrupo IN %@", usuario.grupos.recordReferences)
@@ -72,7 +72,7 @@ public class CloudKitNotification {
         guard let usuario = DataController.shared().getUsuario else {
             fatalError("Não existe um usuário para puxar a subscription")
         }
-        guard let idSubscription = usuario.idSubscription.value else {
+        guard let idSubscription = usuario.idSubscription.value, usuario.idSubscription.value != "" else {
             completionHandler()
             return
         }
@@ -86,6 +86,7 @@ public class CloudKitNotification {
                     if let error = error {
                         fatalError(error.localizedDescription)
                     }
+                    DataController.shared().editarUsuario(target: usuario, idSubscription: "")
                     completionHandler()
                 })
             }

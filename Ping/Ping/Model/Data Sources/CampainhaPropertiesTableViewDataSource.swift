@@ -5,6 +5,7 @@
 //  Created by Wolfgang Walder on 02/09/19.
 //  Copyright © 2019 Pedro Giuliano Farina. All rights reserved.
 //
+// swiftlint:disable all
 
 import UIKit
 
