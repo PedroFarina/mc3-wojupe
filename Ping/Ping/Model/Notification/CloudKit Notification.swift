@@ -28,7 +28,7 @@ public class CloudKitNotification {
         delegate.preparePushNotifications(for: UIApplication.shared)
     }
 
-    public static func createSubscription() {
+    public static func createSubscription(save: Bool = true, completionHandler: @escaping (String) -> Void) {
         guard let usuario = DataController.shared().getUsuario else {
             fatalError("Não existe um usuário para fazer a subscription")
         }
@@ -57,18 +57,31 @@ public class CloudKitNotification {
                 fatalError(error.localizedDescription)
             }
             if let record = record {
-                DataController.shared().editarUsuario(target: usuario, idSubscription: record.subscriptionID)
+                if save {
+                    DataController.shared().editarUsuario(target: usuario, idSubscription: record.subscriptionID)
+                } else {
+                    completionHandler(record.subscriptionID)
+                }
             }
         })
     }
 
     public static func updateSubscription() {
         deleteSubscription {
-            createSubscription()
+            createSubscription{ (_) in
+            }
         }
     }
 
-    public static func deleteSubscription(completionHandler: @escaping () -> Void) {
+    public static func updateSubscription(completionHandler: @escaping (String) -> Void) {
+        deleteSubscription(save: false) {
+            createSubscription(save: false) { (id) in
+                completionHandler(id)
+            }
+        }
+    }
+
+    public static func deleteSubscription(save: Bool = true, completionHandler: @escaping () -> Void) {
         guard let usuario = DataController.shared().getUsuario else {
             fatalError("Não existe um usuário para puxar a subscription")
         }

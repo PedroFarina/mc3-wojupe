@@ -33,7 +33,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                 fatalError(error.localizedDescription)
             }
             CloudKitNotification.permitted = permitted
-            CloudKitNotification.createSubscription()
+            CloudKitNotification.createSubscription { (_) in}
             DispatchQueue.main.async {
                 application.registerForRemoteNotifications()
             }

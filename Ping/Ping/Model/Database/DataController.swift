@@ -125,9 +125,12 @@ public class DataController {
         dono.addCampainha(campainha)
         dono.addToGrupo(grupo)
 
-        recordsToSave.append(contentsOf: [dono, campainha])
 
-        saveData(database: publicDB)
+        CloudKitNotification.updateSubscription{ (id) in
+            dono.idSubscription.value = id
+            self.recordsToSave.append(contentsOf: [dono, campainha])
+            self.saveData(database: self.publicDB)
+        }
 
         return campainha
     }
@@ -177,7 +180,6 @@ public class DataController {
         if let index = _campainhas.firstIndex(of: campainha) {
             _campainhas.remove(at: index)
         }
-        recordsToDelete.append(campainha)
 
         guard let usuario = _usuario,
             let grupo = campainha.grupo.value else {
@@ -189,8 +191,13 @@ public class DataController {
         if let index = usuario.grupos.firstIndex(of: grupo) {
             usuario.grupos.remove(at: index)
         }
-        recordsToSave.append(usuario)
-        saveData(database: publicDB)
+        CloudKitNotification.updateSubscription { (subsId) in
+            usuario.idSubscription.value = subsId
+            self.recordsToDelete.append(campainha)
+            self.recordsToSave.append(usuario)
+
+            self.saveData(database: self.publicDB)
+        }
     }
 
     // MARK: Acessores de Grupos de Campainha

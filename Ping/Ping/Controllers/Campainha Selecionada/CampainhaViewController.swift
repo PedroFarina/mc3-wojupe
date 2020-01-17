@@ -21,7 +21,6 @@ public class CampainhaViewController: UIViewController {
         if !CloudKitNotification.permitted {
             CloudKitNotification.askPermission()
         }
-        CloudKitNotification.updateSubscription()
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
