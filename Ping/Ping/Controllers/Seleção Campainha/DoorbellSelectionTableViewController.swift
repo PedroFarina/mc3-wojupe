@@ -32,6 +32,10 @@ public class DoorbellSelectionTableViewController: UITableViewController {
         tableView.reloadData()
     }
 
+    public override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
+
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.isEmpty ? 5 : data.count
     }

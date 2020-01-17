@@ -30,12 +30,14 @@
         <scene sceneID="8Xu-EU-pU8">
             <objects>
                 <tableViewController id="2gh-vR-qvl" customClass="DoorbellSelectionTableViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="zxQ-hH-3BY">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Vsq-cx-AkU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections/>
                         <connections>
-                            <outlet property="dataSource" destination="2gh-vR-qvl" id="t98-LD-4LA"/>
-                            <outlet property="delegate" destination="2gh-vR-qvl" id="qKT-Tr-Ubh"/>
+                            <outlet property="dataSource" destination="2gh-vR-qvl" id="6TV-Ib-DzH"/>
+                            <outlet property="delegate" destination="2gh-vR-qvl" id="j9l-m0-kbV"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Campainhas" largeTitleDisplayMode="never" id="9En-Kv-NnV">
