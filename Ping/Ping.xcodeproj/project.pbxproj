@@ -19,11 +19,12 @@
 		024B1F702319C20100E3C527 /* DataActionAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B1F6F2319C20100E3C527 /* DataActionAnswer.swift */; };
 		024B1F772319C47D00E3C527 /* LocalizedStringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 024B1F762319C47C00E3C527 /* LocalizedStringExtension.swift */; };
 		025BD00A23CF9AD500A6510A /* DoorbellSelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BD00923CF9AD500A6510A /* DoorbellSelectionTableViewController.swift */; };
-		025BD00C23D2311700A6510A /* Historico.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 025BD00B23D2311700A6510A /* Historico.storyboard */; };
 		025BD00F23D231E000A6510A /* HistoricoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BD00E23D231E000A6510A /* HistoricoTableViewController.swift */; };
 		025BD01123D2382C00A6510A /* Visitante.swift in Sources */ = {isa = PBXBuildFile; fileRef = 025BD01023D2382C00A6510A /* Visitante.swift */; };
 		025ECB42231ED5640009E29C /* Edicao.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 025ECB44231ED5640009E29C /* Edicao.storyboard */; };
 		025ECB4B231ED5D20009E29C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 025ECB49231ED5D20009E29C /* Localizable.strings */; };
+		026512D923D25B2E007F1D43 /* DoorbellSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 026512DB23D25B2E007F1D43 /* DoorbellSelection.storyboard */; };
+		026512E023D25B50007F1D43 /* Historico.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 026512E223D25B50007F1D43 /* Historico.storyboard */; };
 		026B521D2326CEFA001D8D27 /* ReferenceList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B521C2326CEFA001D8D27 /* ReferenceList.swift */; };
 		026B522023283382001D8D27 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B521F23283382001D8D27 /* AppDelegateExtension.swift */; };
 		026B5222232834E6001D8D27 /* CloudKit Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026B5221232834E6001D8D27 /* CloudKit Notification.swift */; };
@@ -59,7 +60,6 @@
 		79372439231D9ECB00665B2D /* TextWithTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79372438231D9ECB00665B2D /* TextWithTitleTableViewCell.swift */; };
 		7937243B231D9F0400665B2D /* TextWithTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7937243A231D9F0400665B2D /* TextWithTitleTableViewCell.xib */; };
 		7937243D231DA82A00665B2D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7937243C231DA82A00665B2D /* Settings.swift */; };
-		796B72C023CE51C00098C683 /* DoorbellSelection.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 796B72BF23CE51C00098C683 /* DoorbellSelection.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,7 +101,6 @@
 		024B1F6F2319C20100E3C527 /* DataActionAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataActionAnswer.swift; sourceTree = "<group>"; };
 		024B1F762319C47C00E3C527 /* LocalizedStringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedStringExtension.swift; sourceTree = "<group>"; };
 		025BD00923CF9AD500A6510A /* DoorbellSelectionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorbellSelectionTableViewController.swift; sourceTree = "<group>"; };
-		025BD00B23D2311700A6510A /* Historico.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Historico.storyboard; sourceTree = "<group>"; };
 		025BD00E23D231E000A6510A /* HistoricoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricoTableViewController.swift; sourceTree = "<group>"; };
 		025BD01023D2382C00A6510A /* Visitante.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Visitante.swift; sourceTree = "<group>"; };
 		025ECB32231ED3D10009E29C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -109,6 +108,12 @@
 		025ECB43231ED5640009E29C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Edicao.storyboard; sourceTree = "<group>"; };
 		025ECB4A231ED5D20009E29C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		025ECB4C231ED5DA0009E29C /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		026512DA23D25B2E007F1D43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DoorbellSelection.storyboard; sourceTree = "<group>"; };
+		026512DD23D25B32007F1D43 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/DoorbellSelection.strings"; sourceTree = "<group>"; };
+		026512DF23D25B33007F1D43 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/DoorbellSelection.strings; sourceTree = "<group>"; };
+		026512E123D25B50007F1D43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Historico.storyboard; sourceTree = "<group>"; };
+		026512E423D25B54007F1D43 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Historico.strings"; sourceTree = "<group>"; };
+		026512E623D25B56007F1D43 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Historico.strings; sourceTree = "<group>"; };
 		026B521C2326CEFA001D8D27 /* ReferenceList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceList.swift; sourceTree = "<group>"; };
 		026B521F23283382001D8D27 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 		026B5221232834E6001D8D27 /* CloudKit Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CloudKit Notification.swift"; sourceTree = "<group>"; };
@@ -152,7 +157,6 @@
 		79372438231D9ECB00665B2D /* TextWithTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWithTitleTableViewCell.swift; sourceTree = "<group>"; };
 		7937243A231D9F0400665B2D /* TextWithTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextWithTitleTableViewCell.xib; sourceTree = "<group>"; };
 		7937243C231DA82A00665B2D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		796B72BF23CE51C00098C683 /* DoorbellSelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DoorbellSelection.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -304,11 +308,11 @@
 			children = (
 				02B2F34F231711F400140BE8 /* TableViewCell */,
 				02B2F3352316E9DE00140BE8 /* Main.storyboard */,
-				796B72BF23CE51C00098C683 /* DoorbellSelection.storyboard */,
+				026512DB23D25B2E007F1D43 /* DoorbellSelection.storyboard */,
 				025ECB44231ED5640009E29C /* Edicao.storyboard */,
 				026B523C232973A7001D8D27 /* Tutorial.storyboard */,
 				022621F623204ABC0055A8FA /* Load.storyboard */,
-				025BD00B23D2311700A6510A /* Historico.storyboard */,
+				026512E223D25B50007F1D43 /* Historico.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -474,13 +478,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				02B2F33C2316E9E100140BE8 /* LaunchScreen.storyboard in Resources */,
-				025BD00C23D2311700A6510A /* Historico.storyboard in Resources */,
+				026512E023D25B50007F1D43 /* Historico.storyboard in Resources */,
 				02B2F35F23171D0200140BE8 /* ButtonTableViewCell.xib in Resources */,
 				022621F723204ABC0055A8FA /* Load.storyboard in Resources */,
 				02B2F357231712ED00140BE8 /* SwitchTableViewCell.xib in Resources */,
 				7937243B231D9F0400665B2D /* TextWithTitleTableViewCell.xib in Resources */,
 				025ECB4B231ED5D20009E29C /* Localizable.strings in Resources */,
-				796B72C023CE51C00098C683 /* DoorbellSelection.storyboard in Resources */,
+				026512D923D25B2E007F1D43 /* DoorbellSelection.storyboard in Resources */,
 				02B2F3392316E9E100140BE8 /* Assets.xcassets in Resources */,
 				025ECB42231ED5640009E29C /* Edicao.storyboard in Resources */,
 				02B2F36323171FDD00140BE8 /* TextTableViewCell.xib in Resources */,
@@ -585,6 +589,26 @@
 				025ECB4C231ED5DA0009E29C /* pt-BR */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		026512DB23D25B2E007F1D43 /* DoorbellSelection.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				026512DA23D25B2E007F1D43 /* Base */,
+				026512DD23D25B32007F1D43 /* pt-BR */,
+				026512DF23D25B33007F1D43 /* en */,
+			);
+			name = DoorbellSelection.storyboard;
+			sourceTree = "<group>";
+		};
+		026512E223D25B50007F1D43 /* Historico.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				026512E123D25B50007F1D43 /* Base */,
+				026512E423D25B54007F1D43 /* pt-BR */,
+				026512E623D25B56007F1D43 /* en */,
+			);
+			name = Historico.storyboard;
 			sourceTree = "<group>";
 		};
 		026B523C232973A7001D8D27 /* Tutorial.storyboard */ = {

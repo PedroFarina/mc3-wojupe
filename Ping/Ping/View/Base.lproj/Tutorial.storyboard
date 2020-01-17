@@ -375,7 +375,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNt-9V-cHt">
                                         <rect key="frame" x="52.333333333333343" y="65.333333333333343" width="195" height="195.00000000000003"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sharebutton" translatesAutoresizingMaskIntoConstraints="NO" id="iX6-D3-Saa">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saveButton" translatesAutoresizingMaskIntoConstraints="NO" id="iX6-D3-Saa">
                                                 <rect key="frame" x="48.666666666666664" y="48.999999999999993" width="97.666666666666686" height="97.333333333333314"/>
                                             </imageView>
                                         </subviews>
@@ -478,7 +478,7 @@ Escolha onde deseja salvá-lo!</string>
     </scenes>
     <resources>
         <image name="cellSenha" width="239" height="46"/>
-        <image name="sharebutton" width="66" height="66"/>
+        <image name="saveButton" width="66" height="66"/>
         <image name="sino" width="86" height="106"/>
     </resources>
 </document>

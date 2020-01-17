@@ -25,4 +25,10 @@
 "Esta ação invalidará a campainha atual e gerará uma nova." = "Esta ação invalidará a campainha atual e gerará uma nova.";
 "Não" = "Não";
 "Sim" = "Sim";
-"Esta ação deletará a campainha permanentemente e o app fechará." = "Esta ação deletará a campainha permanentemente e limpar os dados do aplicativo.";
+"Esta ação deletará a campainha permanentemente e o app fechará." = "Esta ação deletará a campainha permanentemente.";
+"Você não teve visitantes ainda." = "Você não teve visitantes ainda.";
+"Exemplo de campainha" = "Exemplo de campainha";
+"Editar" = "Editar";
+"Você deseja excluir " = "Você deseja excluir ";
+"? Essa ação não pode ser desfeita." = "? Essa ação não pode ser desfeita.";
+"Confirmação de deleção" = "Confirmação de deleção";
