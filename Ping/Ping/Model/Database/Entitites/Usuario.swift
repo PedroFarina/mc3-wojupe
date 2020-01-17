@@ -41,6 +41,13 @@ public class Usuario: NSObject, EntityObject {
         DataController.shared().saveModifications(obj: [self, value])
     }
 
+    public func deleteCampainha(_ value: Campainha) {
+        if let index = campainhas.firstIndex(of: value) {
+            campainhas.remove(at: index)
+            value.removeDono()
+        }
+    }
+
     public func addToGrupo(_ value: GrupoCampainha) {
         if !grupos.contains(value) {
             grupos.append(value, action: .none)
@@ -55,5 +62,12 @@ public class Usuario: NSObject, EntityObject {
             value.removeUsuario(self)
         }
         DataController.shared().saveModifications(obj: [self, value])
+    }
+
+    public func deleteFromGrupo(_ value: GrupoCampainha) {
+        if let index = grupos.firstIndex(of: value) {
+            grupos.remove(at: index)
+            value.removeUsuario(self)
+        }
     }
 }

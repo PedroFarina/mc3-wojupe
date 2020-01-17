@@ -71,6 +71,7 @@ public class DataController {
     }
 
     private var recordsToSave: [EntityObject] = []
+    private var recordsToDelete: [EntityObject] = []
 
     public var refreshing: Bool = false {
         didSet {
@@ -176,16 +177,20 @@ public class DataController {
         if let index = _campainhas.firstIndex(of: campainha) {
             _campainhas.remove(at: index)
         }
-        deleteObject(database: publicDB, object: campainha, completionHandler: completionHandlerDefault)
+        recordsToDelete.append(campainha)
 
         guard let usuario = _usuario,
             let grupo = campainha.grupo.value else {
             return
         }
-        usuario.removeCampainha(campainha)
-        usuario.removeFromGrupo(grupo)
+        if let index = usuario.campainhas.firstIndex(of: campainha) {
+            usuario.campainhas.remove(at: index)
+        }
+        if let index = usuario.grupos.firstIndex(of: grupo) {
+            usuario.grupos.remove(at: index)
+        }
         recordsToSave.append(usuario)
-        saveUsuario(usuario: usuario)
+        saveData(database: publicDB)
     }
 
     // MARK: Acessores de Grupos de Campainha
@@ -207,9 +212,8 @@ public class DataController {
 
     // MARK: Histórico de campainhas
     public func getVisitors(of campainha: Campainha, completionHandler: @escaping ([Visitante]) -> Void) {
-        guard let usuario = _usuario,
-            let referenceValue = campainha.grupo.referenceValue else {
-            fatalError("Não havia um usuário")
+        guard let referenceValue = campainha.grupo.referenceValue else {
+            fatalError("Não havia um grupo")
         }
         let predicate = NSPredicate(format: "idGrupo == %@", referenceValue)
         let query = CKQuery(recordType: "Notification", predicate: predicate)
@@ -522,14 +526,20 @@ public class DataController {
 
     // MARK: Saving Objects
     private func saveData(database: CKDatabase) {
-        var records: [CKRecord] = []
+        var savingRecords: [CKRecord] = []
         for obj in recordsToSave {
-            records.append(obj.record)
+            savingRecords.append(obj.record)
         }
         recordsToSave = []
+        var deletingRecords: [CKRecord.ID] = []
+        for obj in recordsToDelete {
+            deletingRecords.append(obj.record.recordID)
+        }
+        recordsToDelete = []
+
         let operation: CKModifyRecordsOperation = CKModifyRecordsOperation(
-            recordsToSave: records, recordIDsToDelete: nil)
-        operation.savePolicy = .changedKeys
+            recordsToSave: savingRecords, recordIDsToDelete: deletingRecords)
+        operation.savePolicy = .allKeys
         database.add(operation)
     }
 

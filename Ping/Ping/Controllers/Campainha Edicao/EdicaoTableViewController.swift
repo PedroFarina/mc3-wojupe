@@ -56,13 +56,16 @@ public class EdicaoTableViewController: UITableViewController {
         ale.addAction(UIAlertAction(title: "Não".localized(), style: .cancel, handler: nil))
 
         ale.addAction(UIAlertAction(title: "Sim".localized(), style: .destructive, handler: { (_) in
-            guard let usuario = DataController.shared().getUsuario else {
+            guard let campainha = self.campainha else {
                 return
             }
-            UserDefaults.standard.setValue(false, forKey: "firstTime")
-            DataController.shared().removeUsuario(target: usuario, completionHandler: {
-                exit(0)
-            })
+            DataController.shared().removeCampainha(target: campainha)
+            self.dismiss(animated: true) {
+                if let cont = self.selected?.navigationController?.viewControllers.first as? DoorbellSelectionTableViewController {
+                    cont.refreshData()
+                }
+                _ = self.selected?.navigationController?.popViewController(animated: true)
+            }
         }))
 
         return ale
