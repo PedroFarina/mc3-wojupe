@@ -179,9 +179,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iVh-bV-x80">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" red="0.61176470589999998" green="0.32156862749999998" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -194,5 +193,5 @@
             <point key="canvasLocation" x="-910.14492753623199" y="-26.116071428571427"/>
         </scene>
     </scenes>
-    <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+    <color key="tintColor" red="0.2156862745" green="0.50196078430000002" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
 </document>

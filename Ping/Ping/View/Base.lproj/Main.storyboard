@@ -82,7 +82,7 @@
                                     <constraint firstItem="p7Y-0S-pGP" firstAttribute="top" secondItem="hC7-KO-IeO" secondAttribute="top" constant="89" id="ZSs-oE-Gfn"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sharebutton" translatesAutoresizingMaskIntoConstraints="NO" id="tXl-bx-e9s" userLabel="Export">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saveButton" translatesAutoresizingMaskIntoConstraints="NO" id="tXl-bx-e9s" userLabel="Export">
                                 <rect key="frame" x="165.5" y="759" width="83" height="83"/>
                                 <accessibility key="accessibilityConfiguration" label="Compartilhar imagem da campainha.">
                                     <accessibilityTraits key="traits" button="YES"/>
@@ -154,7 +154,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Campainha" id="DyI-DY-4Ud">
+                    <navigationItem key="navigationItem" title="Campainha" largeTitleDisplayMode="never" id="DyI-DY-4Ud">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="d2x-J6-dVT">
                             <connections>
                                 <segue destination="Dml-xm-dmN" kind="show" id="KaY-4X-fLF"/>
@@ -174,7 +174,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="947.43777452415804" y="138.28125"/>
+            <point key="canvasLocation" x="946.37681159420299" y="137.94642857142856"/>
         </scene>
         <!--Edicao-->
         <scene sceneID="qUQ-eh-Key">
@@ -214,7 +214,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="sharebutton" width="66" height="66"/>
+        <image name="saveButton" width="66" height="66"/>
     </resources>
-    <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+    <color key="tintColor" red="0.2156862745" green="0.50196078430000002" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
 </document>

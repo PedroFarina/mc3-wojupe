@@ -16,6 +16,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" red="0.61176470588235299" green="0.32156862745098036" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.61176470589999998" green="0.32156862749999998" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <connections>
@@ -40,7 +44,7 @@
                             <outlet property="delegate" destination="2gh-vR-qvl" id="j9l-m0-kbV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Campainhas" largeTitleDisplayMode="never" id="9En-Kv-NnV">
+                    <navigationItem key="navigationItem" title="Campainhas" largeTitleDisplayMode="always" id="9En-Kv-NnV">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jzh-eq-zP8">
                             <connections>
                                 <segue destination="Z9G-Cj-NkK" kind="presentation" id="4hn-Sg-YBn"/>
@@ -78,4 +82,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="4hn-Sg-YBn"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.21568627450980393" green="0.50196078431372548" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
 </document>

@@ -67,9 +67,12 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="23P-vy-3ez" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="pMC-U7-CWf">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="pMC-U7-CWf">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.61176470589999998" green="0.32156862749999998" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -81,4 +84,5 @@
             <point key="canvasLocation" x="1747.826086956522" y="-479.46428571428567"/>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.2156862745" green="0.50196078430000002" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

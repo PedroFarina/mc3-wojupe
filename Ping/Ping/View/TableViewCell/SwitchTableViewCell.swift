@@ -16,7 +16,7 @@ class SwitchTableViewCell: UITableViewCell {
     public lazy var onOff: UISwitch = {
         let onOff = UISwitch()
         onOff.addTarget(self, action: #selector(onOffOccur), for: .valueChanged)
-        onOff.onTintColor = #colorLiteral(red: 1, green: 0.6235294118, blue: 0.03921568627, alpha: 1)
+        onOff.onTintColor = #colorLiteral(red: 0.2156862745, green: 0.5019607843, blue: 0.5607843137, alpha: 1)
 
         return onOff
     }()
