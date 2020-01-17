@@ -46,3 +46,6 @@
 
 /* Class = "UILabel"; text = "Renovar QR"; ObjectID = "icz-cc-66D"; */
 "icz-cc-66D.text" = "Renew QR code";
+
+/* Class = "UITableViewSection"; footerTitle = "Se nenhum título for dado, a campainha terá o título de Porta"; ObjectID = "TeG-UL-2TU"; */
+"TeG-UL-2TU.footerTitle" = "If no title is given, the doorbell will be titled Door.";
