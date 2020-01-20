@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2Oa-4G-A3Y">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="6p3-r9-YeF">
+            <objects>
+                <navigationController id="2Oa-4G-A3Y" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="PSK-9T-OSg">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" red="0.61176470588235299" green="0.32156862745098036" blue="0.22745098039215686" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" red="0.61176470589999998" green="0.32156862749999998" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2gh-vR-qvl" kind="relationship" relationship="rootViewController" id="QAp-Cf-hoL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dNl-rQ-Ko0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1444" y="135"/>
+        </scene>
+        <!--Campainhas-->
+        <scene sceneID="8Xu-EU-pU8">
+            <objects>
+                <tableViewController id="2gh-vR-qvl" customClass="DoorbellSelectionTableViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Vsq-cx-AkU">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="2gh-vR-qvl" id="6TV-Ib-DzH"/>
+                            <outlet property="delegate" destination="2gh-vR-qvl" id="j9l-m0-kbV"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Campainhas" largeTitleDisplayMode="always" id="9En-Kv-NnV">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Jzh-eq-zP8">
+                            <connections>
+                                <segue destination="Z9G-Cj-NkK" kind="presentation" id="4hn-Sg-YBn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Slh-ci-Dkc" kind="show" identifier="campainhaSelected" id="I3X-OU-BcY"/>
+                        <segue destination="Z9G-Cj-NkK" kind="presentation" identifier="editCampainha" id="1jQ-Jp-fzK"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="niC-as-Agd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-552" y="135"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="BsR-Dh-vX8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="Slh-ci-Dkc" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="cpH-x3-42v"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q9L-h6-0h6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="125" y="147"/>
+        </scene>
+        <!--Edicao-->
+        <scene sceneID="fJC-TG-cA8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Edicao" id="Z9G-Cj-NkK" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="avq-dt-2eA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="134" y="40"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="4hn-Sg-YBn"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.21568627450980393" green="0.50196078431372548" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+</document>

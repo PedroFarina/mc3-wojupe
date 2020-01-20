@@ -25,4 +25,11 @@
 "Esta ação invalidará a campainha atual e gerará uma nova." = "This action will discard the actual doorbell and generate a new one.";
 "Não" = "No";
 "Sim" = "Yes";
-"Esta ação deletará a campainha permanentemente e o app fechará." = "This will delete the doorbell permanently and erase the app data.";
+"Esta ação deletará a campainha permanentemente e o app fechará." = "This will delete the doorbell permanently.";
+"Você não teve visitantes ainda." = "You had no visitors yet.";
+"Exemplo de campainha" = "Example Doorbell";
+"Editar" = "Edit";
+"Você deseja excluir " = "Are you sure you wish to delete ";
+"? Essa ação não pode ser desfeita." = "? This action can't be undone.";
+"Confirmação de deleção" = "Deletion confirmation";
+"Porta" = "Door";

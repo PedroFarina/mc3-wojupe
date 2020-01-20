@@ -41,7 +41,7 @@
         <!--Custom Page View Controller-->
         <scene sceneID="5es-qN-H47">
             <objects>
-                <pageViewController storyboardIdentifier="CustomPageViewController" autoresizesArchivedViewToFullSize="NO" providesPresentationContextTransitionStyle="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" doubleSided="YES" id="Cez-iD-JN3" customClass="CustomPageViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="CustomPageViewController" autoresizesArchivedViewToFullSize="NO" providesPresentationContextTransitionStyle="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Cez-iD-JN3" customClass="CustomPageViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <outlet property="pgControl" destination="vH2-wA-mLw" id="ZH7-eO-QHR"/>
                     </connections>
@@ -223,6 +223,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                 <color key="backgroundColor" red="0.96246176959999996" green="0.76471585040000001" blue="0.4626800418" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="Rg5-pp-32V" firstAttribute="centerX" secondItem="6kJ-lU-BgQ" secondAttribute="centerX" id="1Ao-4X-4A6"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6Ug-jV-ltr" secondAttribute="trailing" constant="20" symbolic="YES" id="383-9d-7Mu"/>
                                     <constraint firstItem="Rg5-pp-32V" firstAttribute="centerY" secondItem="6kJ-lU-BgQ" secondAttribute="centerY" multiplier="0.75" id="4I9-C7-bWn"/>
                                     <constraint firstItem="Rg5-pp-32V" firstAttribute="width" secondItem="6kJ-lU-BgQ" secondAttribute="width" multiplier="0.65" id="A1m-nE-U4K"/>
                                     <constraint firstItem="6Ug-jV-ltr" firstAttribute="centerY" secondItem="zf2-Wz-IpG" secondAttribute="centerY" id="BZP-cf-zqY"/>
@@ -374,7 +375,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNt-9V-cHt">
                                         <rect key="frame" x="52.333333333333343" y="65.333333333333343" width="195" height="195.00000000000003"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sharebutton" translatesAutoresizingMaskIntoConstraints="NO" id="iX6-D3-Saa">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saveButton" translatesAutoresizingMaskIntoConstraints="NO" id="iX6-D3-Saa">
                                                 <rect key="frame" x="48.666666666666664" y="48.999999999999993" width="97.666666666666686" height="97.333333333333314"/>
                                             </imageView>
                                         </subviews>
@@ -477,7 +478,7 @@ Escolha onde deseja salvá-lo!</string>
     </scenes>
     <resources>
         <image name="cellSenha" width="239" height="46"/>
-        <image name="sharebutton" width="66" height="66"/>
+        <image name="saveButton" width="66" height="66"/>
         <image name="sino" width="86" height="106"/>
     </resources>
 </document>

@@ -11,3 +11,5 @@
 /* Class = "UIImageView"; accessibilityLabel = "Compartilhar imagem da campainha."; ObjectID = "tXl-bx-e9s"; */
 "tXl-bx-e9s.accessibilityLabel" = "Export doorbell's image.";
 
+/* Class = "UIButton"; normalTitle = "Ver histórico"; ObjectID = "m1j-tH-REs"; */
+"m1j-tH-REs.normalTitle" = "See visitors";

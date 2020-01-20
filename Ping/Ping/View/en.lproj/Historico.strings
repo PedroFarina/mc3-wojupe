@@ -1,0 +1,9 @@
+
+/* Class = "UINavigationItem"; title = "Histórico de Visitantes"; ObjectID = "HE0-UN-GEP"; */
+"HE0-UN-GEP.title" = "Visitors History";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "XNN-Mb-4j8"; */
+"XNN-Mb-4j8.text" = "Title";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "j7z-VC-iZW"; */
+"j7z-VC-iZW.text" = "Detail";

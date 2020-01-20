@@ -5,6 +5,7 @@
 //  Created by Pedro Giuliano Farina on 30/08/19.
 //  Copyright © 2019 Pedro Giuliano Farina. All rights reserved.
 //
+// swiftlint:disable type_body_length file_length
 
 import CloudKit
 import UIKit
@@ -70,6 +71,7 @@ public class DataController {
     }
 
     private var recordsToSave: [EntityObject] = []
+    private var recordsToDelete: [EntityObject] = []
 
     public var refreshing: Bool = false {
         didSet {
@@ -112,7 +114,6 @@ public class DataController {
         return _campainhas
     }
     // MARK: Acessores de campainhas
-
     // MARK: Criar campainha
     public func createCampainha(dono: Usuario, titulo: String, descricao: String) -> Campainha {
         let campainha: Campainha = Campainha(dono: dono)
@@ -124,8 +125,12 @@ public class DataController {
         dono.addCampainha(campainha)
         dono.addToGrupo(grupo)
 
-        recordsToSave.append(contentsOf: [dono, campainha])
-        saveData(database: publicDB)
+
+        CloudKitNotification.updateSubscription{ (id) in
+            dono.idSubscription.value = id
+            self.recordsToSave.append(contentsOf: [dono, campainha])
+            self.saveData(database: self.publicDB)
+        }
 
         return campainha
     }
@@ -175,7 +180,24 @@ public class DataController {
         if let index = _campainhas.firstIndex(of: campainha) {
             _campainhas.remove(at: index)
         }
-        deleteObject(database: publicDB, object: campainha, completionHandler: completionHandlerDefault)
+
+        guard let usuario = _usuario,
+            let grupo = campainha.grupo.value else {
+            return
+        }
+        if let index = usuario.campainhas.firstIndex(of: campainha) {
+            usuario.campainhas.remove(at: index)
+        }
+        if let index = usuario.grupos.firstIndex(of: grupo) {
+            usuario.grupos.remove(at: index)
+        }
+        CloudKitNotification.updateSubscription { (subsId) in
+            usuario.idSubscription.value = subsId
+            self.recordsToDelete.append(campainha)
+            self.recordsToSave.append(usuario)
+
+            self.saveData(database: self.publicDB)
+        }
     }
 
     // MARK: Acessores de Grupos de Campainha
@@ -193,6 +215,32 @@ public class DataController {
         saveData(database: publicDB)
 
         return grupo
+    }
+
+    // MARK: Histórico de campainhas
+    public func getVisitors(of campainha: Campainha, completionHandler: @escaping ([Visitante]) -> Void) {
+        guard let referenceValue = campainha.grupo.referenceValue else {
+            fatalError("Não havia um grupo")
+        }
+        let predicate = NSPredicate(format: "idGrupo == %@", referenceValue)
+        let query = CKQuery(recordType: "Notification", predicate: predicate)
+        self.fetch(query: query, completionHandler: { (answer) in
+            switch answer {
+            case  .fail(_, let description):
+                fatalError(description)
+            case  .successful(let results):
+                guard let results = results else {
+                    return
+                }
+                var visitantes: [Visitante] = []
+                for result in results {
+                    if let visitante = Visitante(record: result) {
+                        visitantes.append(visitante)
+                    }
+                }
+                completionHandler(visitantes)
+            }
+        })
     }
 
     // MARK: Salvar grupo de campainha
@@ -485,14 +533,20 @@ public class DataController {
 
     // MARK: Saving Objects
     private func saveData(database: CKDatabase) {
-        var records: [CKRecord] = []
+        var savingRecords: [CKRecord] = []
         for obj in recordsToSave {
-            records.append(obj.record)
+            savingRecords.append(obj.record)
         }
         recordsToSave = []
+        var deletingRecords: [CKRecord.ID] = []
+        for obj in recordsToDelete {
+            deletingRecords.append(obj.record.recordID)
+        }
+        recordsToDelete = []
+
         let operation: CKModifyRecordsOperation = CKModifyRecordsOperation(
-            recordsToSave: records, recordIDsToDelete: nil)
-        operation.savePolicy = .changedKeys
+            recordsToSave: savingRecords, recordIDsToDelete: deletingRecords)
+        operation.savePolicy = .allKeys
         database.add(operation)
     }
 
