@@ -10,11 +10,6 @@ import UserNotifications
 import UIKit
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
-    // When user allowed push notification and the app has gotten the device token
-    // (device token is a unique ID that Apple server use to determine which device to send push notification to)
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        CloudKitNotification.createSubscription()
-    }
 
     // This function will be called when the app receive notification
     func userNotificationCenter(
@@ -31,13 +26,14 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         completionHandler()
     }
 
-    func perparePushNotifications(for application: UIApplication) {
+    func preparePushNotifications(for application: UIApplication) {
         UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert]) { (permitted, error)
             in
             if let error = error {
                 fatalError(error.localizedDescription)
             }
             CloudKitNotification.permitted = permitted
+            CloudKitNotification.createSubscription { (_) in}
             DispatchQueue.main.async {
                 application.registerForRemoteNotifications()
             }

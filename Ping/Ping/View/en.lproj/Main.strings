@@ -9,5 +9,7 @@
 "hC7-KO-IeO.accessibilityLabel" = "The QR Code of your doorbell along with its description.";
 
 /* Class = "UIImageView"; accessibilityLabel = "Compartilhar imagem da campainha."; ObjectID = "tXl-bx-e9s"; */
-"tXl-bx-e9s.accessibilityLabel" = "Share doorbell's image.";
+"tXl-bx-e9s.accessibilityLabel" = "Export doorbell's image.";
 
+/* Class = "UIButton"; normalTitle = "Ver histórico"; ObjectID = "m1j-tH-REs"; */
+"m1j-tH-REs.normalTitle" = "See visitors";

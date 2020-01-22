@@ -25,13 +25,17 @@ public class CloudKitNotification {
         guard let delegate = UIApplication.shared.delegate as? AppDelegate else {
             fatalError("O app não tem um App Delegate.")
         }
-        if !permitted {
-            delegate.perparePushNotifications(for: UIApplication.shared)
-        }
+        delegate.preparePushNotifications(for: UIApplication.shared)
     }
 
-    public static func createSubscription() {
-        let predicate = NSPredicate(format: "TRUEPREDICATE")
+    public static func createSubscription(save: Bool = true, completionHandler: @escaping (String) -> Void) {
+        guard let usuario = DataController.shared().getUsuario else {
+            fatalError("Não existe um usuário para fazer a subscription")
+        }
+        if (usuario.idSubscription.value ?? "") != ""{
+            return
+        }
+        let predicate = NSPredicate(format: "idGrupo IN %@", usuario.grupos.recordReferences)
         let subscription = CKQuerySubscription(
             recordType: "Notification", predicate: predicate, options: .firesOnRecordCreation)
 
@@ -48,15 +52,58 @@ public class CloudKitNotification {
 
         subscription.notificationInfo = info
 
-        CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: { _, error in
+        CKContainer.default().publicCloudDatabase.save(subscription, completionHandler: { record, error in
             if let error = error {
                 fatalError(error.localizedDescription)
+            }
+            if let record = record {
+                if save {
+                    DataController.shared().editarUsuario(target: usuario, idSubscription: record.subscriptionID)
+                } else {
+                    completionHandler(record.subscriptionID)
+                }
             }
         })
     }
 
     public static func updateSubscription() {
+        deleteSubscription {
+            createSubscription{ (_) in
+            }
+        }
+    }
 
+    public static func updateSubscription(completionHandler: @escaping (String) -> Void) {
+        deleteSubscription(save: false) {
+            createSubscription(save: false) { (id) in
+                completionHandler(id)
+            }
+        }
+    }
+
+    public static func deleteSubscription(save: Bool = true, completionHandler: @escaping () -> Void) {
+        guard let usuario = DataController.shared().getUsuario else {
+            fatalError("Não existe um usuário para puxar a subscription")
+        }
+        guard let idSubscription = usuario.idSubscription.value, usuario.idSubscription.value != "" else {
+            completionHandler()
+            return
+        }
+        let publicDB = CKContainer.default().publicCloudDatabase
+        publicDB.fetch(withSubscriptionID: idSubscription) { (sub, error) in
+            if let error = error {
+                fatalError(error.localizedDescription)
+            }
+            if let sub = sub {
+                publicDB.delete(withSubscriptionID: sub.subscriptionID, completionHandler: { (_, error) in
+                    if let error = error {
+                        fatalError(error.localizedDescription)
+                    }
+                    DataController.shared().editarUsuario(target: usuario, idSubscription: "")
+                    completionHandler()
+                })
+            }
+        }
     }
 
     public static func resetBadge() {

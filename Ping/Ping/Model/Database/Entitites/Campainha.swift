@@ -15,7 +15,6 @@ public class Campainha: NSObject, EntityObject {
     public private(set) var grupo: ReferenceField<GrupoCampainha>
     public private(set) var titulo: DataProperty<String>
     public private(set) var descricao: DataProperty<String>
-    public private(set) var URL: DataProperty<String>
 
     public init(dono: Usuario, record: CKRecord) {
         self.record = record
@@ -23,7 +22,6 @@ public class Campainha: NSObject, EntityObject {
         self.grupo = ReferenceField(record: record, key: "Grupo", action: .none)
         self.titulo = DataProperty(record: record, key: "Titulo")
         self.descricao = DataProperty(record: record, key: "Descricao")
-        self.URL = DataProperty(record: record, key: "URL")
         super.init()
     }
 
@@ -40,16 +38,28 @@ public class Campainha: NSObject, EntityObject {
             self.grupo.value = grupo
             grupo.setCampainha(self)
         }
+        DataController.shared().editarGrupoCampainha(target: grupo, newCampainha: self, newUsuarios: nil)
     }
 
     public func removeGrupo() {
         if let grupo = grupo.value {
             self.grupo.value = nil
             grupo.removeCampainha()
+            DataController.shared().saveModifications(obj: [self, grupo])
         }
     }
 
     public func renewURL() {
         //Fazer requerimento e atribuir a URL
+        guard let grupo = grupo.value else {
+            return
+        }
+        DataController.shared().removeGrupoCampainha(target: grupo)
+        let grupoNovo = DataController.shared().createGrupoCampainha(owner: self)
+        setGrupo(grupoNovo)
+        if let usuario = dono.value {
+            usuario.addToGrupo(grupoNovo)
+        }
+        CloudKitNotification.updateSubscription()
     }
 }

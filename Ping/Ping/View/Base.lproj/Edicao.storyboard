@@ -1,39 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CO2-8X-1ch">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CO2-8X-1ch">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Editando-->
         <scene sceneID="Fh4-fJ-EcV">
             <objects>
-                <tableViewController id="I43-w6-9zt" customClass="EdicaoTableViewController" customModule="Ping" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="I43-w6-9zt" customClass="EdicaoTableViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Wgn-Rq-ODF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Título" id="TeG-UL-2TU">
+                            <tableViewSection headerTitle="Título" footerTitle="Se nenhum título for dado, a campainha terá o título de Porta" id="TeG-UL-2TU">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="SnC-1g-czh" customClass="TextTableViewCell" customModule="Ping" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="SnC-1g-czh" customClass="TextTableViewCell" customModule="QR_Bell" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SnC-1g-czh" id="PSq-G2-aOW">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hZJ-b4-Pd5">
-                                                    <rect key="frame" x="12" y="0.0" width="390" height="43.5"/>
+                                                    <rect key="frame" x="12" y="0.0" width="390" height="17"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Este campo será usado para  te notificar qual campainha foi tocada. Toque duas vezes para editar." label="Nome da campainha na notificação. Campo de texto."/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="43.5" id="1FD-VO-flm"/>
                                                     </constraints>
-                                                    <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                 </textField>
@@ -54,16 +51,16 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Descrição" footerTitle="Este texto será impresso abaixo do código QR." id="IRq-50-r8v">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="7q3-sf-WKY" customClass="TextViewTableViewCell" customModule="Ping" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="163" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="7q3-sf-WKY" customClass="TextViewTableViewCell" customModule="QR_Bell" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="175" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7q3-sf-WKY" id="tFw-QW-Jez">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="B4T-35-LQc">
-                                                    <rect key="frame" x="12" y="0.0" width="390" height="87.5"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <rect key="frame" x="12" y="0.0" width="390" height="87"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Esta descrição ficará abaixo do código QR quando impresso. Toque duas vezes para editar." label="Descrição impressa junto do código QR da campainha. Campo de texto."/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="87" id="X9W-hR-qFn"/>
@@ -89,15 +86,15 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Ações QR" footerTitle="As ações QR não podem ser desfeitas." id="DMX-ap-bl4">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="cTa-P7-eCx" customClass="ButtonTableViewCell" customModule="Ping" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="282.5" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" id="cTa-P7-eCx" customClass="ButtonTableViewCell" customModule="QR_Bell" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="294.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cTa-P7-eCx" id="VVe-DF-tdh">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Renovar QR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icz-cc-66D">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="19.5"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Será gerado um código QR novo para esta campainha. Toque duas vezes para renovar." label="Renovar código QR. Será necessário imprimir a campainha novamente.">
                                                         <accessibilityTraits key="traits" button="YES" staticText="YES"/>
                                                     </accessibility>
@@ -116,19 +113,16 @@
                                                 <constraint firstItem="icz-cc-66D" firstAttribute="centerX" secondItem="VVe-DF-tdh" secondAttribute="centerX" id="r2B-rD-0Pu"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="lblBtn" destination="icz-cc-66D" id="iS4-XY-sD7"/>
-                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="KFg-AD-bb1" customClass="ButtonTableViewCell" customModule="Ping" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="326.5" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" id="KFg-AD-bb1" customClass="ButtonTableViewCell" customModule="QR_Bell" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="338.5" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KFg-AD-bb1" id="vw0-0a-ivs">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Apagar QR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9gb-xQ-VS5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="19.5"/>
                                                     <accessibility key="accessibilityConfiguration" hint="Uma vez apagado, a campainha fica desabilitada até a criação de um novo código QR. Toque duas vezes para apagar." label="Apagar código QR. Esta ação desabilitará a campainha.">
                                                         <accessibilityTraits key="traits" button="YES" staticText="YES"/>
                                                     </accessibility>
@@ -147,9 +141,6 @@
                                                 <constraint firstItem="9gb-xQ-VS5" firstAttribute="centerY" secondItem="vw0-0a-ivs" secondAttribute="centerY" id="jKe-Rc-2Hg"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="lblBtn" destination="9gb-xQ-VS5" id="5vB-s5-gqZ"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -165,16 +156,14 @@
                                 <action selector="cancelTap:" destination="I43-w6-9zt" id="Nmj-DE-wGU"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Zyk-Or-9sh">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="Zyk-Or-9sh">
                             <connections>
                                 <action selector="saveTap:" destination="I43-w6-9zt" id="oOO-hr-cJx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cellApagarButton" destination="KFg-AD-bb1" id="Twp-bh-cag"/>
                         <outlet property="cellDescricao" destination="7q3-sf-WKY" id="3p0-MP-90x"/>
-                        <outlet property="cellRenovarButton" destination="cTa-P7-eCx" id="UYG-Nc-43X"/>
                         <outlet property="cellTitulo" destination="SnC-1g-czh" id="ZAA-T9-ub7"/>
                     </connections>
                 </tableViewController>
@@ -190,9 +179,8 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="iVh-bV-x80">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                         <textAttributes key="titleTextAttributes">
-                            <color key="textColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" red="0.61176470589999998" green="0.32156862749999998" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -205,5 +193,5 @@
             <point key="canvasLocation" x="-910.14492753623199" y="-26.116071428571427"/>
         </scene>
     </scenes>
-    <color key="tintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+    <color key="tintColor" red="0.2156862745" green="0.50196078430000002" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
 </document>

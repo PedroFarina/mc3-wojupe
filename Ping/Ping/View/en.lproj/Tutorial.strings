@@ -12,7 +12,7 @@
 "9Ki-mo-OVg.accessibilityLabel" = "A silent ring.";
 
 /* Class = "UIView"; accessibilityLabel = "A share action."; ObjectID = "JNt-9V-cHt"; */
-"JNt-9V-cHt.accessibilityLabel" = "A share action.";
+"JNt-9V-cHt.accessibilityLabel" = "An export action.";
 
 /* Class = "UILabel"; text = "O Modo Silencioso serve para aquele momento em que não deseja ser incomodado. Porém, não esqueça de ativá-la posteriormente para receber seus avisos de campainha!"; ObjectID = "ObM-Tv-BUu"; */
 "ObM-Tv-BUu.text" = "The silent mode is for those moments you wish not to be disturbed. So don't forget to deactivate it once you're done.";
@@ -30,7 +30,7 @@
 "bc1-Rg-8Sy.text" = "With this field active, as soon as the visitor scan the QR he'll have to enter your password to be able to notify you.";
 
 /* Class = "UILabel"; text = "Compartilhar"; ObjectID = "dAm-Oh-DAL"; */
-"dAm-Oh-DAL.text" = "Share";
+"dAm-Oh-DAL.text" = "Export";
 
 /* Class = "UILabel"; text = "Introdução"; ObjectID = "dOD-ic-l1g"; */
 "dOD-ic-l1g.text" = "Introduction";

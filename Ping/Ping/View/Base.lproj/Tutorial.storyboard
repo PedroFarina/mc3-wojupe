@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tzA-PC-pex">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tzA-PC-pex">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -43,16 +41,16 @@
         <!--Custom Page View Controller-->
         <scene sceneID="5es-qN-H47">
             <objects>
-                <pageViewController storyboardIdentifier="CustomPageViewController" autoresizesArchivedViewToFullSize="NO" providesPresentationContextTransitionStyle="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" doubleSided="YES" id="Cez-iD-JN3" customClass="CustomPageViewController" customModule="Ping" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="CustomPageViewController" autoresizesArchivedViewToFullSize="NO" providesPresentationContextTransitionStyle="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Cez-iD-JN3" customClass="CustomPageViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <outlet property="pgControl" destination="vH2-wA-mLw" id="ZH7-eO-QHR"/>
                     </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6v-5H-afu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" id="vH2-wA-mLw">
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="vH2-wA-mLw">
                     <rect key="frame" x="0.0" y="0.0" width="39" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="pageIndicatorTintColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
+                    <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <color key="currentPageIndicatorTintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
                     <connections>
                         <action selector="pageChanged:" destination="Cez-iD-JN3" eventType="valueChanged" id="o4o-OO-1SJ"/>
@@ -64,7 +62,7 @@
         <!--Introducao-->
         <scene sceneID="Nn7-mW-oAC">
             <objects>
-                <viewController storyboardIdentifier="Introducao" title="Introducao" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7Ec-2k-Uz4" customClass="IntroducaoViewController" customModule="Ping" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Introducao" title="Introducao" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7Ec-2k-Uz4" customClass="IntroducaoViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GHD-FJ-dFW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -141,7 +139,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="8wa-1e-JW5" firstAttribute="width" secondItem="GHD-FJ-dFW" secondAttribute="width" multiplier="0.8" id="9Fg-bI-iO7"/>
                             <constraint firstItem="8wa-1e-JW5" firstAttribute="centerX" secondItem="hVI-Fs-4bY" secondAttribute="centerX" id="Vdf-WX-kVK"/>
@@ -162,7 +160,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
         <!--Protecao View Controller-->
         <scene sceneID="Mx2-d6-NmO">
             <objects>
-                <viewController storyboardIdentifier="Protecao" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZiT-2r-45t" customClass="ProtecaoViewController" customModule="Ping" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Protecao" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZiT-2r-45t" customClass="ProtecaoViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n8u-Oe-cCg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -207,7 +205,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                         </variation>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellSenha" translatesAutoresizingMaskIntoConstraints="NO" id="zf2-Wz-IpG">
-                                        <rect key="frame" x="62.000000000000014" y="195.33333333333334" width="175.66666666666674" height="33"/>
+                                        <rect key="frame" x="62.000000000000014" y="195.33333333333334" width="175.66666666666669" height="33"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ug-jV-ltr">
                                         <rect key="frame" x="73.333333333333343" y="201.33333333333334" width="48" height="21"/>
@@ -225,6 +223,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                 <color key="backgroundColor" red="0.96246176959999996" green="0.76471585040000001" blue="0.4626800418" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="Rg5-pp-32V" firstAttribute="centerX" secondItem="6kJ-lU-BgQ" secondAttribute="centerX" id="1Ao-4X-4A6"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6Ug-jV-ltr" secondAttribute="trailing" constant="20" symbolic="YES" id="383-9d-7Mu"/>
                                     <constraint firstItem="Rg5-pp-32V" firstAttribute="centerY" secondItem="6kJ-lU-BgQ" secondAttribute="centerY" multiplier="0.75" id="4I9-C7-bWn"/>
                                     <constraint firstItem="Rg5-pp-32V" firstAttribute="width" secondItem="6kJ-lU-BgQ" secondAttribute="width" multiplier="0.65" id="A1m-nE-U4K"/>
                                     <constraint firstItem="6Ug-jV-ltr" firstAttribute="centerY" secondItem="zf2-Wz-IpG" secondAttribute="centerY" id="BZP-cf-zqY"/>
@@ -255,7 +254,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6kJ-lU-BgQ" firstAttribute="width" secondItem="n8u-Oe-cCg" secondAttribute="width" multiplier="0.8" id="3GW-vi-7ED"/>
                             <constraint firstItem="6kJ-lU-BgQ" firstAttribute="centerX" secondItem="nxx-p8-EW1" secondAttribute="centerX" id="d6f-Q5-TQ8"/>
@@ -347,7 +346,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                 </variation>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="0Xc-05-fiX" firstAttribute="firstBaseline" secondItem="9Ki-mo-OVg" secondAttribute="firstBaseline" multiplier="0.6" id="07Y-Xx-EIh"/>
                             <constraint firstItem="dPN-pg-AHP" firstAttribute="centerX" secondItem="brt-zU-poX" secondAttribute="centerX" id="FqV-a9-OFp"/>
@@ -365,7 +364,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
         <!--Compartilhar View Controller-->
         <scene sceneID="sdx-vn-Fgf">
             <objects>
-                <viewController storyboardIdentifier="Compartilhar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lPZ-xA-zXT" customClass="CompartilharViewController" customModule="Ping" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Compartilhar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lPZ-xA-zXT" customClass="CompartilharViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nc6-bo-T7g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -376,7 +375,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNt-9V-cHt">
                                         <rect key="frame" x="52.333333333333343" y="65.333333333333343" width="195" height="195.00000000000003"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sharebutton" translatesAutoresizingMaskIntoConstraints="NO" id="iX6-D3-Saa">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saveButton" translatesAutoresizingMaskIntoConstraints="NO" id="iX6-D3-Saa">
                                                 <rect key="frame" x="48.666666666666664" y="48.999999999999993" width="97.666666666666686" height="97.333333333333314"/>
                                             </imageView>
                                         </subviews>
@@ -427,8 +426,8 @@ Escolha onde deseja salvá-lo!</string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compartilhar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAm-Oh-DAL">
-                                <rect key="frame" x="112" y="208.33333333333334" width="151" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exportar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAm-Oh-DAL">
+                                <rect key="frame" x="138.33333333333334" y="208.33333333333334" width="98.333333333333343" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -437,7 +436,7 @@ Escolha onde deseja salvá-lo!</string>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRk-ft-esk">
-                                <rect key="frame" x="152.66666666666666" y="675" width="70" height="33"/>
+                                <rect key="frame" x="152.66666666666666" y="636.33333333333337" width="70" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Começar">
                                     <color key="titleColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
@@ -451,9 +450,9 @@ Escolha onde deseja salvá-lo!</string>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="zRk-ft-esk" firstAttribute="top" secondItem="j20-Eo-5mh" secondAttribute="bottom" constant="46.666666666666629" id="8oc-s2-onr"/>
+                            <constraint firstItem="zRk-ft-esk" firstAttribute="top" secondItem="j20-Eo-5mh" secondAttribute="bottom" constant="8" symbolic="YES" id="8oc-s2-onr"/>
                             <constraint firstItem="dAm-Oh-DAL" firstAttribute="centerX" secondItem="j20-Eo-5mh" secondAttribute="centerX" id="Cfu-Mo-KAr"/>
                             <constraint firstItem="j20-Eo-5mh" firstAttribute="centerX" secondItem="THg-Gb-T1T" secondAttribute="centerX" id="CjZ-KS-xfd"/>
                             <constraint firstItem="j20-Eo-5mh" firstAttribute="width" secondItem="nc6-bo-T7g" secondAttribute="width" multiplier="0.8" id="EUg-mC-jJD"/>
@@ -479,7 +478,7 @@ Escolha onde deseja salvá-lo!</string>
     </scenes>
     <resources>
         <image name="cellSenha" width="239" height="46"/>
-        <image name="sharebutton" width="66" height="66"/>
+        <image name="saveButton" width="66" height="66"/>
         <image name="sino" width="86" height="106"/>
     </resources>
 </document>
