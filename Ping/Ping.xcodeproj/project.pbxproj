@@ -128,7 +128,6 @@
 		02942AD6232AD2DE00A4B720 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Edicao.strings; sourceTree = "<group>"; };
 		02942AD8232AD2DF00A4B720 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Edicao.strings"; sourceTree = "<group>"; };
 		02942ADC232AD5F300A4B720 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Tutorial.strings; sourceTree = "<group>"; };
-		02942ADE232AD6B600A4B720 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Tutorial.strings"; sourceTree = "<group>"; };
 		02942AE0232AE4EE00A4B720 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		02942AE2232AE4F000A4B720 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		02B2F32E2316E9DE00140BE8 /* QR Bell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "QR Bell.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +146,7 @@
 		02CEADC923D89A7700895851 /* TitleDetailDownDisclosureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDetailDownDisclosureTableViewCell.swift; sourceTree = "<group>"; };
 		02CEADCA23D89A7700895851 /* TitleDetailDownDisclosureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleDetailDownDisclosureTableViewCell.xib; sourceTree = "<group>"; };
 		02CEADCD23D8A0FD00895851 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		02CEADD023DCD29700895851 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Tutorial.strings"; sourceTree = "<group>"; };
 		02E42454231EDBDE000F4C8C /* EdicaoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdicaoTableViewController.swift; sourceTree = "<group>"; };
 		02E42456231EDC11000F4C8C /* TextViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewTableViewCell.swift; sourceTree = "<group>"; };
 		02E4245D231EDED0000F4C8C /* CIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIImageExtension.swift; sourceTree = "<group>"; };
@@ -620,7 +620,7 @@
 			children = (
 				026B523B232973A7001D8D27 /* Base */,
 				02942ADC232AD5F300A4B720 /* en */,
-				02942ADE232AD6B600A4B720 /* pt-BR */,
+				02CEADD023DCD29700895851 /* pt-BR */,
 			);
 			name = Tutorial.storyboard;
 			sourceTree = "<group>";
