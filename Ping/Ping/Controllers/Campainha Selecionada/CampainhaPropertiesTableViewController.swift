@@ -5,9 +5,10 @@
 //  Created by Wolfgang Walder on 30/08/19.
 //  Copyright © 2019 Pedro Giuliano Farina. All rights reserved.
 //
-// swiftlint:disable function_body_length
+// swiftlint:disable function_body_length identifier_name
 
 import UIKit
+import Foundation
 
 class CampainhaPropertiesTableViewController: UITableViewController {
     public var heightConstraint: NSLayoutConstraint?
@@ -46,13 +47,29 @@ class CampainhaPropertiesTableViewController: UITableViewController {
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? TitleDetailDownDisclosureTableViewCell {
             cell.tap()
+            if let usuarios = usuarios,
+                let const = heightConstraint {
+                closed = !closed
+                var pathes: [IndexPath] = []
+                for i in 3 ..< usuarios.count + 3 {
+                    let index = IndexPath(row: i, section: 0)
+                    tableView.cellForRow(at: index)?.isHidden = closed
+                    pathes.append(index)
+                }
+                tableView.reloadRows(at: pathes, with: .bottom)
+                const.constant += CGFloat(pathes.count * 44 * (closed ? -1 : 1))
+            }
             tableView.deselectRow(at: indexPath, animated: true)
         } else {
             tableView.deselectRow(at: indexPath, animated: false)
         }
     }
 
-    var totalHeight: CGFloat = 0
+    var closed: Bool = true
+    var height: [CGFloat] = []
+    var totalHeight: CGFloat {
+        return height.reduce(0, +)
+    }
     public override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let amount: CGFloat
         if let cell = tableView.cellForRow(at: indexPath) {
@@ -62,13 +79,13 @@ class CampainhaPropertiesTableViewController: UITableViewController {
                 amount = 44
             }
         } else {
-            if !senhaEnabled && indexPath.row == 1 {
+            if (!senhaEnabled && indexPath.row == 1) || (indexPath.row > 2 && closed) {
                 amount = 0
             } else {
                 amount = 44
             }
         }
-        totalHeight += amount
+        height[indexPath.row] = amount
         return amount
     }
 
@@ -79,7 +96,6 @@ class CampainhaPropertiesTableViewController: UITableViewController {
             let lastVisibleIndexPath = tableView.indexPathsForVisibleRows?.last {
             if indexPath == lastVisibleIndexPath {
                 heightConstraint?.constant = totalHeight
-                totalHeight = 0
                 firstLoad = false
             }
         }
@@ -90,10 +106,14 @@ class CampainhaPropertiesTableViewController: UITableViewController {
     }
 
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let usuarios = usuarios else {
-            return 3
+        let value: Int
+        if let usuarios = usuarios {
+            value = usuarios.count - 1 + 4
+        } else {
+            value = 4
         }
-        return 3
+        height = Array(repeating: 0, count: value)
+        return value
     }
 
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -158,6 +178,11 @@ class CampainhaPropertiesTableViewController: UITableViewController {
                     " pessoas".localized()
                 return cell
             }
+        case 3:
+            let cell = UITableViewCell()
+            cell.textLabel?.textColor = #colorLiteral(red: 0.2156862745, green: 0.5019607843, blue: 0.5607843137, alpha: 1)
+            cell.textLabel?.text = "Adicionar pessoa"
+            return cell
         default:
             return UITableViewCell()
         }
