@@ -14,8 +14,10 @@ UIPageViewControllerDataSource, UIScrollViewDelegate {
     @IBOutlet weak var pgControl: UIPageControl!
     lazy var orderedViewControllers: [UIViewController] = {
         return [self.newVc(viewController: "Introducao"),
+                self.newVc(viewController: "Campainhas"),
                 self.newVc(viewController: "Protecao"),
-                self.newVc(viewController: "Compartilhar")]
+                self.newVc(viewController: "Silencioso"),
+                self.newVc(viewController: "Exportar")]
     }()
     var ultimoIndice: Int = 0
     @IBAction func pageChanged(_ sender: Any) {
