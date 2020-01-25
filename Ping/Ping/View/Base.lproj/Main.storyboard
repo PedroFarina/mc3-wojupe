@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -33,7 +33,7 @@
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <segue destination="Xcx-Hn-e1I" kind="embed" id="qft-aa-NPe"/>
+                                    <segue destination="Ow9-VL-9GL" kind="embed" id="nhW-Qn-acT"/>
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hC7-KO-IeO">
@@ -164,6 +164,7 @@
                     <connections>
                         <outlet property="imgQR" destination="TXw-QN-PsM" id="EG0-GG-I7Y"/>
                         <outlet property="lblDescricao" destination="g9b-gq-CbN" id="VMb-p7-mMO"/>
+                        <outlet property="optionsHeightConstraint" destination="R6S-2e-DwV" id="7Ec-wv-fev"/>
                         <outlet property="pageView" destination="hC7-KO-IeO" id="agp-hq-KOF"/>
                     </connections>
                 </viewController>
@@ -175,6 +176,24 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="946.37681159420299" y="137.94642857142856"/>
+        </scene>
+        <!--Campainha Properties Table View Controller-->
+        <scene sceneID="uh2-bj-4lp">
+            <objects>
+                <tableViewController id="Ow9-VL-9GL" customClass="CampainhaPropertiesTableViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="d5s-QM-GuC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="132"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="Ow9-VL-9GL" id="MZv-8o-iWa"/>
+                            <outlet property="delegate" destination="Ow9-VL-9GL" id="vnl-3L-I00"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GXV-34-OQ6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="946" y="648"/>
         </scene>
         <!--Edicao-->
         <scene sceneID="qUQ-eh-Key">
@@ -193,24 +212,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihV-GU-9hB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1588" y="205"/>
-        </scene>
-        <!--Campainha Properties Table View Controller-->
-        <scene sceneID="rjv-Eq-9gT">
-            <objects>
-                <tableViewController id="Xcx-Hn-e1I" customClass="CampainhaPropertiesTableViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1ZP-pt-8r6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="132"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <connections>
-                            <outlet property="dataSource" destination="Xcx-Hn-e1I" id="mnU-ez-CM5"/>
-                            <outlet property="delegate" destination="Xcx-Hn-e1I" id="gdp-84-ZCg"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3nV-ES-06T" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="948" y="792"/>
         </scene>
     </scenes>
     <resources>

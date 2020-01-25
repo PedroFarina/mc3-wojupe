@@ -46,6 +46,9 @@
 		02B2F35F23171D0200140BE8 /* ButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B2F35E23171D0200140BE8 /* ButtonTableViewCell.xib */; };
 		02B2F36223171FDD00140BE8 /* TextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B2F36023171FDD00140BE8 /* TextTableViewCell.swift */; };
 		02B2F36323171FDD00140BE8 /* TextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B2F36123171FDD00140BE8 /* TextTableViewCell.xib */; };
+		02CEADCB23D89A7700895851 /* TitleDetailDownDisclosureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CEADC923D89A7700895851 /* TitleDetailDownDisclosureTableViewCell.swift */; };
+		02CEADCC23D89A7700895851 /* TitleDetailDownDisclosureTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CEADCA23D89A7700895851 /* TitleDetailDownDisclosureTableViewCell.xib */; };
+		02CEADCE23D8A0FD00895851 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CEADCD23D8A0FD00895851 /* UIImageExtension.swift */; };
 		02E42455231EDBDE000F4C8C /* EdicaoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E42454231EDBDE000F4C8C /* EdicaoTableViewController.swift */; };
 		02E42457231EDC11000F4C8C /* TextViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E42456231EDC11000F4C8C /* TextViewTableViewCell.swift */; };
 		02E4245E231EDED0000F4C8C /* CIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4245D231EDED0000F4C8C /* CIImageExtension.swift */; };
@@ -55,8 +58,6 @@
 		02E42469231F0A49000F4C8C /* DataFetchAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E42468231F0A49000F4C8C /* DataFetchAnswer.swift */; };
 		02E4246B231F113C000F4C8C /* DataProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4246A231F113C000F4C8C /* DataProperty.swift */; };
 		79372433231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79372432231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift */; };
-		79372435231D8E3C00665B2D /* CampainhaPropertiesTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79372434231D8E3C00665B2D /* CampainhaPropertiesTableViewDelegate.swift */; };
-		79372437231D913F00665B2D /* CampainhaPropertiesTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79372436231D913F00665B2D /* CampainhaPropertiesTableViewDataSource.swift */; };
 		79372439231D9ECB00665B2D /* TextWithTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79372438231D9ECB00665B2D /* TextWithTitleTableViewCell.swift */; };
 		7937243B231D9F0400665B2D /* TextWithTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7937243A231D9F0400665B2D /* TextWithTitleTableViewCell.xib */; };
 		7937243D231DA82A00665B2D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7937243C231DA82A00665B2D /* Settings.swift */; };
@@ -143,6 +144,9 @@
 		02B2F35E23171D0200140BE8 /* ButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonTableViewCell.xib; sourceTree = "<group>"; };
 		02B2F36023171FDD00140BE8 /* TextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTableViewCell.swift; sourceTree = "<group>"; };
 		02B2F36123171FDD00140BE8 /* TextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextTableViewCell.xib; sourceTree = "<group>"; };
+		02CEADC923D89A7700895851 /* TitleDetailDownDisclosureTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleDetailDownDisclosureTableViewCell.swift; sourceTree = "<group>"; };
+		02CEADCA23D89A7700895851 /* TitleDetailDownDisclosureTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleDetailDownDisclosureTableViewCell.xib; sourceTree = "<group>"; };
+		02CEADCD23D8A0FD00895851 /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		02E42454231EDBDE000F4C8C /* EdicaoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EdicaoTableViewController.swift; sourceTree = "<group>"; };
 		02E42456231EDC11000F4C8C /* TextViewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewTableViewCell.swift; sourceTree = "<group>"; };
 		02E4245D231EDED0000F4C8C /* CIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CIImageExtension.swift; sourceTree = "<group>"; };
@@ -152,8 +156,6 @@
 		02E42468231F0A49000F4C8C /* DataFetchAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchAnswer.swift; sourceTree = "<group>"; };
 		02E4246A231F113C000F4C8C /* DataProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProperty.swift; sourceTree = "<group>"; };
 		79372432231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampainhaPropertiesTableViewController.swift; sourceTree = "<group>"; };
-		79372434231D8E3C00665B2D /* CampainhaPropertiesTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampainhaPropertiesTableViewDelegate.swift; sourceTree = "<group>"; };
-		79372436231D913F00665B2D /* CampainhaPropertiesTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampainhaPropertiesTableViewDataSource.swift; sourceTree = "<group>"; };
 		79372438231D9ECB00665B2D /* TextWithTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWithTitleTableViewCell.swift; sourceTree = "<group>"; };
 		7937243A231D9F0400665B2D /* TextWithTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextWithTitleTableViewCell.xib; sourceTree = "<group>"; };
 		7937243C231DA82A00665B2D /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -231,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				79372432231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift */,
-				79372434231D8E3C00665B2D /* CampainhaPropertiesTableViewDelegate.swift */,
 				02B2F3332316E9DE00140BE8 /* CampainhaViewController.swift */,
 			);
 			path = "Campainha Selecionada";
@@ -329,6 +330,8 @@
 				79372438231D9ECB00665B2D /* TextWithTitleTableViewCell.swift */,
 				7937243A231D9F0400665B2D /* TextWithTitleTableViewCell.xib */,
 				02E42456231EDC11000F4C8C /* TextViewTableViewCell.swift */,
+				02CEADCA23D89A7700895851 /* TitleDetailDownDisclosureTableViewCell.xib */,
+				02CEADC923D89A7700895851 /* TitleDetailDownDisclosureTableViewCell.swift */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 				02E4245D231EDED0000F4C8C /* CIImageExtension.swift */,
 				026B524323298CD5001D8D27 /* StringInImageExtension.swift */,
 				026B5245232991D5001D8D27 /* ViewToPDFExtension.swift */,
+				02CEADCD23D8A0FD00895851 /* UIImageExtension.swift */,
 			);
 			path = "Swift Extensions";
 			sourceTree = "<group>";
@@ -373,7 +377,6 @@
 		02E42461231EDF55000F4C8C /* Data Sources */ = {
 			isa = PBXGroup;
 			children = (
-				79372436231D913F00665B2D /* CampainhaPropertiesTableViewDataSource.swift */,
 				02E42462231EE078000F4C8C /* QRCodeGenerator.swift */,
 			);
 			path = "Data Sources";
@@ -489,6 +492,7 @@
 				025ECB42231ED5640009E29C /* Edicao.storyboard in Resources */,
 				02B2F36323171FDD00140BE8 /* TextTableViewCell.xib in Resources */,
 				026B523A232973A7001D8D27 /* Tutorial.storyboard in Resources */,
+				02CEADCC23D89A7700895851 /* TitleDetailDownDisclosureTableViewCell.xib in Resources */,
 				02B2F3372316E9DE00140BE8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,14 +540,12 @@
 				02E42463231EE078000F4C8C /* QRCodeGenerator.swift in Sources */,
 				7937243D231DA82A00665B2D /* Settings.swift in Sources */,
 				025BD01123D2382C00A6510A /* Visitante.swift in Sources */,
-				79372435231D8E3C00665B2D /* CampainhaPropertiesTableViewDelegate.swift in Sources */,
 				02E42455231EDBDE000F4C8C /* EdicaoTableViewController.swift in Sources */,
 				02E42467231EF53E000F4C8C /* Usuario.swift in Sources */,
 				02E42457231EDC11000F4C8C /* TextViewTableViewCell.swift in Sources */,
 				026B524423298CD5001D8D27 /* StringInImageExtension.swift in Sources */,
 				024B1F602319B01D00E3C527 /* DataController.swift in Sources */,
 				02E4246B231F113C000F4C8C /* DataProperty.swift in Sources */,
-				79372437231D913F00665B2D /* CampainhaPropertiesTableViewDataSource.swift in Sources */,
 				79372439231D9ECB00665B2D /* TextWithTitleTableViewCell.swift in Sources */,
 				02E42465231EF50F000F4C8C /* Campainha.swift in Sources */,
 				02B2F35D23171CE700140BE8 /* ButtonTableViewCell.swift in Sources */,
@@ -556,7 +558,9 @@
 				022621FB2322C6DE0055A8FA /* GrupoCampainha.swift in Sources */,
 				026B5246232991D5001D8D27 /* ViewToPDFExtension.swift in Sources */,
 				026B5235232849BD001D8D27 /* CustomPageViewController.swift in Sources */,
+				02CEADCE23D8A0FD00895851 /* UIImageExtension.swift in Sources */,
 				026B522023283382001D8D27 /* AppDelegateExtension.swift in Sources */,
+				02CEADCB23D89A7700895851 /* TitleDetailDownDisclosureTableViewCell.swift in Sources */,
 				79372433231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,6 +11,7 @@ import PDFKit
 
 public class CampainhaViewController: UIViewController {
 
+    @IBOutlet weak var optionsHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var pageView: UIView!
     @IBOutlet weak var lblDescricao: UILabel!
     @IBOutlet weak var imgQR: UIImageView!
@@ -21,12 +22,6 @@ public class CampainhaViewController: UIViewController {
         if !CloudKitNotification.permitted {
             CloudKitNotification.askPermission()
         }
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
-        view.addGestureRecognizer(tap)
-    }
-
-    @objc private func dismissKeyboard() {
-        view.endEditing(true)
     }
 
     override public func viewWillAppear(_ animated: Bool) {
@@ -56,6 +51,7 @@ public class CampainhaViewController: UIViewController {
         } else if let tableController = segue.destination
             as? CampainhaPropertiesTableViewController {
             tableController.campainha = self.campainha
+            tableController.heightConstraint = optionsHeightConstraint
         }
     }
 
