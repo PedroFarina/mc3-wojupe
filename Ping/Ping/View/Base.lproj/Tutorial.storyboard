@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tzA-PC-pex">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tzA-PC-pex">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +18,7 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qe8-4u-iFT">
                                 <rect key="frame" x="0.0" y="-3" width="375" height="828"/>
-                                <color key="backgroundColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <segue destination="Cez-iD-JN3" kind="embed" id="rDA-ol-PX4"/>
                                 </connections>
@@ -112,7 +112,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                         </variation>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.96246176958084106" green="0.76471585035324097" blue="0.46268004179000854" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.70196078431372544" green="0.79607843137254897" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="Thl-Pn-rgl" firstAttribute="centerY" secondItem="V7R-c1-bbU" secondAttribute="centerY" multiplier="2.1" id="3Z8-ON-roj"/>
                                     <constraint firstItem="V7R-c1-bbU" firstAttribute="width" secondItem="8wa-1e-JW5" secondAttribute="width" multiplier="0.65" id="780-8m-t2U"/>
@@ -155,7 +155,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ewf-07-ZIn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-30" y="113"/>
+            <point key="canvasLocation" x="-7" y="106"/>
         </scene>
         <!--Protecao View Controller-->
         <scene sceneID="Mx2-d6-NmO">
@@ -176,7 +176,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                                 <accessibility key="accessibilityConfiguration">
                                                     <bool key="isElement" value="NO"/>
                                                 </accessibility>
-                                                <color key="onTintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="onTintColor" red="0.21568627450980393" green="0.50196078431372548" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </switch>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -220,7 +220,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                         </variation>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.96246176959999996" green="0.76471585040000001" blue="0.4626800418" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.70196078431372544" green="0.79607843137254897" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="Rg5-pp-32V" firstAttribute="centerX" secondItem="6kJ-lU-BgQ" secondAttribute="centerX" id="1Ao-4X-4A6"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6Ug-jV-ltr" secondAttribute="trailing" constant="20" symbolic="YES" id="383-9d-7Mu"/>
@@ -270,7 +270,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UhD-us-Wmn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="648" y="113"/>
+            <point key="canvasLocation" x="1380" y="106"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nda-Uj-pGa">
@@ -319,7 +319,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                         </variation>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.96246176959999996" green="0.76471585040000001" blue="0.4626800418" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.70196078431372544" green="0.79607843137254897" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="ObM-Tv-BUu" firstAttribute="width" secondItem="dPN-pg-AHP" secondAttribute="width" multiplier="0.8" id="ETq-ml-cWg"/>
                                     <constraint firstItem="ObM-Tv-BUu" firstAttribute="height" relation="lessThanOrEqual" secondItem="dPN-pg-AHP" secondAttribute="height" multiplier="0.4" id="Fa7-oD-kNZ"/>
@@ -359,12 +359,12 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FA9-d9-fdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1300" y="112"/>
+            <point key="canvasLocation" x="2087" y="106"/>
         </scene>
         <!--Compartilhar View Controller-->
         <scene sceneID="sdx-vn-Fgf">
             <objects>
-                <viewController storyboardIdentifier="Compartilhar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lPZ-xA-zXT" customClass="CompartilharViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Exportar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lPZ-xA-zXT" customClass="CompartilharViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nc6-bo-T7g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -409,7 +409,7 @@ Escolha onde deseja salvá-lo!</string>
                                         </variation>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.96246176959999996" green="0.76471585040000001" blue="0.4626800418" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.70196078431372544" green="0.79607843137254897" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="j20-Eo-5mh" secondAttribute="height" multiplier="169:245" id="DB4-7c-Si2"/>
                                     <constraint firstItem="qF3-vo-Ob8" firstAttribute="width" secondItem="j20-Eo-5mh" secondAttribute="width" multiplier="0.8" id="HV0-HC-oeQ"/>
@@ -439,7 +439,7 @@ Escolha onde deseja salvá-lo!</string>
                                 <rect key="frame" x="152.66666666666666" y="636.33333333333337" width="70" height="33"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <state key="normal" title="Começar">
-                                    <color key="titleColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="titleColor" red="0.21568627450980393" green="0.50196078431372548" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" type="system" pointSize="50"/>
@@ -465,7 +465,7 @@ Escolha onde deseja salvá-lo!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g0J-Uz-e8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1975" y="112"/>
+            <point key="canvasLocation" x="2785" y="106"/>
         </scene>
         <!--Load-->
         <scene sceneID="lAK-bA-xwK">
@@ -473,12 +473,102 @@ Escolha onde deseja salvá-lo!</string>
                 <viewControllerPlaceholder storyboardName="Load" id="oII-4O-8In" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77Z-gG-XC3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2801" y="112"/>
+            <point key="canvasLocation" x="3778" y="107"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="XbA-cf-eSu">
+            <objects>
+                <viewController storyboardIdentifier="Campainhas" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xv2-aD-Soc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8oK-ZH-lgU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="69h-Ds-98Y">
+                                <rect key="frame" x="37.666666666666657" y="193.66666666666666" width="300" height="434.66666666666674"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQY-ve-hfz">
+                                        <rect key="frame" x="52.333333333333343" y="65.333333333333343" width="195" height="195.00000000000003"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sinoCamp" translatesAutoresizingMaskIntoConstraints="NO" id="k0y-lK-sH8">
+                                                <rect key="frame" x="58.666666666666657" y="19.666666666666686" width="78" height="156"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" label="Um sino sendo silenciado.">
+                                            <accessibilityTraits key="traits" image="YES"/>
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                        <constraints>
+                                            <constraint firstItem="k0y-lK-sH8" firstAttribute="height" secondItem="lQY-ve-hfz" secondAttribute="height" multiplier="0.8" id="3Nn-U7-QoW"/>
+                                            <constraint firstItem="k0y-lK-sH8" firstAttribute="centerX" secondItem="lQY-ve-hfz" secondAttribute="centerX" id="48T-Jv-ldy"/>
+                                            <constraint firstItem="k0y-lK-sH8" firstAttribute="centerY" secondItem="lQY-ve-hfz" secondAttribute="centerY" id="KSa-pm-ON1"/>
+                                            <constraint firstAttribute="width" secondItem="lQY-ve-hfz" secondAttribute="height" multiplier="1:1" id="PDi-7j-hkn"/>
+                                            <constraint firstItem="k0y-lK-sH8" firstAttribute="width" secondItem="lQY-ve-hfz" secondAttribute="width" multiplier="0.4" id="rat-QF-nez"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HVi-wm-T6d">
+                                        <rect key="frame" x="30" y="277.33333333333337" width="240" height="130.33333333333337"/>
+                                        <string key="text">A página campainhas reúne todas as campainhas geradas pelo usuário. Também permite que crie novas campainhas, editando seu título e a descrição do código QR.</string>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.70196078431372544" green="0.79607843137254897" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="HVi-wm-T6d" firstAttribute="width" secondItem="69h-Ds-98Y" secondAttribute="width" multiplier="0.8" id="8qr-cc-hqp"/>
+                                    <constraint firstItem="lQY-ve-hfz" firstAttribute="centerX" secondItem="69h-Ds-98Y" secondAttribute="centerX" id="Bwe-4z-9YJ"/>
+                                    <constraint firstItem="HVi-wm-T6d" firstAttribute="height" relation="lessThanOrEqual" secondItem="69h-Ds-98Y" secondAttribute="height" multiplier="0.4" id="Fhe-cY-zPO"/>
+                                    <constraint firstItem="lQY-ve-hfz" firstAttribute="centerY" secondItem="69h-Ds-98Y" secondAttribute="centerY" multiplier="0.75" id="GxY-lz-Hks"/>
+                                    <constraint firstItem="lQY-ve-hfz" firstAttribute="width" secondItem="69h-Ds-98Y" secondAttribute="width" multiplier="0.65" id="XC0-e9-jAk"/>
+                                    <constraint firstItem="HVi-wm-T6d" firstAttribute="centerY" secondItem="lQY-ve-hfz" secondAttribute="centerY" multiplier="2.1" id="Zit-5s-T2J"/>
+                                    <constraint firstItem="HVi-wm-T6d" firstAttribute="centerX" secondItem="69h-Ds-98Y" secondAttribute="centerX" id="g7Z-sQ-hTo"/>
+                                    <constraint firstAttribute="width" secondItem="69h-Ds-98Y" secondAttribute="height" multiplier="169:245" id="gwG-SV-O67"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Campainhas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciT-or-FjT">
+                                <rect key="frame" x="115" y="208.33333333333334" width="145" height="32"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="70"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="69h-Ds-98Y" firstAttribute="width" secondItem="8oK-ZH-lgU" secondAttribute="width" multiplier="0.8" id="8MS-NM-n4M"/>
+                            <constraint firstItem="69h-Ds-98Y" firstAttribute="centerY" secondItem="Qit-zT-cSg" secondAttribute="centerY" id="GGU-bW-i0e"/>
+                            <constraint firstItem="ciT-or-FjT" firstAttribute="firstBaseline" secondItem="lQY-ve-hfz" secondAttribute="firstBaseline" multiplier="0.6" id="X8M-KA-osr"/>
+                            <constraint firstItem="ciT-or-FjT" firstAttribute="centerX" secondItem="69h-Ds-98Y" secondAttribute="centerX" id="cbQ-Xe-HU2"/>
+                            <constraint firstItem="69h-Ds-98Y" firstAttribute="centerX" secondItem="Qit-zT-cSg" secondAttribute="centerX" id="crU-rS-cUN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Qit-zT-cSg"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QCf-mK-Xrm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="678" y="107"/>
         </scene>
     </scenes>
     <resources>
         <image name="cellSenha" width="239" height="46"/>
         <image name="saveButton" width="66" height="66"/>
         <image name="sino" width="86" height="106"/>
+        <image name="sinoCamp" width="76" height="94"/>
     </resources>
 </document>
