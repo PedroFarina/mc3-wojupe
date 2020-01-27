@@ -11,7 +11,7 @@ import CloudKit
 public class ReferenceList<T: EntityObject> {
     private let record: CKRecord
     private let key: String
-    public private(set) var recordReferences: [CKRecord.Reference] = []
+    public var recordReferences: [CKRecord.Reference] = []
     private var _references: [T] =  []
     public private(set) var references: [T] {
         get {

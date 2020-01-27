@@ -22,6 +22,9 @@ public class CampainhaViewController: UIViewController {
         if !CloudKitNotification.permitted {
             CloudKitNotification.askPermission()
         }
+        if campainha?.dono.value != DataController.shared().getUsuario {
+            navigationItem.rightBarButtonItem = nil
+        }
     }
 
     override public func viewWillAppear(_ animated: Bool) {
