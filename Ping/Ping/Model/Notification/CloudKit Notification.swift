@@ -35,7 +35,9 @@ public class CloudKitNotification {
         if (usuario.idSubscription.value ?? "") != ""{
             return
         }
-        let predicate = NSPredicate(format: "idUsuario == %@", usuario.record.recordID)
+
+        let predicate = NSPredicate(format: "idUsuario == %@",
+                                    CKRecord.Reference(record: usuario.record, action: .none))
         let subscription = CKQuerySubscription(
             recordType: "Notification", predicate: predicate, options: .firesOnRecordCreation)
 

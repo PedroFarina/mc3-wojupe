@@ -41,7 +41,7 @@
         <!--Custom Page View Controller-->
         <scene sceneID="5es-qN-H47">
             <objects>
-                <pageViewController storyboardIdentifier="CustomPageViewController" autoresizesArchivedViewToFullSize="NO" providesPresentationContextTransitionStyle="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Cez-iD-JN3" customClass="CustomPageViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="CustomPageViewController" autoresizesArchivedViewToFullSize="NO" providesPresentationContextTransitionStyle="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Cez-iD-JN3" customClass="CustomPageViewController" customModule="Nok" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <outlet property="pgControl" destination="vH2-wA-mLw" id="ZH7-eO-QHR"/>
                     </connections>
@@ -51,7 +51,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="39" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="currentPageIndicatorTintColor" red="0.67843137254901964" green="0.80000000000000004" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <color key="currentPageIndicatorTintColor" red="0.21568627450980393" green="0.50196078431372548" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <connections>
                         <action selector="pageChanged:" destination="Cez-iD-JN3" eventType="valueChanged" id="o4o-OO-1SJ"/>
                     </connections>
@@ -62,7 +62,7 @@
         <!--Introducao-->
         <scene sceneID="Nn7-mW-oAC">
             <objects>
-                <viewController storyboardIdentifier="Introducao" title="Introducao" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7Ec-2k-Uz4" customClass="IntroducaoViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Introducao" title="Introducao" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7Ec-2k-Uz4" customClass="IntroducaoViewController" customModule="Nok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GHD-FJ-dFW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,7 +160,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
         <!--Protecao View Controller-->
         <scene sceneID="Mx2-d6-NmO">
             <objects>
-                <viewController storyboardIdentifier="Protecao" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZiT-2r-45t" customClass="ProtecaoViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Protecao" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZiT-2r-45t" customClass="ProtecaoViewController" customModule="Nok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n8u-Oe-cCg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -342,7 +342,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
         <!--Compartilhar View Controller-->
         <scene sceneID="sdx-vn-Fgf">
             <objects>
-                <viewController storyboardIdentifier="Exportar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lPZ-xA-zXT" customClass="CompartilharViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Exportar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lPZ-xA-zXT" customClass="CompartilharViewController" customModule="Nok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nc6-bo-T7g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

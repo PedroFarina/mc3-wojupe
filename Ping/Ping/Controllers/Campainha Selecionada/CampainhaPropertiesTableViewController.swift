@@ -5,7 +5,7 @@
 //  Created by Wolfgang Walder on 30/08/19.
 //  Copyright © 2019 Pedro Giuliano Farina. All rights reserved.
 //
-// swiftlint:disable function_body_length identifier_name
+// swiftlint:disable function_body_length identifier_name cyclomatic_complexity
 
 import UIKit
 import Foundation
@@ -44,6 +44,31 @@ class CampainhaPropertiesTableViewController: UITableViewController {
         tableView.allowsSelection = true
     }
 
+    private lazy var addAlert: UIAlertController = {
+        let alert = UIAlertController(
+            title: "Digite o ID da pessoa desejada".localized(),
+            message: "Esta informação encontra-se na página inicial do app".localized(),
+            preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Adicionar".localized(), style: .default, handler: { (_) in
+            if let first = alert.textFields?.first,
+                let text = first.text,
+                let campainha = self.campainha {
+                DataController.shared().addUser(text, to: campainha) { (answer) in
+                    if answer {
+                        self.tableView.reloadData()
+                    } else {
+                        print("no")
+                    }
+                }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancelar".localized(), style: .cancel, handler: nil))
+        alert.addTextField { (txt) in
+            txt.placeholder = "ID"
+        }
+        return alert
+    }()
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let cell = tableView.cellForRow(at: indexPath) as? TitleDetailDownDisclosureTableViewCell {
             cell.tap()
@@ -60,6 +85,8 @@ class CampainhaPropertiesTableViewController: UITableViewController {
                 const.constant += CGFloat(pathes.count * 44 * (closed ? -1 : 1))
             }
             tableView.deselectRow(at: indexPath, animated: true)
+        } else if indexPath.row == 3 {
+            self.present(addAlert, animated: true)
         } else {
             tableView.deselectRow(at: indexPath, animated: false)
         }
@@ -106,6 +133,8 @@ class CampainhaPropertiesTableViewController: UITableViewController {
     }
 
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        height = Array(repeating: 0, count: 2)
+        return 2
         let value: Int
         if let usuarios = usuarios {
             value = usuarios.count - 1 + 4
@@ -184,7 +213,12 @@ class CampainhaPropertiesTableViewController: UITableViewController {
             cell.textLabel?.text = "Adicionar pessoa"
             return cell
         default:
-            return UITableViewCell()
+            let cell = UITableViewCell()
+            if let usuarios = usuarios {
+                cell.textLabel?.text = usuarios[indexPath.row - 2].idUsuario.value
+            }
+
+            return cell
         }
         return UITableViewCell()
     }

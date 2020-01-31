@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "02B2F32D2316E9DE00140BE8"
-               BuildableName = "QR Bell.app"
+               BuildableName = "Nok.app"
                BlueprintName = "Ping"
                ReferencedContainer = "container:Ping.xcodeproj">
             </BuildableReference>
@@ -31,7 +31,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02B2F32D2316E9DE00140BE8"
-            BuildableName = "QR Bell.app"
+            BuildableName = "Nok.app"
             BlueprintName = "Ping"
             ReferencedContainer = "container:Ping.xcodeproj">
          </BuildableReference>
@@ -54,7 +54,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02B2F32D2316E9DE00140BE8"
-            BuildableName = "QR Bell.app"
+            BuildableName = "Nok.app"
             BlueprintName = "Ping"
             ReferencedContainer = "container:Ping.xcodeproj">
          </BuildableReference>
@@ -71,7 +71,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "02B2F32D2316E9DE00140BE8"
-            BuildableName = "QR Bell.app"
+            BuildableName = "Nok.app"
             BlueprintName = "Ping"
             ReferencedContainer = "container:Ping.xcodeproj">
          </BuildableReference>

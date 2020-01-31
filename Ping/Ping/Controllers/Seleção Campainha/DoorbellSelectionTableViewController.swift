@@ -73,6 +73,9 @@ public class DoorbellSelectionTableViewController: UITableViewController {
         _ tableView: UITableView,
         trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
         -> UISwipeActionsConfiguration? {
+        if data.isEmpty {
+            return nil
+        }
 
         var actions: [UIContextualAction] = []
 
