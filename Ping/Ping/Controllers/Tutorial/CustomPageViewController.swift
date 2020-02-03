@@ -16,7 +16,6 @@ UIPageViewControllerDataSource, UIScrollViewDelegate {
         return [self.newVc(viewController: "Introducao"),
                 self.newVc(viewController: "Campainhas"),
                 self.newVc(viewController: "Protecao"),
-                self.newVc(viewController: "Silencioso"),
                 self.newVc(viewController: "Exportar")]
     }()
     var ultimoIndice: Int = 0

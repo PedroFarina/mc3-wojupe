@@ -43,9 +43,32 @@ import UIKit
         }
     }
 
+    var tap: UITapGestureRecognizer?
+    var view: UIView?
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            tap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+            view = topController.view
+            topController.view.addGestureRecognizer(tap!)
+        }
+    }
+
+    @objc private func dismissKeyboard() {
+        view?.endEditing(true)
+        if let tap = tap {
+            view?.removeGestureRecognizer(tap)
+        }
+    }
+
     @objc private func textFieldEditingDidEnd(_ textField: UITextField) {
         if maxCharacters != -1 && textField.text?.count !=  maxCharacters {
             textField.text = ""
+        }
+        if let tap = tap {
+            view?.removeGestureRecognizer(tap)
         }
     }
 

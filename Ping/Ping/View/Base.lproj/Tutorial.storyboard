@@ -41,17 +41,17 @@
         <!--Custom Page View Controller-->
         <scene sceneID="5es-qN-H47">
             <objects>
-                <pageViewController storyboardIdentifier="CustomPageViewController" autoresizesArchivedViewToFullSize="NO" providesPresentationContextTransitionStyle="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Cez-iD-JN3" customClass="CustomPageViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="CustomPageViewController" autoresizesArchivedViewToFullSize="NO" providesPresentationContextTransitionStyle="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Cez-iD-JN3" customClass="CustomPageViewController" customModule="Nok" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <outlet property="pgControl" destination="vH2-wA-mLw" id="ZH7-eO-QHR"/>
                     </connections>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z6v-5H-afu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" id="vH2-wA-mLw">
+                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" id="vH2-wA-mLw">
                     <rect key="frame" x="0.0" y="0.0" width="39" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="currentPageIndicatorTintColor" name="systemOrangeColor" catalog="System" colorSpace="catalog"/>
+                    <color key="currentPageIndicatorTintColor" red="0.21568627450980393" green="0.50196078431372548" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <connections>
                         <action selector="pageChanged:" destination="Cez-iD-JN3" eventType="valueChanged" id="o4o-OO-1SJ"/>
                     </connections>
@@ -62,7 +62,7 @@
         <!--Introducao-->
         <scene sceneID="Nn7-mW-oAC">
             <objects>
-                <viewController storyboardIdentifier="Introducao" title="Introducao" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7Ec-2k-Uz4" customClass="IntroducaoViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Introducao" title="Introducao" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7Ec-2k-Uz4" customClass="IntroducaoViewController" customModule="Nok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GHD-FJ-dFW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,7 +160,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
         <!--Protecao View Controller-->
         <scene sceneID="Mx2-d6-NmO">
             <objects>
-                <viewController storyboardIdentifier="Protecao" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZiT-2r-45t" customClass="ProtecaoViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Protecao" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZiT-2r-45t" customClass="ProtecaoViewController" customModule="Nok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="n8u-Oe-cCg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,39 +204,17 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         </variation>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellSenha" translatesAutoresizingMaskIntoConstraints="NO" id="zf2-Wz-IpG">
-                                        <rect key="frame" x="62.000000000000014" y="195.33333333333334" width="175.66666666666669" height="33"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Senha" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ug-jV-ltr">
-                                        <rect key="frame" x="73.333333333333343" y="201.33333333333334" width="48" height="21"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <bool key="isElement" value="NO"/>
-                                        </accessibility>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                        </variation>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.70196078431372544" green="0.79607843137254897" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="Rg5-pp-32V" firstAttribute="centerX" secondItem="6kJ-lU-BgQ" secondAttribute="centerX" id="1Ao-4X-4A6"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6Ug-jV-ltr" secondAttribute="trailing" constant="20" symbolic="YES" id="383-9d-7Mu"/>
                                     <constraint firstItem="Rg5-pp-32V" firstAttribute="centerY" secondItem="6kJ-lU-BgQ" secondAttribute="centerY" multiplier="0.75" id="4I9-C7-bWn"/>
                                     <constraint firstItem="Rg5-pp-32V" firstAttribute="width" secondItem="6kJ-lU-BgQ" secondAttribute="width" multiplier="0.65" id="A1m-nE-U4K"/>
-                                    <constraint firstItem="6Ug-jV-ltr" firstAttribute="centerY" secondItem="zf2-Wz-IpG" secondAttribute="centerY" id="BZP-cf-zqY"/>
                                     <constraint firstAttribute="width" secondItem="6kJ-lU-BgQ" secondAttribute="height" multiplier="169:245" id="BhR-sO-qQu"/>
-                                    <constraint firstItem="zf2-Wz-IpG" firstAttribute="centerX" secondItem="Rg5-pp-32V" secondAttribute="centerX" id="FK8-XS-q7Q"/>
-                                    <constraint firstItem="6Ug-jV-ltr" firstAttribute="leading" secondItem="zf2-Wz-IpG" secondAttribute="leading" multiplier="1.1" constant="5" id="Fm4-g8-Qvx"/>
                                     <constraint firstItem="bc1-Rg-8Sy" firstAttribute="centerX" secondItem="6kJ-lU-BgQ" secondAttribute="centerX" id="LL1-wK-cUp"/>
-                                    <constraint firstItem="zf2-Wz-IpG" firstAttribute="centerY" secondItem="Rg5-pp-32V" secondAttribute="centerY" multiplier="1.3" id="NUT-wP-QIw"/>
                                     <constraint firstItem="bc1-Rg-8Sy" firstAttribute="width" secondItem="6kJ-lU-BgQ" secondAttribute="width" multiplier="0.8" id="OwK-Tx-EII"/>
                                     <constraint firstItem="bc1-Rg-8Sy" firstAttribute="centerY" secondItem="Rg5-pp-32V" secondAttribute="centerY" multiplier="2.1" id="ZcT-Kd-iba"/>
-                                    <constraint firstItem="zf2-Wz-IpG" firstAttribute="height" secondItem="Rg5-pp-32V" secondAttribute="height" multiplier="0.17" id="lBZ-J3-EXP"/>
                                     <constraint firstItem="bc1-Rg-8Sy" firstAttribute="height" relation="lessThanOrEqual" secondItem="6kJ-lU-BgQ" secondAttribute="height" multiplier="0.4" id="szZ-TG-tOz"/>
-                                    <constraint firstItem="zf2-Wz-IpG" firstAttribute="width" secondItem="Rg5-pp-32V" secondAttribute="width" multiplier="0.9" id="zHP-Ej-Pqp"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -364,7 +342,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
         <!--Compartilhar View Controller-->
         <scene sceneID="sdx-vn-Fgf">
             <objects>
-                <viewController storyboardIdentifier="Exportar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lPZ-xA-zXT" customClass="CompartilharViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Exportar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lPZ-xA-zXT" customClass="CompartilharViewController" customModule="Nok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nc6-bo-T7g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -566,7 +544,6 @@ Escolha onde deseja salvá-lo!</string>
         </scene>
     </scenes>
     <resources>
-        <image name="cellSenha" width="239" height="46"/>
         <image name="saveButton" width="66" height="66"/>
         <image name="sino" width="86" height="106"/>
         <image name="sinoCamp" width="76" height="94"/>

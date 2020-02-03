@@ -11,8 +11,24 @@ import CloudKit
 public class ReferenceList<T: EntityObject> {
     private let record: CKRecord
     private let key: String
-    public private(set) var recordReferences: [CKRecord.Reference] = []
-    public private(set) var references: [T] = []
+    public var recordReferences: [CKRecord.Reference] = []
+    private var _references: [T] =  []
+    public private(set) var references: [T] {
+        get {
+            if _references.count != recordReferences.count {
+                for record in recordReferences {
+                    guard let reference = DataController.shared().getEntityByID(record.recordID) as? T else {
+                        continue
+                    }
+                    _references.append(reference)
+                }
+            }
+            return _references
+        }
+        set {
+            _references = newValue
+        }
+    }
 
     public init(record: CKRecord, key: String) {
         self.record = record
@@ -49,46 +65,6 @@ public class ReferenceList<T: EntityObject> {
         record.setValue(recordReferences, forKey: key)
     }
 }
-//public class ReferenceList<T: EntityObject> {
-//    private let record: CKRecord
-//    private let key: String
-//    public var references: [ReferenceField<T>] = [] {
-//        didSet {
-//            var refs: [CKRecord.Reference] = []
-//            for reference in references {
-//                if let ref = reference.referenceValue {
-//                    refs.append(ref)
-//                }
-//            }
-//            record.setValue(refs, forKey: key)
-//        }
-//    }
-//
-//    public init(record: CKRecord, key: String) {
-//        self.record = record
-//        self.key = key
-//    }
-//
-//    public func append(_ value: T, action: CKRecord_Reference_Action) {
-//        references.append(ReferenceField<T>(record: self.record, key: self.key, action: action))
-//    }
-//
-//    public func firstIndex(of value: T) -> Int? {
-//        return references.firstIndex(where: { (ref) -> Bool in
-//            return ref.value == value
-//        })
-//    }
-//
-//    public func contains(_ value: T) -> Bool {
-//        return references.contains(where: { (ref) -> Bool in
-//            return ref.value == value
-//        })
-//    }
-//
-//    public func remove(at index: Int) {
-//        references.remove(at: index)
-//    }
-//}
 
 extension ReferenceList {
     static func == (lhs: [T], rhs: ReferenceList) -> Bool {

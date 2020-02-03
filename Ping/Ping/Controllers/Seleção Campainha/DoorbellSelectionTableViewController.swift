@@ -73,6 +73,11 @@ public class DoorbellSelectionTableViewController: UITableViewController {
         _ tableView: UITableView,
         trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
         -> UISwipeActionsConfiguration? {
+        if data.isEmpty {
+            return nil
+        }
+
+        var actions: [UIContextualAction] = []
 
         let delete = UIContextualAction(style: .destructive, title: "Excluir".localized()) { (_, _, success) in
             DispatchQueue.main.async {
@@ -81,17 +86,21 @@ public class DoorbellSelectionTableViewController: UITableViewController {
                 self.tableView.isEditing = false
             }
         }
+        actions.append(delete)
 
-        let edit = UIContextualAction(style: .normal, title: "Editar".localized()) { (_, _, success) in
-            DispatchQueue.main.async {
-                self.editCampainha(self.data[indexPath.row])
-                success(true)
-                self.tableView.isEditing = false
+        if data[indexPath.row].dono.value == DataController.shared().getUsuario {
+            let edit = UIContextualAction(style: .normal, title: "Editar".localized()) { (_, _, success) in
+                DispatchQueue.main.async {
+                    self.editCampainha(self.data[indexPath.row])
+                    success(true)
+                    self.tableView.isEditing = false
+                }
             }
+            edit.backgroundColor = .systemOrange
+            actions.append(edit)
         }
-        edit.backgroundColor = .systemOrange
 
-        let config = UISwipeActionsConfiguration(actions: [delete, edit])
+        let config = UISwipeActionsConfiguration(actions: actions)
         config.performsFirstActionWithFullSwipe = true
         return config
     }

@@ -35,7 +35,9 @@ public class CloudKitNotification {
         if (usuario.idSubscription.value ?? "") != ""{
             return
         }
-        let predicate = NSPredicate(format: "idGrupo IN %@", usuario.grupos.recordReferences)
+
+        let predicate = NSPredicate(format: "idUsuario == %@",
+                                    CKRecord.Reference(record: usuario.record, action: .none))
         let subscription = CKQuerySubscription(
             recordType: "Notification", predicate: predicate, options: .firesOnRecordCreation)
 
@@ -64,21 +66,6 @@ public class CloudKitNotification {
                 }
             }
         })
-    }
-
-    public static func updateSubscription() {
-        deleteSubscription {
-            createSubscription{ (_) in
-            }
-        }
-    }
-
-    public static func updateSubscription(completionHandler: @escaping (String) -> Void) {
-        deleteSubscription(save: false) {
-            createSubscription(save: false) { (id) in
-                completionHandler(id)
-            }
-        }
     }
 
     public static func deleteSubscription(save: Bool = true, completionHandler: @escaping () -> Void) {

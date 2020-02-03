@@ -125,14 +125,44 @@ public class DataController {
         dono.addCampainha(campainha)
         dono.addToGrupo(grupo)
 
-
-        CloudKitNotification.updateSubscription{ (id) in
-            dono.idSubscription.value = id
-            self.recordsToSave.append(contentsOf: [dono, campainha])
-            self.saveData(database: self.publicDB)
-        }
-
         return campainha
+    }
+
+    // MARK: Adicionar usuário
+    public func addUser(_ user: String, to campainha: Campainha, completionHandler: @escaping (Bool) -> Void) {
+        let predicate = NSPredicate(format: "idUsuario == %@", user)
+        let query = CKQuery(recordType: "Usuario", predicate: predicate)
+        fetch(query: query) { (answer) in
+            switch answer {
+            case .successful(let results):
+                if let userRecord = results?.first,
+                    let grupo = campainha.grupo.value,
+                    var usuariosRecord = grupo.record.object(forKey: "Usuarios") as? [CKRecord.Reference] {
+                    var campainhas = userRecord.object(forKey: "Campainhas") as? [CKRecord.Reference] ?? []
+
+                    campainhas.append(CKRecord.Reference(record: campainha.record, action: .none))
+                    userRecord["Campainhas"] = campainhas
+                    usuariosRecord.append(CKRecord.Reference(record: userRecord, action: .none))
+                    grupo.record["Usuarios"] = usuariosRecord
+                    self.publicDB.save(grupo.record) { (_, err) in
+                        if err == nil {
+                            self.publicDB.save(userRecord) { (_, err) in
+                                completionHandler(err == nil)
+                            }
+                        } else {
+                            completionHandler(false)
+                        }
+
+                    }
+
+                } else {
+                    completionHandler(false)
+                }
+            case .fail(let err, let desc):
+                DataController.errorHandler(error: err, description: desc)
+                completionHandler(false)
+            }
+        }
     }
 
     // MARK: Salvar campainha
@@ -177,26 +207,37 @@ public class DataController {
 
     // MARK: Remover campainha
     public func removeCampainha(target campainha: Campainha) {
-        if let index = _campainhas.firstIndex(of: campainha) {
-            _campainhas.remove(at: index)
-        }
-
         guard let usuario = _usuario,
             let grupo = campainha.grupo.value else {
-            return
+                return
         }
-        if let index = usuario.campainhas.firstIndex(of: campainha) {
-            usuario.campainhas.remove(at: index)
+        if campainha.dono.value == usuario {
+            if let index = usuario.campainhas.firstIndex(of: campainha) {
+                usuario.campainhas.remove(at: index)
+            }
+            if let index = usuario.grupos.firstIndex(of: grupo) {
+                usuario.grupos.remove(at: index)
+            }
+            recordsToDelete.append(campainha)
+            recordsToSave.append(usuario)
+            saveData(database: self.publicDB)
+        } else {
+            if let index = usuario.campainhas.firstIndex(of: campainha) {
+                usuario.campainhas.remove(at: index)
+            }
+            if let index = usuario.grupos.firstIndex(of: grupo) {
+                usuario.grupos.remove(at: index)
+            }
+            if let index = grupo.usuarios.firstIndex(of: usuario) {
+                grupo.usuarios.remove(at: index)
+            }
+            recordsToSave.append(grupo)
+            recordsToSave.append(usuario)
+            recordsToSave.append(campainha)
+            saveData(database: self.publicDB)
         }
-        if let index = usuario.grupos.firstIndex(of: grupo) {
-            usuario.grupos.remove(at: index)
-        }
-        CloudKitNotification.updateSubscription { (subsId) in
-            usuario.idSubscription.value = subsId
-            self.recordsToDelete.append(campainha)
-            self.recordsToSave.append(usuario)
-
-            self.saveData(database: self.publicDB)
+        if let index = _campainhas.firstIndex(of: campainha) {
+            _campainhas.remove(at: index)
         }
     }
 
@@ -219,10 +260,12 @@ public class DataController {
 
     // MARK: Histórico de campainhas
     public func getVisitors(of campainha: Campainha, completionHandler: @escaping ([Visitante]) -> Void) {
-        guard let referenceValue = campainha.grupo.referenceValue else {
-            fatalError("Não havia um grupo")
+        guard let usuario = _usuario else {
+                completionHandler([])
+                return
         }
-        let predicate = NSPredicate(format: "idGrupo == %@", referenceValue)
+        let usuarioReference = CKRecord.Reference(record: usuario.record, action: .none)
+        let predicate = NSPredicate(format: "idUsuario == %@", usuarioReference)
         let query = CKQuery(recordType: "Notification", predicate: predicate)
         self.fetch(query: query, completionHandler: { (answer) in
             switch answer {

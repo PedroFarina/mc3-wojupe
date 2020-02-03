@@ -60,6 +60,5 @@ public class Campainha: NSObject, EntityObject {
         if let usuario = dono.value {
             usuario.addToGrupo(grupoNovo)
         }
-        CloudKitNotification.updateSubscription()
     }
 }
