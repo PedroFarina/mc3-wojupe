@@ -260,12 +260,13 @@ public class DataController {
 
     // MARK: Histórico de campainhas
     public func getVisitors(of campainha: Campainha, completionHandler: @escaping ([Visitante]) -> Void) {
-        guard let usuario = _usuario else {
+        guard let usuario = _usuario,
+              let grupoReference = campainha.grupo.referenceValue else {
                 completionHandler([])
                 return
         }
         let usuarioReference = CKRecord.Reference(record: usuario.record, action: .none)
-        let predicate = NSPredicate(format: "idUsuario == %@", usuarioReference)
+        let predicate = NSPredicate(format: "idUsuario == %@ AND idGrupo == %@", usuarioReference, grupoReference)
         let query = CKQuery(recordType: "Notification", predicate: predicate)
         self.fetch(query: query, completionHandler: { (answer) in
             switch answer {

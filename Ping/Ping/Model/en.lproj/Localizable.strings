@@ -35,3 +35,4 @@
 "Porta" = "Door";
 "Criando nova campainha" = "Creating new doorbell";
 "OK" = "Done";
+"Você ainda não tem campainhas.\nToque no '+' para gerar uma campainha." = "You have no doorbells yet.\Create a new doorbel by touching the '+' button.";
