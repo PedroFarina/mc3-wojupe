@@ -23,9 +23,11 @@ public class DoorbellSelectionTableViewController: UITableViewController {
     public func refreshData() {
         data = DataController.shared().getCampainhas
         if !data.isEmpty {
+            tableView.isScrollEnabled = true
             navigationItem.leftBarButtonItem = self.editButtonItem
             tableView.allowsSelection = true
         } else {
+            tableView.isScrollEnabled = false
             navigationItem.leftBarButtonItem = nil
             tableView.allowsSelection = false
         }
@@ -33,11 +35,14 @@ public class DoorbellSelectionTableViewController: UITableViewController {
     }
 
     public override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if data.isEmpty {
+            return tableView.frame.size.height * 0.9
+        }
         return 50
     }
 
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.isEmpty ? 5 : data.count
+        return data.isEmpty ? 1 : data.count
     }
 
     public override func numberOfSections(in tableView: UITableView) -> Int {
@@ -45,17 +50,17 @@ public class DoorbellSelectionTableViewController: UITableViewController {
     }
 
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.accessoryType = .disclosureIndicator
-        if data.isEmpty {
-            cell.textLabel?.text = "Exemplo de campainha".localized()
+        if data.isEmpty, let cell = tableView.dequeueReusableCell(withIdentifier: "placeholder") as? ButtonTableViewCell {
+            cell.buttonText = "Você ainda não tem campainhas.\nToque no '+' para gerar uma campainha.".localized()
             cell.isUserInteractionEnabled = false
+            return cell
         } else {
+            let cell = UITableViewCell()
             cell.textLabel?.text = data[indexPath.row].titulo.value
+            cell.accessoryType = .disclosureIndicator
             cell.editingAccessoryType = .disclosureIndicator
+            return cell
         }
-
-        return cell
     }
 
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

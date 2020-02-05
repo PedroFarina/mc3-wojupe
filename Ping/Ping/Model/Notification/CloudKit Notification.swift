@@ -45,7 +45,7 @@ public class CloudKitNotification {
 
         info.titleLocalizationKey = "Alguém está na %1$@".localized()
         info.titleLocalizationArgs = ["NomeCampainha"]
-        info.subtitleLocalizationKey = "%1$@ chegou!"
+        info.subtitleLocalizationKey = "%1$@ chegou!".localized()
         info.subtitleLocalizationArgs = ["NomeVisitante"]
 
         info.shouldBadge = true

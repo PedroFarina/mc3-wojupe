@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -105,14 +106,14 @@
                                         <string key="text">Com um código QR sua campainha pode se tornar acessível!
 Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar um aviso com identificação!</string>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="tutorialText"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         </variation>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.70196078431372544" green="0.79607843137254897" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="tutorialCard"/>
                                 <constraints>
                                     <constraint firstItem="Thl-Pn-rgl" firstAttribute="centerY" secondItem="V7R-c1-bbU" secondAttribute="centerY" multiplier="2.1" id="3Z8-ON-roj"/>
                                     <constraint firstItem="V7R-c1-bbU" firstAttribute="width" secondItem="8wa-1e-JW5" secondAttribute="width" multiplier="0.65" id="780-8m-t2U"/>
@@ -132,7 +133,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Introdução" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dOD-ic-l1g">
                                 <rect key="frame" x="125.33333333333331" y="208.33333333333334" width="124.66666666666669" height="31.333333333333343"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="tutorialText"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="70"/>
@@ -198,14 +199,14 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logo que o visitante escanear o código QR, se este campo estiver ativo, o visitante deve preencher a senha definida." textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bc1-Rg-8Sy">
                                         <rect key="frame" x="30" y="299.33333333333337" width="240" height="86.333333333333314"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="tutorialText"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         </variation>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.70196078431372544" green="0.79607843137254897" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="tutorialCard"/>
                                 <constraints>
                                     <constraint firstItem="Rg5-pp-32V" firstAttribute="centerX" secondItem="6kJ-lU-BgQ" secondAttribute="centerX" id="1Ao-4X-4A6"/>
                                     <constraint firstItem="Rg5-pp-32V" firstAttribute="centerY" secondItem="6kJ-lU-BgQ" secondAttribute="centerY" multiplier="0.75" id="4I9-C7-bWn"/>
@@ -225,7 +226,7 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proteção por Senha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tE8-Xb-rsJ">
                                 <rect key="frame" x="74" y="208.33333333333334" width="227" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="tutorialText"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="62"/>
@@ -249,95 +250,6 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UhD-us-Wmn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1380" y="106"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="nda-Uj-pGa">
-            <objects>
-                <viewController storyboardIdentifier="Silencioso" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h2A-nh-HGf" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ci6-gh-DAV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dPN-pg-AHP">
-                                <rect key="frame" x="37.666666666666657" y="193.66666666666666" width="300" height="434.66666666666674"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Ki-mo-OVg">
-                                        <rect key="frame" x="52.333333333333343" y="65.333333333333343" width="195" height="195.00000000000003"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sino" translatesAutoresizingMaskIntoConstraints="NO" id="dw9-DS-qHq">
-                                                <rect key="frame" x="58.666666666666657" y="19.666666666666686" width="78" height="156"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <accessibility key="accessibilityConfiguration" label="Um sino sendo silenciado.">
-                                            <accessibilityTraits key="traits" image="YES"/>
-                                            <bool key="isElement" value="YES"/>
-                                        </accessibility>
-                                        <constraints>
-                                            <constraint firstItem="dw9-DS-qHq" firstAttribute="centerX" secondItem="9Ki-mo-OVg" secondAttribute="centerX" id="1qH-uC-yxQ"/>
-                                            <constraint firstItem="dw9-DS-qHq" firstAttribute="height" secondItem="9Ki-mo-OVg" secondAttribute="height" multiplier="0.8" id="3fN-Ic-R15"/>
-                                            <constraint firstItem="dw9-DS-qHq" firstAttribute="centerY" secondItem="9Ki-mo-OVg" secondAttribute="centerY" id="CZF-T0-kfZ"/>
-                                            <constraint firstAttribute="width" secondItem="9Ki-mo-OVg" secondAttribute="height" multiplier="1:1" id="DN2-Sy-bUd"/>
-                                            <constraint firstItem="dw9-DS-qHq" firstAttribute="width" secondItem="9Ki-mo-OVg" secondAttribute="width" multiplier="0.4" id="c43-hT-oGT"/>
-                                        </constraints>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="10"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ObM-Tv-BUu">
-                                        <rect key="frame" x="30" y="277.33333333333337" width="240" height="130.33333333333337"/>
-                                        <string key="text">O Modo Silencioso serve para aquele momento em que não deseja ser incomodado. Porém, não esqueça de ativá-la posteriormente para receber seus avisos de campainha!</string>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=regular">
-                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                        </variation>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.70196078431372544" green="0.79607843137254897" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstItem="ObM-Tv-BUu" firstAttribute="width" secondItem="dPN-pg-AHP" secondAttribute="width" multiplier="0.8" id="ETq-ml-cWg"/>
-                                    <constraint firstItem="ObM-Tv-BUu" firstAttribute="height" relation="lessThanOrEqual" secondItem="dPN-pg-AHP" secondAttribute="height" multiplier="0.4" id="Fa7-oD-kNZ"/>
-                                    <constraint firstItem="9Ki-mo-OVg" firstAttribute="width" secondItem="dPN-pg-AHP" secondAttribute="width" multiplier="0.65" id="SUs-Mw-Yem"/>
-                                    <constraint firstItem="9Ki-mo-OVg" firstAttribute="centerX" secondItem="dPN-pg-AHP" secondAttribute="centerX" id="WpW-Wh-V7r"/>
-                                    <constraint firstItem="ObM-Tv-BUu" firstAttribute="centerY" secondItem="9Ki-mo-OVg" secondAttribute="centerY" multiplier="2.1" id="aED-6T-xgD"/>
-                                    <constraint firstItem="ObM-Tv-BUu" firstAttribute="centerX" secondItem="dPN-pg-AHP" secondAttribute="centerX" id="tlk-Y3-akj"/>
-                                    <constraint firstAttribute="width" secondItem="dPN-pg-AHP" secondAttribute="height" multiplier="169:245" id="wQl-Ic-5ia"/>
-                                    <constraint firstItem="9Ki-mo-OVg" firstAttribute="centerY" secondItem="dPN-pg-AHP" secondAttribute="centerY" multiplier="0.75" id="yGo-iL-p8o"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modo Silencioso" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xc-05-fiX">
-                                <rect key="frame" x="92" y="208.33333333333334" width="191" height="32"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="70"/>
-                                </variation>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="0Xc-05-fiX" firstAttribute="firstBaseline" secondItem="9Ki-mo-OVg" secondAttribute="firstBaseline" multiplier="0.6" id="07Y-Xx-EIh"/>
-                            <constraint firstItem="dPN-pg-AHP" firstAttribute="centerX" secondItem="brt-zU-poX" secondAttribute="centerX" id="FqV-a9-OFp"/>
-                            <constraint firstItem="dPN-pg-AHP" firstAttribute="centerY" secondItem="brt-zU-poX" secondAttribute="centerY" id="Fv8-zK-QdJ"/>
-                            <constraint firstItem="dPN-pg-AHP" firstAttribute="width" secondItem="Ci6-gh-DAV" secondAttribute="width" multiplier="0.8" id="Ijc-nN-oLU"/>
-                            <constraint firstItem="0Xc-05-fiX" firstAttribute="centerX" secondItem="dPN-pg-AHP" secondAttribute="centerX" id="Tfl-OF-iNL"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="brt-zU-poX"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="FA9-d9-fdg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2087" y="106"/>
         </scene>
         <!--Compartilhar View Controller-->
         <scene sceneID="sdx-vn-Fgf">
@@ -380,14 +292,14 @@ Desta forma, quem chegar em sua residência pode escanear o código e lhe enviar
                                         <string key="text">É onde o código QR pode ser exportado para posterior impressão. 
 Escolha onde deseja salvá-lo!</string>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="tutorialText"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         </variation>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.70196078431372544" green="0.79607843137254897" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="tutorialCard"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="j20-Eo-5mh" secondAttribute="height" multiplier="169:245" id="DB4-7c-Si2"/>
                                     <constraint firstItem="qF3-vo-Ob8" firstAttribute="width" secondItem="j20-Eo-5mh" secondAttribute="width" multiplier="0.8" id="HV0-HC-oeQ"/>
@@ -407,15 +319,15 @@ Escolha onde deseja salvá-lo!</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exportar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAm-Oh-DAL">
                                 <rect key="frame" x="138.33333333333334" y="208.33333333333334" width="98.333333333333343" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="tutorialText"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="70"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRk-ft-esk">
-                                <rect key="frame" x="152.66666666666666" y="636.33333333333337" width="70" height="33"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <rect key="frame" x="147.66666666666666" y="636.33333333333337" width="80" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                 <state key="normal" title="Começar">
                                     <color key="titleColor" red="0.21568627450980393" green="0.50196078431372548" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
@@ -443,7 +355,7 @@ Escolha onde deseja salvá-lo!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g0J-Uz-e8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2785" y="106"/>
+            <point key="canvasLocation" x="2084" y="106"/>
         </scene>
         <!--Load-->
         <scene sceneID="lAK-bA-xwK">
@@ -451,7 +363,7 @@ Escolha onde deseja salvá-lo!</string>
                 <viewControllerPlaceholder storyboardName="Load" id="oII-4O-8In" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77Z-gG-XC3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3778" y="107"/>
+            <point key="canvasLocation" x="2795" y="106"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="XbA-cf-eSu">
@@ -493,14 +405,14 @@ Escolha onde deseja salvá-lo!</string>
                                         <rect key="frame" x="30" y="277.33333333333337" width="240" height="130.33333333333337"/>
                                         <string key="text">A página campainhas reúne todas as campainhas geradas pelo usuário. Também permite que crie novas campainhas, editando seu título e a descrição do código QR.</string>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="tutorialText"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=regular">
                                             <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                         </variation>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.70196078431372544" green="0.79607843137254897" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="tutorialCard"/>
                                 <constraints>
                                     <constraint firstItem="HVi-wm-T6d" firstAttribute="width" secondItem="69h-Ds-98Y" secondAttribute="width" multiplier="0.8" id="8qr-cc-hqp"/>
                                     <constraint firstItem="lQY-ve-hfz" firstAttribute="centerX" secondItem="69h-Ds-98Y" secondAttribute="centerX" id="Bwe-4z-9YJ"/>
@@ -520,7 +432,7 @@ Escolha onde deseja salvá-lo!</string>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Campainhas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciT-or-FjT">
                                 <rect key="frame" x="115" y="208.33333333333334" width="145" height="32"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="26"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="tutorialText"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="70"/>
@@ -545,7 +457,12 @@ Escolha onde deseja salvá-lo!</string>
     </scenes>
     <resources>
         <image name="saveButton" width="66" height="66"/>
-        <image name="sino" width="86" height="106"/>
         <image name="sinoCamp" width="76" height="94"/>
+        <namedColor name="tutorialCard">
+            <color red="0.70196078431372544" green="0.79607843137254897" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="tutorialText">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
