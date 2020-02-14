@@ -282,6 +282,9 @@ public class DataController {
                         visitantes.append(visitante)
                     }
                 }
+                visitantes.sort { (vs1, vs2) -> Bool in
+                    return vs1.date > vs2.date
+                }
                 completionHandler(visitantes)
             }
         })

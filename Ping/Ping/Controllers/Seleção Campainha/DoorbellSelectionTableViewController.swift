@@ -14,6 +14,7 @@ public class DoorbellSelectionTableViewController: UITableViewController {
 
     public override func viewDidLoad() {
         tableView.tableFooterView = UIView()
+        tableView.estimatedRowHeight = 50
     }
 
     public override func viewWillAppear(_ animated: Bool) {
@@ -38,7 +39,7 @@ public class DoorbellSelectionTableViewController: UITableViewController {
         if data.isEmpty {
             return tableView.frame.size.height * 0.9
         }
-        return 50
+        return UITableView.automaticDimension
     }
 
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,12 +55,13 @@ public class DoorbellSelectionTableViewController: UITableViewController {
             cell.buttonText = "Você ainda não tem campainhas.\nToque no '+' para gerar uma campainha.".localized()
             cell.isUserInteractionEnabled = false
             return cell
-        } else {
-            let cell = UITableViewCell()
+        } else if let cell = tableView.dequeueReusableCell(withIdentifier: "cell") {
             cell.textLabel?.text = data[indexPath.row].titulo.value
             cell.accessoryType = .disclosureIndicator
             cell.editingAccessoryType = .disclosureIndicator
             return cell
+        } else {
+            return UITableViewCell()
         }
     }
 

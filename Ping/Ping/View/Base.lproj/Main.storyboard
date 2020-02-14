@@ -11,13 +11,13 @@
         <!--Campainha-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="CampainhaViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CampainhaViewController" customModule="Nok" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="414" placeholderIntrinsicHeight="146" translatesAutoresizingMaskIntoConstraints="NO" id="ZVU-NA-Ltd">
-                                <rect key="frame" x="0.0" y="519" width="414" height="132"/>
+                                <rect key="frame" x="0.0" y="522" width="414" height="132"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="132" id="R6S-2e-DwV"/>
                                     <constraint firstAttribute="height" constant="132" id="hUh-yE-q4W"/>
@@ -97,8 +97,12 @@
                                 </connections>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m1j-tH-REs">
-                                <rect key="frame" x="163.5" y="474" width="87" height="30"/>
+                                <rect key="frame" x="156.5" y="474" width="101" height="33"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                 <state key="normal" title="Ver histórico"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                </variation>
                                 <connections>
                                     <segue destination="Iey-AE-F3e" kind="presentation" id="RwN-Uj-JZ2"/>
                                 </connections>
@@ -180,7 +184,7 @@
         <!--Campainha Properties Table View Controller-->
         <scene sceneID="uh2-bj-4lp">
             <objects>
-                <tableViewController id="Ow9-VL-9GL" customClass="CampainhaPropertiesTableViewController" customModule="QR_Bell" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Ow9-VL-9GL" customClass="CampainhaPropertiesTableViewController" customModule="Nok" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="d5s-QM-GuC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="132"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
