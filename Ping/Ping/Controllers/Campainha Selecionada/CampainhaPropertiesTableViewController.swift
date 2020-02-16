@@ -29,6 +29,7 @@ class CampainhaPropertiesTableViewController: UITableViewController {
             }
         }
     }
+    public private(set) var senhaSwitch: SwitchTableViewCell?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -165,6 +166,7 @@ class CampainhaPropertiesTableViewController: UITableViewController {
             }
             if let cell = tableView.dequeueReusableCell(withIdentifier: SwitchTableViewCell.identifier)
                 as? SwitchTableViewCell {
+                senhaSwitch = cell
                 cell.lblText = title
                 if let grupo = campainha?.grupo.value, let senha = grupo.senha.value {
                     cell.onOff.isOn = senha != "" || cell.onOff.isOn

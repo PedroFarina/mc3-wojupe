@@ -14,4 +14,16 @@ public class LoadViewController: UIViewController {
             self.performSegue(withIdentifier: "main", sender: self)
         }
     }
+
+    public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let split = segue.destination as? UISplitViewController,
+            let leftNav = split.viewControllers.first as? UINavigationController,
+            let leftCont = leftNav.topViewController as? DoorbellSelectionTableViewController,
+            let rightNav = split.viewControllers.last as? UINavigationController,
+            let rightCont = rightNav.topViewController as? CampainhaViewController {
+            rightCont.campainha = DataController.shared().getCampainhas.first
+            leftCont.campainhaDelegate = rightCont
+            rightCont.selectionTableView = leftCont
+        }
+    }
 }

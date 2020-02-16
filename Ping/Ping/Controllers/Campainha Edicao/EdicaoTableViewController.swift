@@ -41,6 +41,7 @@ public class EdicaoTableViewController: UITableViewController {
 
         ale.addAction(UIAlertAction(title: "Sim".localized(), style: .destructive, handler: { (_) in
             self.campainha?.renewURL()
+            self.selected?.campainhaChangedQR()
         }))
 
         return ale
@@ -60,10 +61,9 @@ public class EdicaoTableViewController: UITableViewController {
                 return
             }
             DataController.shared().removeCampainha(target: campainha)
+            self.selected?.campainhaDeleted(campainha)
+            self.selection?.refreshData()
             self.dismiss(animated: true) {
-                if let cont = self.selected?.navigationController?.viewControllers.first as? DoorbellSelectionTableViewController {
-                    cont.refreshData()
-                }
                 _ = self.selected?.navigationController?.popViewController(animated: true)
             }
         }))

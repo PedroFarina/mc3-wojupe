@@ -10,6 +10,7 @@ import UIKit
 
 public class DoorbellSelectionTableViewController: UITableViewController {
     private weak var selectedCampainha: Campainha?
+    public weak var campainhaDelegate: CampainhaViewController?
     private var data: [Campainha] = DataController.shared().getCampainhas
 
     public override func viewDidLoad() {
@@ -51,7 +52,8 @@ public class DoorbellSelectionTableViewController: UITableViewController {
     }
 
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if data.isEmpty, let cell = tableView.dequeueReusableCell(withIdentifier: "placeholder") as? ButtonTableViewCell {
+        if data.isEmpty,
+            let cell = tableView.dequeueReusableCell(withIdentifier: "placeholder") as? ButtonTableViewCell {
             cell.buttonText = "Você ainda não tem campainhas.\nToque no '+' para gerar uma campainha.".localized()
             cell.isUserInteractionEnabled = false
             return cell
@@ -70,7 +72,12 @@ public class DoorbellSelectionTableViewController: UITableViewController {
             editCampainha(data[indexPath.row])
         } else {
             selectedCampainha = data[indexPath.row]
-            self.performSegue(withIdentifier: "campainhaSelected", sender: self)
+            campainhaDelegate?.campainhaSelected(data[indexPath.row])
+            if
+                let detailViewController = campainhaDelegate as? CampainhaViewController,
+                let detailNavigationController = detailViewController.navigationController {
+                splitViewController?.showDetailViewController(detailNavigationController, sender: nil)
+            }
         }
         tableView.deselectRow(at: indexPath, animated: true)
         selectedCampainha = nil
@@ -128,6 +135,7 @@ public class DoorbellSelectionTableViewController: UITableViewController {
 
         let yesAction = UIAlertAction(title: "Sim".localized(), style: .destructive) { (_) in
             DataController.shared().removeCampainha(target: target)
+            self.campainhaDelegate?.campainhaDeleted(target)
             self.refreshData()
         }
         let noAction = UIAlertAction(title: "Não".localized(), style: .cancel, handler: nil)
@@ -142,6 +150,7 @@ public class DoorbellSelectionTableViewController: UITableViewController {
             let editCont = nav.topViewController as? EdicaoTableViewController {
             editCont.campainha = selectedCampainha
             editCont.selection = self
+            editCont.selected = campainhaDelegate
         } else if let selectCont = segue.destination as? CampainhaViewController {
             selectCont.campainha = selectedCampainha
         }

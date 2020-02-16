@@ -161,7 +161,7 @@
                     <navigationItem key="navigationItem" title="Campainha" largeTitleDisplayMode="never" id="DyI-DY-4Ud">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="d2x-J6-dVT">
                             <connections>
-                                <segue destination="Dml-xm-dmN" kind="show" id="KaY-4X-fLF"/>
+                                <segue destination="Dml-xm-dmN" kind="presentation" id="KaY-4X-fLF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
