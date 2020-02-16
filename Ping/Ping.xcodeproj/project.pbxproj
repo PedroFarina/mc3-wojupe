@@ -57,6 +57,7 @@
 		02E42467231EF53E000F4C8C /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E42466231EF53E000F4C8C /* Usuario.swift */; };
 		02E42469231F0A49000F4C8C /* DataFetchAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E42468231F0A49000F4C8C /* DataFetchAnswer.swift */; };
 		02E4246B231F113C000F4C8C /* DataProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E4246A231F113C000F4C8C /* DataProperty.swift */; };
+		02FC1BB523F838F900117358 /* CampainhasSplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FC1BB423F838F900117358 /* CampainhasSplitViewController.swift */; };
 		79372433231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79372432231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift */; };
 		79372439231D9ECB00665B2D /* TextWithTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79372438231D9ECB00665B2D /* TextWithTitleTableViewCell.swift */; };
 		7937243B231D9F0400665B2D /* TextWithTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7937243A231D9F0400665B2D /* TextWithTitleTableViewCell.xib */; };
@@ -155,6 +156,7 @@
 		02E42466231EF53E000F4C8C /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		02E42468231F0A49000F4C8C /* DataFetchAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchAnswer.swift; sourceTree = "<group>"; };
 		02E4246A231F113C000F4C8C /* DataProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProperty.swift; sourceTree = "<group>"; };
+		02FC1BB423F838F900117358 /* CampainhasSplitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampainhasSplitViewController.swift; sourceTree = "<group>"; };
 		79372432231D8AAA00665B2D /* CampainhaPropertiesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampainhaPropertiesTableViewController.swift; sourceTree = "<group>"; };
 		79372438231D9ECB00665B2D /* TextWithTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextWithTitleTableViewCell.swift; sourceTree = "<group>"; };
 		7937243A231D9F0400665B2D /* TextWithTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TextWithTitleTableViewCell.xib; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				025BD00923CF9AD500A6510A /* DoorbellSelectionTableViewController.swift */,
+				02FC1BB423F838F900117358 /* CampainhasSplitViewController.swift */,
 			);
 			name = "Seleção Campainha";
 			path = "Seleção Campainha";
@@ -527,6 +530,7 @@
 			files = (
 				026B5242232980CC001D8D27 /* CompartilharViewController.swift in Sources */,
 				026B5222232834E6001D8D27 /* CloudKit Notification.swift in Sources */,
+				02FC1BB523F838F900117358 /* CampainhasSplitViewController.swift in Sources */,
 				02E42469231F0A49000F4C8C /* DataFetchAnswer.swift in Sources */,
 				022621F923204ACA0055A8FA /* LoadViewController.swift in Sources */,
 				02B2F3342316E9DE00140BE8 /* CampainhaViewController.swift in Sources */,
@@ -657,7 +661,7 @@
 				DEVELOPMENT_TEAM = BVZY57RJZG;
 				INFOPLIST_FILE = "Bell Stickers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MARKETING_VERSION = 1.22;
+				MARKETING_VERSION = 1.23;
 				PRODUCT_BUNDLE_IDENTIFIER = "PGF.Ping.Bell-Stickers";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -674,7 +678,7 @@
 				DEVELOPMENT_TEAM = BVZY57RJZG;
 				INFOPLIST_FILE = "Bell Stickers/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				MARKETING_VERSION = 1.22;
+				MARKETING_VERSION = 1.23;
 				PRODUCT_BUNDLE_IDENTIFIER = "PGF.Ping.Bell-Stickers";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -813,7 +817,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.22;
+				MARKETING_VERSION = 1.23;
 				PRODUCT_BUNDLE_IDENTIFIER = PGF.Ping;
 				PRODUCT_NAME = Nok;
 				SWIFT_VERSION = 5.0;
@@ -834,7 +838,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.22;
+				MARKETING_VERSION = 1.23;
 				PRODUCT_BUNDLE_IDENTIFIER = PGF.Ping;
 				PRODUCT_NAME = Nok;
 				SWIFT_VERSION = 5.0;
