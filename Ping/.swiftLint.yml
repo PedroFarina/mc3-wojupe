@@ -1,0 +1,44 @@
+# rule identifiers to opt in
+opt_in_rules:
+  - closure_end_indentation
+  - closure_spacing
+  - conditional_returns_on_newline
+  - empty_count
+  - fatal_error_message
+  - first_where
+  - force_unwrapping
+  - implicitly_unwrapped_optional
+
+
+# special configuration for rules 
+colon:
+  flexible_right_spacing: false
+  apply_to_dictionaries: true
+
+cyclomatic_complexity:
+  warning: 10
+  error: 20
+  ignores_case_statements: false
+
+large_tuple:
+  warning: 3
+  error: 4
+
+function_parameter_count:
+  warning: 5
+  error: 12
+
+implicitly_unwrapped_optional:
+  mode: allExceptIBOutlets
+
+function_body_length:
+  warning: 45
+  error: 100
+
+line_length:
+  warning: 120
+  error: 200
+  ignores_urls: true
+  ignores_function_declarations: false
+  ignores_comments: false
+
